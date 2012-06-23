@@ -1,0 +1,34 @@
+// Place all the styles related to the blogs controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+div.blog {
+  background: url('bg_fn_blog_corner.png') no-repeat;
+  padding: 2em 19px;
+  width: 641px;
+  border-radius: 5px;
+  border: 1px solid #E6E6E6;
+  h2 {
+    font-size: 40px;
+    margin-bottom: 19px;
+    a {
+      text-decoration: none;
+      &:hover {
+        strong {
+          display: inline;
+        }
+      }
+      strong {
+        font-size: 10px;
+        line-height: 40px;
+        margin-left: 1em;
+        display: none;
+      }
+    }
+  }
+}
+div.bottom {
+  background: url('bg_fn_blog.png') no-repeat;
+  height: 40px;
+  width: 679px;
+}

@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>WBlog</title>
+  <title>WinDy's Blog</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= yield :js %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<!-- head -->
+<div class="head">
+  <div class="container">
+    <ul class="nav">
+    	<li> <a id="home" href="#">首页<strong>Home</strong></a> </li>
+    	<li> <a id="tech" href="#">技术<strong>Tech</strong></a> </li>
+    	<li> <a id="life" href="#">生活<strong>Life</strong></a> </li>
+    	<li> <a id="creator" href="#">创业<strong>Creator</strong></a> </li>
+    </ul>
+    <strong class="descrip">WinDy的个人中心 - 记录人生经历 - 技术 生活 And 创业</strong>
+  </div>
+</div>
+<div class="container">
+  <%= yield %>
+</div>
 
 </body>
 </html>

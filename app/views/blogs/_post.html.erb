@@ -1,0 +1,5 @@
+<div class="blog">
+  <h2><%= link_to (post.title + "<strong> >></strong>").html_safe, blog_path(post) %></h2>
+  <div class="content"><%= post.content %></div>
+</div>
+<div class="bottom"></div>
