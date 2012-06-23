@@ -6,7 +6,7 @@
   </ul>
   <%= f.input :content, :as=> :text, :label=>false %>
   <div class="preview"></div>
-  <%= f.input :type %>
+  <%= f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], :include_blank=>false %>
   <div class="submit">
     <%= f.submit %>
   </div>

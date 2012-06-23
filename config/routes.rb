@@ -9,4 +9,5 @@ WBlog::Application.routes.draw do
     end
   end
   match '/admin' => 'admin/posts#new'
+  match '/:type' => 'blogs#index'
 end
