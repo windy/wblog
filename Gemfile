@@ -36,6 +36,7 @@ gem 'jquery-rails'
 
 # gem 'capistrano'
 
-gem "bluecloth"
+#gem "bluecloth"
+gem "redcarpet"
 gem "simple_form"
 gem 'database_cleaner'

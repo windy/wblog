@@ -1,3 +1,60 @@
 // Place all the styles related to the admin/posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h3 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #CCC;
+}
+
+#post_content {
+  width: 800px;
+  height: 390px;
+}
+
+div.submit {
+  display: block;
+  line-height: 40px;
+  width: 805px;
+  background-color: #CCC;
+  padding-left: 16px;
+  font-size: 20px;
+}
+
+ul.tab {
+  margin: 10px 0 10px 0;
+  overflow: hidden;
+  li {
+    float: left;
+    padding: 5px 5px;
+    border: 1px solid #CCC;
+    cursor: pointer;
+  }
+  li.active {
+    border-bottom: none;
+    border-top: 1px solid #CCC;
+  }
+  li:not(.active) {
+    border-top: none;
+    border-top-right-radius: none;
+    border-top-left-radius: none;
+  }
+  li#content {
+    border-top-left-radius: 10px;
+    border-right: none;
+  }
+  li#preview {
+    border-right-bottom-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
+
+div.preview {
+  width: 800px;
+  min-height: 396px;
+  border: 1px solid #CCC;
+  padding: 5px 5px;
+}
+

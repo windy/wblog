@@ -1,47 +1,16 @@
 require 'spec_helper'
 
 describe Admin::PostsController do
-
-  describe "GET 'new'" do
-    it "returns http success" do
-      get 'new'
-      response.should be_success
-    end
+  it "preview should return ok" do
+    post :preview
+    response.body.should == ""
+    post :preview, text: '123'
+    response.body.should == "<p>123</p>\n"
+    post :preview, text: <<-EOF
+```ruby
+puts 'hello world'
+```
+EOF
+    response.body.should == "<p><code>ruby\nputs &#39;hello world&#39;\n</code></p>\n"
   end
-
-  describe "GET 'edit'" do
-    it "returns http success" do
-      get 'edit'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'destroy'" do
-    it "returns http success" do
-      get 'destroy'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'index'" do
-    it "returns http success" do
-      get 'index'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'create'" do
-    it "returns http success" do
-      get 'create'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'update'" do
-    it "returns http success" do
-      get 'update'
-      response.should be_success
-    end
-  end
-
 end

@@ -1,5 +1,13 @@
-<%= simple_form_for(@post) do %>
+<%= simple_form_for(@post, :url=> admin_posts_path(@post)) do |f| %>
   <%= f.input :title %>
-  <%= f.input :content %>
-  <%= f.select :type %>
+  <ul class="tab">
+  	<li class="active" id="content">content</li>
+  	<li id="preview" url='<%= preview_admin_posts_path %>'>preview</li>
+  </ul>
+  <%= f.input :content, :as=> :text, :label=>false %>
+  <div class="preview"></div>
+  <%= f.input :type %>
+  <div class="submit">
+    <%= f.submit %>
+  </div>
 <% end %>

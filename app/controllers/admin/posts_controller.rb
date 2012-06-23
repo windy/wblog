@@ -1,5 +1,4 @@
 class Admin::PostsController < ApplicationController
-  layout false
   def new
     @post = Post.new
   end
@@ -14,8 +13,22 @@ class Admin::PostsController < ApplicationController
   end
 
   def create
+    @post = Post.new( params[:post] )
+    if @post.save
+      flash[:notice] = "success!"
+      redirect_to :action=>:index
+    else
+      flash[:alert] = "fail!"
+      render :action=>:new
+    end
   end
 
   def update
+  end
+
+  def preview
+    text = params[:text] || ""
+    md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink=>true)
+    render :text => md.render(text)
   end
 end
