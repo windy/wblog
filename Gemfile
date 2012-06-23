@@ -22,29 +22,20 @@ group :assets do
 end
 
 group :test do
-  gem 'capybara'
-  gem 'cucumber-rails'
-  gem 'factory_girl'
-  gem 'mongoid-rspec', :require => false
+  #gem 'capybara'
+  #gem 'cucumber-rails'
+  #gem 'factory_girl'
+  #gem 'mongoid-rspec', :require => false
 end
 
 group :test, :development do
-  gem 'rspec-rails'
+  gem "rspec-rails", ">= 2.8.1"
 end
 
 gem 'jquery-rails'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
 # gem 'capistrano'
 
-# To use debugger
-# gem 'debugger'
+gem "bluecloth"
+gem "simple_form"
+gem 'database_cleaner'
