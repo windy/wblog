@@ -7,6 +7,9 @@ class Post
   field :title, :type => String
   field :content, :type => String
   field :type, :type=> String
+  field :visited_count, :type=>Integer, :default=>0
+
+  has_many :comments
 
   validates :title, :presence=>true, :uniqueness=> true
   validates :content, :presence=>true, :length => { :minimum=> 30 }
