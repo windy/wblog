@@ -9,6 +9,12 @@ class BlogsController < ApplicationController
     end
   end
 
+  def rss
+    @posts = Post.all.limit(10)
+    render :layout=>false
+    response.headers["Content-Type"] = "application/xml; charset=utf-8"
+  end
+
   def show
     @post = Post.find(params[:id])
   end

@@ -1,4 +1,1 @@
-<div class="blog">
-  <h2><%= @post.title %></h2>
-  <div class="content"><%= @post.content %></div>
-</div>
+<%= render :partial=> "post", :locals=> { :post=> @post } %>

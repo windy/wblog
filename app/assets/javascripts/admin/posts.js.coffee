@@ -23,3 +23,14 @@ $(document).ready ->
     $.post $(this).attr('url'), text: content.val(), (data)->
       preview.html(data)
     
+  $('a#upload_photo').click ->
+    $('input[type=file]').show().focus().click().hide()
+  
+  opt =
+    type: 'POST'
+    url: "/photos"
+    success: (data,status,xhr)->
+      insertAtCaret('post_content', data)
+  
+
+  $('input[type=file]').fileUpload opt

@@ -14,4 +14,10 @@ class Post
   validates :title, :presence=>true, :uniqueness=> true
   validates :content, :presence=>true, :length => { :minimum=> 30 }
   validates :type, :presence=>true, :inclusion => { :in => [ TECH, LIFE, CREATOR ] }
+
+  def content_html
+    rd = Redcarpet::Render::HTML.new(:hard_wrap=>true)
+    md = Redcarpet::Markdown.new(rd, :autolink=>true)
+    md.render(self.content)
+  end
 end

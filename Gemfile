@@ -40,3 +40,5 @@ gem 'jquery-rails'
 gem "redcarpet"
 gem "simple_form"
 gem 'database_cleaner'
+gem "mini_magick"
+gem 'carrierwave-mongoid'

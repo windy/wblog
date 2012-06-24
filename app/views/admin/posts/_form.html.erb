@@ -4,6 +4,8 @@
   	<li class="active" id="content">content</li>
   	<li id="preview" url='<%= preview_admin_posts_path %>'>preview</li>
   </ul>
+  <%= link_to t(:upload_photo), "#", :id=>'upload_photo' %>
+  <input type="file" style="display: none;" />
   <%= f.input :content, :as=> :text, :label=>false %>
   <div class="preview"></div>
   <%= f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], :include_blank=>false %>

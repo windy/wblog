@@ -28,7 +28,8 @@ class Admin::PostsController < ApplicationController
 
   def preview
     text = params[:text] || ""
-    md = Redcarpet::Markdown.new(Redcarpet::Render::HTML, :autolink=>true)
+    rd = Redcarpet::Render::HTML.new(:hard_wrap=>true)
+    md = Redcarpet::Markdown.new(rd, :autolink=>true)
     render :text => md.render(text)
   end
 end

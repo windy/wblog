@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+div.blogs {
+  width: 700px;
+  float: left;
+}
+
 div.blog {
   background: url('bg_fn_blog_corner.png') no-repeat;
   padding: 2em 19px;
@@ -20,7 +25,6 @@ div.blog {
       }
       strong {
         font-size: 10px;
-        line-height: 40px;
         margin-left: 1em;
         display: none;
       }
