@@ -13,6 +13,7 @@ $(document).ready ->
     content.show()
     $(this).addClass('active')
     $('#preview').removeClass('active')
+    false
 
   $('#preview').click ->
     content.hide()
@@ -22,9 +23,11 @@ $(document).ready ->
     preview.show()
     $.post $(this).attr('url'), text: content.val(), (data)->
       preview.html(data)
+    false
     
   $('a#upload_photo').click ->
     $('input[type=file]').show().focus().click().hide()
+    false
   
   opt =
     type: 'POST'
