@@ -35,6 +35,7 @@ end
 gem 'jquery-rails'
 
 gem 'capistrano'
+gem 'rvm-capistrano'
 
 #gem "bluecloth"
 gem "redcarpet"
