@@ -11,4 +11,14 @@ describe BlogsController do
     get :index
     assigns[:posts][1].title.should == a.title
   end
+
+  it "index with label should get by order desc" do
+    a = Post.new(title: '123', content: '123'*20, type: Post::TECH)
+    a.save!
+    sleep 1
+    b = Post.new(title: '1234', content: '123'*20,type: Post::TECH)
+    b.save!
+    get :index, :type=> "tech"
+    assigns[:posts][1].title.should == a.title
+  end
 end
