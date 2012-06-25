@@ -23,6 +23,11 @@ role :db,  "yafeilee.me", :primary => true # This is where Rails migrations will
 #
 set :deploy_to, "/home/ruby/app_wblog"
 
+before "deploy:finalize_update","link_uploads"
+
+task :link_uploads do
+  run "ln -nsf #{shared_path}/uploads  #{release_path}/public/uploads"
+end
 
 # If you are using Passenger mod_rails uncomment this:
  namespace :deploy do
