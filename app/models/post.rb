@@ -4,6 +4,7 @@ class Post
   LIFE = "生活"
   CREATOR = "创业"
   include Mongoid::Document
+  include Mongoid::Timestamps
   field :title, :type => String
   field :content, :type => String
   field :type, :type=> String

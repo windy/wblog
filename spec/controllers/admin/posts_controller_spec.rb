@@ -11,6 +11,6 @@ describe Admin::PostsController do
 puts 'hello world'
 ```
 EOF
-    response.body.should == "<p><code>ruby\nputs &#39;hello world&#39;\n</code></p>\n"
+    response.body.should == "<p><code>ruby<br>\nputs &#39;hello world&#39;<br>\n</code></p>\n"
   end
 end
