@@ -11,7 +11,7 @@ xml.rss "version" => "2.0", "xmlns:dc" => "http://purl.org/dc/elements/1.1/" do
      xml.item do
        xml.title       post.title
        xml.link        blog_url(post)
-       xml.description post.content
+       xml.description post.content_html
        xml.guid        blog_url(post)
      end
    end
