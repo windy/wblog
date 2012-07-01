@@ -1,5 +1,11 @@
 <div class="blog">
   <h2><%= link_to (post.title + "<strong> >></strong>").html_safe, blog_path(post) %></h2>
   <div class="content wikistyle"><%= post.content_html.html_safe %></div>
+  <div class="cc">
+    <%= t(:announce_at) %>
+    <%= format_time(post.created_at) %> | 
+    <%= "浏览数 " + post.visited.to_s %> |
+    <%= link_to t('comment'), blog_path(post) + "#disqus_thread" %>
+  </div>
 </div>
 <div class="bottom"></div>

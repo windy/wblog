@@ -21,4 +21,10 @@ class Post
     md = Redcarpet::Markdown.new(rd, :autolink=>true)
     md.render(self.content)
   end
+
+  def visited
+    self.visited_count += 1
+    self.save
+    self.visited_count
+  end
 end

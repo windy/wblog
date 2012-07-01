@@ -4,3 +4,5 @@
 en:
   hello: "Hello world"
   upload_photo: "上传图片"
+  comment: "查看评论"
+  announce_at: "发表在 "
