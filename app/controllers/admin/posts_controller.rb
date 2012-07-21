@@ -16,7 +16,7 @@ class Admin::PostsController < ApplicationController
     @post = Post.new( params[:post] )
     if @post.save
       flash[:notice] = "success!"
-      redirect_to :action=>:index
+      redirect_to root_path
     else
       flash[:alert] = "fail!"
       render :action=>:new
