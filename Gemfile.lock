@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: http://ruby.taobao.org/
   specs:
     actionmailer (3.2.6)
       actionpack (= 3.2.6)
@@ -59,6 +59,8 @@ GEM
       multi_json (~> 1.0)
     highline (1.6.13)
     hike (1.2.1)
+    html_truncator (0.3.0)
+      nokogiri (~> 1.4)
     i18n (0.6.0)
     journey (1.0.4)
     jquery-rails (2.0.2)
@@ -86,6 +88,7 @@ GEM
     net-ssh (2.5.2)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
+    nokogiri (1.5.5)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -160,9 +163,11 @@ DEPENDENCIES
   carrierwave-mongoid
   coffee-rails (~> 3.2.1)
   database_cleaner
+  html_truncator
   jquery-rails
   mini_magick
   mongoid
+  nokogiri
   rails (= 3.2.6)
   redcarpet
   rspec-rails (>= 2.8.1)

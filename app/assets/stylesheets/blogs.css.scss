@@ -14,9 +14,14 @@ div.blog {
   border-radius: 5px;
   border: 1px solid #E6E6E6;
   .cc {
+    height: 21px;
+    text-align: bottom;
     color: #CCC;
     a {
       color: #CCC;
+    }
+    .bsync-custom {
+      display: inline-block;
     }
   }
   h2 {

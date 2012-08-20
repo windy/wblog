@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+#source 'http://ruby.taobao.org'
 
 gem 'rails', '3.2.6'
 
@@ -43,3 +44,5 @@ gem "simple_form"
 gem 'database_cleaner'
 gem "mini_magick"
 gem 'carrierwave-mongoid'
+gem 'html_truncator'
+gem 'nokogiri'
