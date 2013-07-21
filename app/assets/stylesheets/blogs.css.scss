@@ -53,3 +53,13 @@ div#disqus_thread {
   border-top: 1px solid #CCC;
   padding-top: 20px;
 }
+
+div.has_new, div.has_old {
+  padding-right: 1em;
+  a {
+    text-decoration: none;
+  }
+}
+div.has_new {
+  float: right;
+}

@@ -2,11 +2,17 @@
 class BlogsController < ApplicationController
   def index
     type = params[:type]
+    page = params[:page].to_i
+    page = 1 if params[:page].nil?
+    max = 3
     if type or type == ""
-      @posts = Post.where(type: map[type]).order(:created_at => :desc )
+      @posts = Post.paginate( :page=>page, :limit=> max ).where(type: map[type]).order(:created_at => :desc )
     else
-      @posts = Post.all.order(:created_at => :desc )
+      @posts = Post.paginate( :page=>page, :limit=> max ).all.order(:created_at => :desc )
     end
+    @page = page
+    @has_old = @posts.to_a.size == max
+    @has_new = ! ( page == 1 )
   end
 
   def rss

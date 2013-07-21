@@ -80,6 +80,9 @@ GEM
       activemodel (~> 3.1)
       mongo (<= 1.6.2)
       tzinfo (~> 0.3.22)
+    mongoid-pagination (0.2.0)
+      activesupport
+      mongoid
     multi_json (1.3.6)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -167,6 +170,7 @@ DEPENDENCIES
   jquery-rails
   mini_magick
   mongoid
+  mongoid-pagination
   nokogiri
   rails (= 3.2.6)
   redcarpet
