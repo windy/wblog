@@ -60,6 +60,9 @@ div.has_new, div.has_old {
     text-decoration: none;
   }
 }
+div.has_old {
+  float: left;
+}
 div.has_new {
   float: right;
 }
