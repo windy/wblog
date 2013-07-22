@@ -11,8 +11,8 @@
 .wikistyle del{color:#999;}
 .wikistyle ul,#wiki-form .content-body ul{margin:1em 0 1em 2em!important;}
 .wikistyle ol,#wiki-form .content-body ol{margin:1em 0 1em 2em!important;}
-.wikistyle ul li,#wiki-form .content-body ul li,.wikistyle ol li,#wiki-form .content-body ol li{margin-top:.5em;margin-bottom:.5em;}
-.wikistyle ul ul,.wikistyle ul ol,.wikistyle ol ol,.wikistyle ol ul,#wiki-form .content-body ul ul,#wiki-form .content-body ul ol,#wiki-form .content-body ol ol,#wiki-form .content-body ol ul{margin-top:0!important;margin-bottom:0!important;}
+.wikistyle ul li,#wiki-form .content-body ul li,.wikistyle ol li,#wiki-form .content-body ol li{margin-top:.5em;margin-bottom:.5em; list-style: decimal; }
+.wikistyle ul ul,.wikistyle ul ol,.wikistyle ol ol,.wikistyle ol ul,#wiki-form .content-body ul ul,#wiki-form .content-body ul ol,#wiki-form .content-body ol ol,#wiki-form .content-body ol ul{margin-top:0!important;margin-bottom:0!important; list-style: disc; }
 .wikistyle blockquote{margin:1em 0!important;border-left:5px solid #ddd!important;padding-left:.6em!important;color:#555!important;}
 .wikistyle dt{font-weight:bold!important;margin-left:1em!important;}
 .wikistyle dd{margin-left:2em!important;margin-bottom:1em!important;}
@@ -41,4 +41,5 @@
 .wikistyle pre::-webkit-scrollbar-thumb:horizontal{width:25px;background-color:#ccc;-webkit-border-radius:4px;}
 .wikistyle pre code{padding:0!important;font-size:12px!important;background-color:#eee!important;border:none!important;}
 .wikistyle code{font-size:12px!important;background-color:#f8f8ff!important;color:#444!important;padding:0 .2em!important;border:1px solid #dedede!important;}
-
+.wikistyle strong {font-weight: bold; }
+.wikistyle em {font-style: italic; }
