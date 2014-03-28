@@ -3,7 +3,6 @@ if ENV['RAILS_ENV'] == 'production'
 else
   source 'http://ruby.taobao.org'
 end
-
 ruby '2.0.0'
 
 gem 'rails', '4.0.4'
@@ -14,7 +13,6 @@ gem 'jquery-rails'
 
 gem "mongoid"
 gem "mongoid-pagination"
-gem "bson_ext"
 gem "redcarpet"
 gem 'slim-rails'
 gem "simple_form"
