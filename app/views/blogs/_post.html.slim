@@ -1,0 +1,11 @@
+.blog
+  h2
+    = link_to post.title, blog_path(post)
+  .content.wikistyle
+    = post.content_html.html_safe
+  .cc
+    = t(:announce_at)
+    = format_time(post.created_at)
+    |  | 
+    = t(:visited_count) + post.visited.to_s
+.bottom

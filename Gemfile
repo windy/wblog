@@ -16,6 +16,7 @@ gem "mongoid"
 gem "mongoid-pagination"
 gem "bson_ext"
 gem "redcarpet"
+gem 'slim-rails'
 gem "simple_form"
 gem "mini_magick"
 gem 'carrierwave-mongoid'

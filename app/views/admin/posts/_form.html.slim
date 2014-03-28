@@ -1,0 +1,14 @@
+= simple_form_for(@post, :url=> admin_posts_path(@post)) do |f|
+  = f.input :title
+  ul.tab
+    li#content.active
+      | content
+    li#preview url=preview_admin_posts_path
+      | preview
+  = link_to t(:upload_photo), "#", :id=>'upload_photo'
+  input[type="file" style="display: none;"]
+  = f.input :content, :as=> :text, :label=>false
+  .preview.wikistyle
+  = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], :include_blank=>false
+  .submit
+    = f.submit
