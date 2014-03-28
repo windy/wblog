@@ -17,3 +17,5 @@
 *.swp
 
 /public/uploads/*
+
+*.lock
