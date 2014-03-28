@@ -1,49 +1,42 @@
-source 'http://rubygems.org'
-#source 'http://ruby.taobao.org'
+if ENV['RAILS_ENV'] == 'production'
+  source 'https://rubygems.org'
+else
+  source 'http://ruby.taobao.org'
+end
 
-gem 'rails', '3.2.6'
+ruby '2.0.0'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '4.0.4'
+gem 'sass-rails', '~> 4.0.2'
+gem 'coffee-rails', '~> 4.0.1'
+gem 'uglifier', '>= 1.3.0'
+gem 'jquery-rails'
 
 gem "mongoid"
 gem "mongoid-pagination"
 gem "bson_ext"
+gem "redcarpet"
+gem "simple_form"
+gem "mini_magick"
+gem 'carrierwave-mongoid'
+gem 'html_truncator'
+gem 'nokogiri'
 
-
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
-  gem 'uglifier', '>= 1.0.3'
+group :development do
+  gem 'quiet_assets'
+  gem 'guard'
+  gem 'guard-rails'
+  gem 'guard-rspec', require: false
+  gem 'guard-bundler', require: false
 end
 
 group :test do
-  #gem 'capybara'
-  #gem 'cucumber-rails'
-  #gem 'factory_girl'
-  #gem 'mongoid-rspec', :require => false
+  gem 'capybara'
+  gem 'factory_girl'
+  gem 'mongoid-rspec', :require => false
+  gem 'database_cleaner'
 end
 
 group :test, :development do
   gem "rspec-rails", ">= 2.8.1"
 end
-
-gem 'jquery-rails'
-
-gem 'capistrano'
-gem 'rvm-capistrano'
-
-#gem "bluecloth"
-gem "redcarpet"
-gem "simple_form"
-gem 'database_cleaner'
-gem "mini_magick"
-gem 'carrierwave-mongoid'
-gem 'html_truncator'
-gem 'nokogiri'

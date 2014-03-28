@@ -16,7 +16,7 @@ WBlog::Application.routes.draw do
       end
     end
   end
-  match '/about' => 'home#index'
-  match '/admin' => 'admin/posts#new'
-  match '/:type' => 'blogs#index'
+  get '/about' => 'home#index'
+  get '/admin' => 'admin/posts#new'
+  get '/:type' => 'blogs#index'
 end
