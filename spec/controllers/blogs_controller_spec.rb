@@ -41,4 +41,24 @@ describe BlogsController do
     assigns[:comments][1].email.should == 'liuzhen@.com'
   end
 
+  it 'test show method' do
+    post = Post.new(title: 'a123', content: '123'*20, type: Post::TECH)
+    post.save!
+    a = Comment.new(name: '1',content: '2432423',email: '22@.com')
+    a.post = post
+    a.save!
+    b = Comment.new(name: '2',content: 'iloveyou',email: 'liuzhen@.com')
+    b.post = post
+    b.save!
+    label = Label.new(type: '生活')
+    post.labels << label
+    post.save!
+    get :show, id: post.id
+    assigns[:comments][0].name.should == '1'
+    assigns[:comments][0].content.should == '2432423'
+    assigns[:comments][0].email.should == '22@.com'
+    assigns[:comments][1].name.should == '2'
+    assigns[:comments][1].content.should == 'iloveyou'
+    assigns[:comments][1].email.should == 'liuzhen@.com'
+  end
 end
