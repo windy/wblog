@@ -1,2 +1,7 @@
-.blogs
-  = render :partial=> "post", :locals=> { :post=> @post }
+.row
+  .small-12.large-8.columns
+    = render partial: "post", :locals=> { :post=> @post }
+.comment-field
+  .row
+    .small-12.large-8.columns
+      = render partial: 'comment', locals: { comments: @comments }

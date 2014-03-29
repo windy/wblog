@@ -1189,3 +1189,19 @@
 // $include-html-visibility-classes: $include-html-classes;
 
 @import 'foundation';
+
+#like-button {
+  color:  #eaa296;
+  background-color: transparent;
+  border: 1px solid #e79385;
+  border-radius: 10rem;
+  &:hover {
+    background-color: transparent;
+    border: 1px solid #e79385;
+    border-radius: 10rem;
+  }
+  &:focus {
+    border: 1px solid #e79385;
+    border-radius: 10rem;
+  }
+}
