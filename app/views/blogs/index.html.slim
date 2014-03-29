@@ -1,12 +1,6 @@
-.blogs
-  - if @posts.size == 0
-    .nocontent
-      = t(:nocontent)
-  - else
-    = render :partial=> "post", :collection=> @posts
-  - if @has_old
-    .has_old
-      a.pagination href="#" data-page="#{@page + 1}" #{t(:prev)}
-  - if @has_new
-    .has_new
-      a.pagination href="#" data-page="#{@page - 1}" #{t(:next)}
+.row
+  .small-12.large-8.columns
+    - 5.times do
+      p hello world
+  .large-4.columns
+    p 订阅
