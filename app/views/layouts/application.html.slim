@@ -29,15 +29,14 @@ html
             li
               a href="#" 创业
             li
-              label 归档
+              label Archive
             li
               a href="#" 归档
             li
               label AboutMe
               a href="#" 关于我
         section.main-section 
-          - 5.times do
-            p helo
+          = yield
       a.exit-off-canvas
 
 
