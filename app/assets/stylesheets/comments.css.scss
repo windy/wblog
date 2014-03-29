@@ -1,6 +1,7 @@
 .comment-field {
   background-color: #333333;
   padding-top: 3rem;
+  padding-bottom: 1rem;
 
   textarea {
     min-height: 7rem;
@@ -14,6 +15,14 @@
       box-shadow: none;
       background-color: white;
     }
+  }
+
+  .has-tip {
+    color: #008cba;
+  }
+
+  .next {
+    float: right;
   }
 }
 
