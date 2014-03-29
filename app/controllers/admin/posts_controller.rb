@@ -32,7 +32,7 @@ class Admin::PostsController < ApplicationController
     md = Redcarpet::Markdown.new(rd, :autolink=>true)
     render :text => md.render(text)
   end
-
+  
   def post_params
     params.require(:post).permit(:title, :content, :type)
   end

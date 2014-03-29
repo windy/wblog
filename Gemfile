@@ -39,4 +39,5 @@ end
 
 group :test, :development do
   gem "rspec-rails", ">= 2.8.1"
+  gem 'pry-rails'
 end

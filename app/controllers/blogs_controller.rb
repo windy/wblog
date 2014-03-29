@@ -1,18 +1,8 @@
 # encoding : utf-8
 class BlogsController < ApplicationController
   def index
-    type = params[:type]
-    page = params[:page].to_i
-    page = 1 if params[:page].nil?
-    max = 3
-    if type or type == ""
-      @posts = Post.paginate( :page=>page, :limit=> max ).where(type: map[type]).order(:created_at => :desc )
-    else
-      @posts = Post.paginate( :page=>page, :limit=> max ).all.order(:created_at => :desc )
-    end
-    @page = page
-    @has_old = @posts.to_a.size == max
-    @has_new = ! ( page == 1 )
+    @newest = Post.desc(:created_at).to_a.first
+    @recent = Post.desc(:created_at).to_a[1..2]
   end
 
   def rss
@@ -22,6 +12,8 @@ class BlogsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    @comments = Comment.all.where(post_id: @post.id)
   end
 
   private
