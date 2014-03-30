@@ -37,15 +37,19 @@
   color: #EBEBEB;
   border-top: 1px solid #5E5E5E;
   padding-top: 1rem;
-  .name {
-    
-  }
+
   .created-at {
     color: #b3b3b3;
   }
   .comment-content {
-    padding-bottom: 1rem;
+    padding-bottom: 2.275rem;
+    padding-left: 0.275rem;
     border-bottom: 1px dashed #8a8a8a;
+    margin-bottom: 0;
+  }
+  .name {
+    padding-top: 0.5rem;
+    padding-left: 0.275rem;
   }
 }
 
@@ -55,4 +59,10 @@
 
 .comment-fail {
   color: #FF7A7A;
+}
+
+.comment-wrapper {
+  &:hover {
+    background-color: #444444;
+  }
 }
