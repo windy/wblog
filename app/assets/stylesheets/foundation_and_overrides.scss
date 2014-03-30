@@ -1197,16 +1197,9 @@
   border: 1px solid #e79385;
   border-radius: 10rem;
   &:hover {
-    background-color: transparent;
-    border: 1px solid #e79385;
-    border-radius: 10rem;
+    background-color: #FCFF9E;
   }
   &:focus {
-    border: 1px solid #e79385;
-    border-radius: 10rem;
-  }
-  &:active {
-    border: 1px solid #e79385;
-    border-radius: 10rem;
+    outline-style: none;
   }
 }
