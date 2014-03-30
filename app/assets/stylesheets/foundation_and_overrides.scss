@@ -1189,3 +1189,17 @@
 // $include-html-visibility-classes: $include-html-classes;
 
 @import 'foundation';
+@import 'foundation-icons';
+
+#like-button {
+  color:  #eaa296;
+  background-color: transparent;
+  border: 1px solid #e79385;
+  border-radius: 10rem;
+  &:hover {
+    background-color: #FCFF9E;
+  }
+  &:focus {
+    outline-style: none;
+  }
+}

@@ -1,0 +1,18 @@
+.row
+  .small-12.large-12.columns
+    = text_area_tag(:content, nil, placeholder: '发表你的看法')
+.row
+  .small-12.large-6.columns
+    = text_field_tag(:name, nil, placeholder: '你的名字')
+    = text_field_tag(:email, nil, placeholder: '你的邮箱')
+button 发表
+.comment-diag
+  p.name
+    | WinDy  • 
+    span.created-at 2014-2-12 13:00
+  p.comment-content 写的好!!
+
+  p.name
+    | WinDy  • 
+    span.created-at 2014-2-12 13:00
+  p.comment-content 写的好!!

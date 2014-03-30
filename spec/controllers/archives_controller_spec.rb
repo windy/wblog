@@ -1,11 +1,11 @@
 require 'spec_helper'
 
-describe HomeController do
+describe ArchivesController do
 
   describe "GET 'index'" do
     it "returns http success" do
       get 'index'
-      expect(response).to be_success
+      response.should be_success
     end
   end
 

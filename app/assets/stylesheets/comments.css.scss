@@ -1,0 +1,43 @@
+.comment-field {
+  background-color: #333333;
+  padding-top: 3rem;
+  padding-bottom: 1rem;
+
+  textarea {
+    min-height: 7rem;
+  }
+
+  input[type='text'], textarea {
+    border: 1px solid #333333;
+    background-color: #F7F7F7;
+    box-shadow: none;
+    &:focus {
+      box-shadow: none;
+      background-color: white;
+    }
+  }
+
+  .has-tip {
+    color: #008cba;
+  }
+
+  .next {
+    float: right;
+  }
+}
+
+.comment-diag {
+  color: #EBEBEB;
+  border-top: 1px solid #5E5E5E;
+  padding-top: 1rem;
+  .name {
+    
+  }
+  .created-at {
+    color: #b3b3b3;
+  }
+  .comment-content {
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #8a8a8a;
+  }
+}
