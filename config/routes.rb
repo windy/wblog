@@ -1,10 +1,12 @@
 WBlog::Application.routes.draw do
   root :to => 'blogs#index'
+
   resources :blogs, :only=>[:index, :show] do
     collection do
       get :rss
     end
     resources :comments, only: [:index, :create]
+    resources :likes, only: [:index, :create, :destroy]
   end
 
 
