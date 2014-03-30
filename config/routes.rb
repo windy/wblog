@@ -4,7 +4,9 @@ WBlog::Application.routes.draw do
     collection do
       get :rss
     end
+    resources :comments, only: [:index, :create]
   end
+
 
   resources :archives
   # photos

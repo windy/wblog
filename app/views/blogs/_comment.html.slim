@@ -1,18 +1,21 @@
-.row
-  .small-12.large-12.columns
-    = text_area_tag(:content, nil, placeholder: '发表你的看法')
-.row
-  .small-12.large-6.columns
-    = text_field_tag(:name, nil, placeholder: '你的名字')
-    = text_field_tag(:email, nil, placeholder: '你的邮箱')
-button 发表
-.comment-diag
-  p.name
-    | WinDy  • 
-    span.created-at 2014-2-12 13:00
-  p.comment-content 写的好!!
-
-  p.name
-    | WinDy  • 
-    span.created-at 2014-2-12 13:00
-  p.comment-content 写的好!!
+.row ng-app="app" ng-controller="CommentsController"
+  .small-12.large-8.columns
+    form
+      .row
+        .small-12.large-12.columns
+          = text_area_tag(:content, nil, placeholder: '发表你的看法', 'ng-model'=> 'content')
+      .row
+        .small-12.large-6.columns
+          = text_field_tag(:name, nil, placeholder: '你的名字', 'ng-model'=> 'name')
+          = text_field_tag(:email, nil, placeholder: '你的邮箱', 'ng-model'=> 'email', 'ng-pattern'=>"/@/", 'ng-required'=>"true")
+      button ng-click="submit()" ng-disabled="form.$invalid" 发表
+      p.comment-success ng-show="publish_success" 发布成功
+      p.comment-fail ng-show="publish_success == false" 发布失败
+    .comment-diag
+      .comment-wrapper ng-repeat=" comment in comments "
+        p.name
+          |{{ comment.name + "  • " }}
+          span.created-at
+            |{{ comment.created_at }}
+        p.comment-content
+          |{{ comment.content }}
