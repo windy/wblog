@@ -11,4 +11,5 @@ class Comment
   validates :name, presence: true
   validates :email, confirmation: true,:format => /@/
   validates :content, presence: true
+  validates_presence_of :post_id
 end

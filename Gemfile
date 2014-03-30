@@ -23,6 +23,7 @@ gem "mini_magick"
 gem 'carrierwave-mongoid'
 gem 'html_truncator'
 gem 'nokogiri'
+gem 'angularjs-rails'
 
 group :development do
   gem 'quiet_assets'
