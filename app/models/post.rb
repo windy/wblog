@@ -15,6 +15,8 @@ class Post
 
   has_many :comments
   has_and_belongs_to_many :labels
+  
+  has_many :likes
 
   validates :title, :presence=>true, :uniqueness=> true
   validates :content, :presence=>true, :length => { :minimum=> 30 }
