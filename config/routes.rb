@@ -6,6 +6,7 @@ WBlog::Application.routes.draw do
     end
   end
 
+  resources :archives
   # photos
   resources :photos, :only=>[:create]
   
