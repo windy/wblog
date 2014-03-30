@@ -23,6 +23,13 @@
 
   .next {
     float: right;
+    i {
+      margin-left: 0.275rem;
+    }
+  }
+
+  .prev i {
+    margin-right: 0.275rem;
   }
 }
 
