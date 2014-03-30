@@ -7,7 +7,7 @@
     p.ptag
       | 标签:
       span #{@newest.labels.collect{ |label| label.name}.join(', ')}
-    .content
+    .content.markdown
       == @newest.sub_content
 
       = link_to "阅读全文 >>", blog_path(@newest)
@@ -17,13 +17,12 @@
     ul.recent-content
       - @recent.each do |re|
         li = link_to "#{re.title}",blog_path(re)
-  .large-3.columns.large-offset-1
+
+  .large-3.columns.large-offset-1.self-introduce
     h4 WELCOME
-    hr
     p 我是李亚飞, WinDy 是我的网名.
 
     h4 ABOUTME
-    hr
     p 关于我
     p 中国 * 深圳
     p 邮件订阅, 微信扫一扫

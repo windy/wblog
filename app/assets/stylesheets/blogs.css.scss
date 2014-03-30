@@ -27,10 +27,27 @@
 
 .recent-title {
   border-bottom: 1px solid #dddddd;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.275rem;
+  margin-bottom: 1rem;
 }
 
 .recent-content {
   padding-bottom: 3rem;
+  li {
+    list-style: none;
+  }
+  margin-left: 0rem;
+  padding-left: 0rem;
+}
+
+@media only screen and (max-width: 40em) {
+  .self-introduce {
+    display: none;
+  }
+}
+.self-introduce {
+  margin-top: 2.2rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #dddddd;
+  }
 }
