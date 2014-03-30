@@ -11,7 +11,7 @@ class LikesController < ApplicationController
     like = Like.new
     like.post = post
     if like.save
-      render :json=> { success: true }
+      render :json=> { success: true, id: like.id.to_s }
     else
       render :json=> { success: false }
     end

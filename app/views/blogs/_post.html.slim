@@ -1,9 +1,9 @@
-h2.blog-title hello
+h2.blog-title #{post.title}
 p.ptag
-  | 分类: 
+  i.fi-list
   span 技术
 p.ptag
-  | 标签:
+  i.fi-pricetag-multiple
   span 生活, 感悟
 
 .content.markdown
@@ -11,6 +11,11 @@ p.ptag
 
 p.ptag
   | 发表于:
-  span 2014-2-14
-p
-  button#like-button Like
+  span #{format_date(post.created_at)}
+p ng-controller="LikesController"
+  button.like-button ng-show="! like " ng-click="submit()"
+    |{{ count }}
+    span Like
+  button.like-button ng-show=" like " ng-click="cancel()" 
+    |{{ count }}
+    span Liked
