@@ -24,18 +24,28 @@ html
             li
               label Menu
             li
-              a href="#" 技 术
+              = link_to '/tech' do
+                i.fi-social-evernote
+                | 技术
             li
-              a href="#" 生 活
+              = link_to '/life' do
+                i.fi-torsos-male-female
+                | 生活
             li
-              a href="#" 创 业
+              = link_to '/creator' do
+                i.fi-lightbulb
+                | 创业
             li
               label Archive
             li
-              = link_to '时间线', archives_path
+              = link_to archives_path do
+                i.fi-align-justify
+                | 时间线
             li
-              label AboutMe
-              a href="#" 关于我
+              label About
+              = link_to about_path do
+                i.fi-torso
+                | 关于我
         section.main-section 
           = yield
           = render "layouts/footer"

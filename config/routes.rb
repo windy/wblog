@@ -19,5 +19,5 @@ WBlog::Application.routes.draw do
   end
   get '/about' => 'home#index'
   get '/admin' => 'admin/posts#new'
-  get '/:type' => 'blogs#index'
+  get '/:type' => 'archives#index'
 end
