@@ -1,0 +1,21 @@
+.markdown {
+  @media only screen and (min-width: 40.063em) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 40em) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.2875rem;
+    }
+  }
+
+  pre {
+    border: 1px solid #cccccc;
+    padding: 1rem 0.5rem;
+    margin: 1rem 0;
+    font-weight: 500;
+    color: #d14;
+  }
+}

@@ -16,6 +16,7 @@ gem 'foundation-icons-sass-rails'
 gem "mongoid"
 gem "mongoid-pagination"
 gem "redcarpet"
+gem "rouge"
 gem 'slim-rails'
 gem "simple_form"
 gem "mini_magick"

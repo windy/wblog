@@ -1,4 +1,6 @@
 # encoding : utf-8
+#
+require 'markdown'
 class Post
   TECH = "技术"
   LIFE = "生活"
@@ -19,8 +21,8 @@ class Post
   validates :type, :presence=>true, :inclusion => { :in => [ TECH, LIFE, CREATOR ] }
 
   def content_html
-    rd = Redcarpet::Render::HTML.new(:hard_wrap=>true)
-    md = Redcarpet::Markdown.new(rd, :autolink=>true)
+    rd = CodeHTML.new
+    md = Redcarpet::Markdown.new(rd, autolink: true, fenced_code_blocks: true)
     md.render(self.content)
   end
 
@@ -31,9 +33,6 @@ class Post
   end
 
   def sub_content
-    rd = Redcarpet::Render::HTML.new(:hard_wrap=>true)
-    md = Redcarpet::Markdown.new(rd, :autolink=>true)
-    sub_cont = md.render(self.content)
-    HTML_Truncator.truncate(sub_cont,100)
+    HTML_Truncator.truncate(content_html,100)
   end
 end
