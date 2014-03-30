@@ -7,7 +7,11 @@
       = render partial: 'comment', locals: { comments: @comments }
   .row
     .small-12.large-8.columns
-      a.prev href="#"
-        span.has-tip data-tooltip="" title="hello" Prev
-      a.next href="#"
-        span.has-tip data-tooltip="" title="hello" Next
+      - if @prev
+        = link_to blog_path(@prev), class: 'prev' do
+          i.fi-arrow-left
+          | Prev
+      - if @next
+        = link_to blog_path(@next), class: 'next' do
+          | Next
+          i.fi-arrow-right
