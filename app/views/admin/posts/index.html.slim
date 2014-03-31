@@ -1,0 +1,22 @@
+.row.admin-posts-field
+  .small-12.columns
+    h3.blog-title 博客管理
+    table width="100%"
+      thead
+        tr
+          th 标题
+          th 概要
+          th 操作
+      tbody
+        - @posts.each do |post|
+          tr
+            td 科学
+            td
+              span 技术
+              span 分类
+              span 喜欢数
+              span 浏览数
+            td
+              = link_to '编辑', edit_admin_post_path(post)
+              = link_to '删除', admin_post_path(post), method: 'DELETE', confirm: '确认删除?'
+

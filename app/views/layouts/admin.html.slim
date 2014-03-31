@@ -12,7 +12,7 @@ html
       ul.title-area
         li.name
           h1
-            a href="#" Admin for WinDy
+            = link_to 'Dashboard For WinDy', admin_root_path
         li.toggle-topbar.menu-icon
           a href="#" Menu
       section.top-bar-section
@@ -20,7 +20,7 @@ html
           li
             = link_to '创建新博客', new_admin_post_path
           li
-            a href="#" 管理博客
+            = link_to '管理博客', admin_posts_path
     - flash.each do |name, msg|
       - if msg.is_a?(String)
         div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""

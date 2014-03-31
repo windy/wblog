@@ -13,13 +13,16 @@ class Admin::PostsController < ApplicationController
   def destroy
     @post = Post.find( params[:id] )
     if @post.destroy
-      render :json=> { success: true }
+      flash[:notice] = '删除博客成功'
+      redirect_to admin_posts_path
     else
-      render :json=> { success: false }
+      flash[:error] = '删除博客失败'
+      redirect_to admin_posts_path
     end
   end
 
   def index
+    @posts = Post.all
   end
 
   def create
@@ -31,8 +34,6 @@ class Admin::PostsController < ApplicationController
       label.save!
       @post.labels << label
     end
-
-    #binding.pry
 
     if @post.save
       flash[:notice] = '创建博客成功'
@@ -57,9 +58,11 @@ class Admin::PostsController < ApplicationController
     end
 
     if @post.update( params.permit(:title, :content, :type) )
-      render :json=> { success: true }
+      flash[:notice] = '更新博客成功'
+      redirect_to admin_posts_path
     else
-      render :json=> { success: false }
+      flash[:error] = '更新博客失败'
+      render :edit
     end
   end
 

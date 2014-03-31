@@ -13,4 +13,8 @@
       $scope.previewHTML = res
 
   $scope.addTag = (e)->
-    $scope.labels += ", #{$(e.target).text()}"
+    new_labels= $(e.target).text()
+    if $scope.labels
+      $scope.labels += ", #{new_labels}"
+    else
+      $scope.labels = new_labels
