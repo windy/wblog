@@ -39,7 +39,9 @@ class Post
   end
 
   def labels_content
-    self.labels.collect { |label| label.name }.join(", ")
+    content = self.labels.collect { |label| label.name }.join(", ")
+    content = '无' if content.blank?
+    content
   end
 
   def liked_count
