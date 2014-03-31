@@ -1,6 +1,6 @@
 .row ng-controller="ArchivesController"
   .small-12.large-8.columns
-    ul.archives-field
+    ul.archives-field ng-model="type" ng-init=" type= '#{@type}' "
       li ng-repeat=" post in posts "
         a.blog-title ng-click="visit(post.id)"
           |{{ post.title }}
