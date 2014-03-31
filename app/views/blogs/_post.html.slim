@@ -1,10 +1,10 @@
 h2.blog-title #{post.title}
 p.ptag
   i.fi-list
-  span 技术
+  span #{post.type}
 p.ptag
   i.fi-pricetag-multiple
-  span 生活, 感悟
+  span #{post.labels_content}
 
 .content.markdown
   == post.content_html

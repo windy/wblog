@@ -2,16 +2,16 @@
   .small-12.large-8.columns
     h2.blog-title #{@newest.title}
     p.ptag
-      | 分类: 
+      i.fi-list
       span #{@newest.type}
     p.ptag
-      | 标签:
-      span #{@newest.labels.collect{ |label| label.name}.join(', ')}
+      i.fi-pricetag-multiple
+      span #{@newest.labels_content}
     .content.markdown
       == @newest.sub_content
 
       = link_to "阅读全文 >>", blog_path(@newest)
-      p.published-at 发表于 2014-2-12
+      p.published-at 发表于 #{format_date(@newest.created_at)}
 
     h4.recent-title RECENT
     ul.recent-content
