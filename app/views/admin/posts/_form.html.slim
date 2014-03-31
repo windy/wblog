@@ -1,14 +1,24 @@
-= simple_form_for(@post, :url=> admin_posts_path(@post)) do |f|
-  = f.input :title
-  ul.tab
-    li#content.active
-      | content
-    li#preview url=preview_admin_posts_path
-      | preview
-  = link_to t(:upload_photo), "#", :id=>'upload_photo'
-  input[type="file" style="display: none;"]
-  = f.input :content, :as=> :text, :label=>false
-  .preview.wikistyle
-  = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], :include_blank=>false
-  .submit
-    = f.submit
+.admin-posts-field
+  = simple_form_for(@post, :url=> admin_posts_path(@post)) do |f|
+    .row
+      .large-6.columns
+        = f.input :title, label: '标题'
+    .row
+      .small-6.large-3.columns
+        = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], label: '类别'
+    .row
+      .small-12.large-6.columns
+        = f.simple_fields_for :label do |p|
+          = p.input :name, label: '标签'
+    dl.tabs data-tab=""
+      dd.active
+        a href="#" 正文
+      dd
+        a href="#" 预览
+      = link_to t(:upload_photo), "#", :id=>'upload_photo'
+    input[type="file" style="display: none;"]
+    = f.input :content, :as=> :text, :label=>false
+    .preview.wikistyle
+    .row
+      .small-12.large-6.columns.posts-button
+        = f.button :submit, '提交', class: 'button'

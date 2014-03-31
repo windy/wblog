@@ -1,0 +1,38 @@
+html
+  head
+    meta charset="utf-8" 
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+    title Admin Page for WinDy's Blog
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "vendor/modernizr"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+  body
+    nav.top-bar data-topbar=""
+      ul.title-area
+        li.name
+          h1
+            a href="#" Admin for WinDy
+        li.toggle-topbar.menu-icon
+          a href="#" Menu
+      section.top-bar-section
+        ul.left
+          li
+            = link_to '创建新博客', new_admin_post_path
+          li
+            a href="#" 管理博客
+    = yield
+    = render "layouts/footer"
+
+
+
+    javascript:
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-32883596-1']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();

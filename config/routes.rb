@@ -20,8 +20,8 @@ WBlog::Application.routes.draw do
         post :preview
       end
     end
+    root to: 'dashboard#index'
   end
   get '/about' => 'home#index'
-  get '/admin' => 'admin/posts#new'
   get '/:type' => 'archives#index'
 end
