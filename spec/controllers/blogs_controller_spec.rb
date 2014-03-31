@@ -66,18 +66,18 @@ describe BlogsController do
     it "#prev, #next" do
       posts = create_list(:post_list, 3)
       selected = posts[1]
-      s_prev = posts[0]
-      s_next = posts[2]
+      s_prev = posts[2]
+      s_next = posts[1]
       get :show, id: selected.id
       expect(assigns(:prev)).to eq(s_prev)
       expect(assigns(:next)).to eq(s_next)
 
-      selected = posts[0]
+      selected = posts[2]
       get :show, id: selected.id
       expect(assigns(:prev)).to be_nil
       expect(assigns(:next)).to eq(posts[1])
 
-      selected = posts[2]
+      selected = posts[0]
       get :show, id: selected.id
       expect(assigns(:prev)).to eq(posts[1])
       expect(assigns(:next)).to be_nil
