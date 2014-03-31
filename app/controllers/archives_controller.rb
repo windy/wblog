@@ -51,7 +51,7 @@ class ArchivesController < ApplicationController
       type: post.type,
       created_at: format_date(post.created_at),
       id: post.id.to_s,
-      liked_count: post.likes.size,
+      liked_count: post.liked_count,
       visited_count: post.visited_count,
       labels: post.labels_content
     }
