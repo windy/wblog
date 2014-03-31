@@ -50,7 +50,7 @@ describe BlogsController do
     b = Comment.new(name: '2',content: 'iloveyou',email: 'liuzhen@.com')
     b.post = post
     b.save!
-    label = Label.new(type: '生活')
+    label = Label.new(name: '生活')
     post.labels << label
     post.save!
     get :show, id: post.id
