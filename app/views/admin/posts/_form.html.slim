@@ -10,7 +10,16 @@
     .small-12.large-6.columns
       = f.simple_fields_for :label do |p|
         = label_tag :labels, '标签'
-        = text_field_tag :labels, @post.labels_content(true)
+        = text_field_tag :labels, @post.labels_content(true), "ng-model"=>"labels", "ng-init" => "labels= '#{@post.labels_content(true)}'"
+
+  .row
+    .small-12.columns
+      p
+        | 已有标签:
+        span
+          - Label.all.each do |label|
+            a.tag href="#" ng-click="addTag($event)" #{label.name}
+          
   / tabs and upload file field
   dl.tabs
     dd ng-class="{ active: body_active }"

@@ -11,3 +11,6 @@
     $http.post '/admin/posts/preview', { content: $scope.content }
     .success (res)->
       $scope.previewHTML = res
+
+  $scope.addTag = (e)->
+    $scope.labels += ", #{$(e.target).text()}"
