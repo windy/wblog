@@ -1,7 +1,21 @@
 .admin-posts-field {
+  margin-top: 1rem;
+
+  .blog-title {
+    border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+  }
 
   #post_content {
     min-height: 20rem;
+  }
+
+  .preview {
+    min-height: 20rem;
+    border: 1px solid #DDDDDD;
+    margin-bottom: 1.275rem;
+    padding: 0.275rem 0.5rem;
   }
 
   #upload_photo {

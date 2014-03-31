@@ -23,9 +23,13 @@ class Post
   validates :type, :presence=>true, :inclusion => { :in => [ TECH, LIFE, CREATOR ] }
 
   def content_html
+    self.render_html(self.content)
+  end
+
+  def self.render_html(content)
     rd = CodeHTML.new
     md = Redcarpet::Markdown.new(rd, autolink: true, fenced_code_blocks: true)
-    md.render(self.content)
+    md.render(content)
   end
 
   def visited

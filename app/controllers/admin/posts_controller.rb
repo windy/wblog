@@ -30,10 +30,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def preview
-    text = params.permit(:text)[:text] || ""
-    rd = Redcarpet::Render::HTML.new(:hard_wrap=>true)
-    md = Redcarpet::Markdown.new(rd, :autolink=>true)
-    render :text => md.render(text)
+    render :text => Post.render_html(params[:content] || "")
   end
   
   def post_params

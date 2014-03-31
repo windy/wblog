@@ -1,4 +1,5 @@
 .row
   .small-12.columns
-    h3 #{t('new_post')}
-    = render 'form'
+    .admin-posts-field ng-controller="AdminPostsController"
+      h3.blog-title #{t('new_post')}
+      = render 'form'
