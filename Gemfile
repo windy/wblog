@@ -35,7 +35,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'factory_girl'
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner'
 end
@@ -43,4 +42,5 @@ end
 group :test, :development do
   gem "rspec-rails", ">= 2.8.1"
   gem 'pry-rails'
+  gem 'factory_girl_rails'
 end

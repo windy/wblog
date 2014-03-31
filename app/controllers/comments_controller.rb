@@ -23,10 +23,6 @@ class CommentsController < ApplicationController
     params.permit(:content, :name, :email)
   end
 
-  def format_time(time)
-    time.strftime("%Y-%m-%d %H:%M")
-  end
-
   def build_json(comment)
     {
       content: comment.content,

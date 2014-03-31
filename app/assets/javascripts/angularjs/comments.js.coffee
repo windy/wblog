@@ -1,5 +1,5 @@
-@app.controller 'CommentsController', ($scope, $http, $location)->
-  url = $location.absUrl() + "/comments"
+@app.controller 'CommentsController', ($scope, $http, $location, $timeout)->
+  url = $location.absUrl() + "/comments.json"
 
   $http.get(url).success (data)->
     console.log data
