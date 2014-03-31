@@ -4,27 +4,6 @@
 #
 
 $(document).ready ->
-  
-  preview = $('.preview')
-  content = $('#post_content')
-
-  $('#content').click ->
-    preview.hide()
-    content.show()
-    $(this).addClass('active')
-    $('#preview').removeClass('active')
-    false
-
-  $('#preview').click ->
-    content.hide()
-    $(this).addClass('active')
-    $('#content').removeClass('active')
-    preview.html('Loading...')
-    preview.show()
-    $.post $(this).attr('url'), text: content.val(), (data)->
-      preview.html(data)
-    false
-    
   $('a#upload_photo').click ->
     $('input[type=file]').show().focus().click().hide()
     false

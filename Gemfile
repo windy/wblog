@@ -13,17 +13,18 @@ gem 'jquery-rails'
 gem 'foundation-rails', '~> 5.2.1'
 gem 'foundation-icons-sass-rails'
 
-gem "mongoid"
-gem "mongoid-pagination"
-gem "redcarpet"
-gem "rouge"
+gem 'mongoid'
+gem 'mongoid-pagination'
+gem 'redcarpet'
+gem 'rouge'
 gem 'slim-rails'
-gem "simple_form"
-gem "mini_magick"
+gem 'simple_form'
+gem 'mini_magick'
 gem 'carrierwave-mongoid'
 gem 'html_truncator'
 gem 'nokogiri'
 gem 'angularjs-rails'
+gem 'figaro'
 
 group :development do
   gem 'quiet_assets'
@@ -42,5 +43,6 @@ end
 group :test, :development do
   gem "rspec-rails", ">= 2.8.1"
   gem 'pry-rails'
+  gem 'pry-nav'
   gem 'factory_girl_rails'
 end

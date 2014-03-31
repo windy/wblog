@@ -10,4 +10,8 @@ class ApplicationController < ActionController::Base
   def format_date(time)
     time.strftime("%Y.%m.%d")
   end
+
+  protected
+  def authericate_user!
+  end
 end

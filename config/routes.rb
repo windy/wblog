@@ -6,7 +6,11 @@ WBlog::Application.routes.draw do
       get :rss
     end
     resources :comments, only: [:index, :create]
-    resources :likes, only: [:index, :create, :destroy]
+    resources :likes, only: [:index, :create, :destroy] do
+      member do
+        get :is_liked
+      end
+    end
   end
 
 
@@ -20,8 +24,8 @@ WBlog::Application.routes.draw do
         post :preview
       end
     end
+    root to: 'dashboard#index'
   end
   get '/about' => 'home#index'
-  get '/admin' => 'admin/posts#new'
   get '/:type' => 'archives#index'
 end

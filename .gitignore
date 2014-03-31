@@ -19,3 +19,6 @@
 /public/uploads/*
 
 *.lock
+
+# Ignore application configuration
+/config/application.yml

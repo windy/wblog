@@ -1,0 +1,29 @@
+.row.admin-posts-field
+  .small-12.columns
+    h3.blog-title 博客管理
+    table width="100%"
+      thead
+        tr
+          th 标题
+          th 概要
+          th 操作
+      tbody
+        - @posts.each do |post|
+          tr
+            td 
+              = link_to post.title, blog_path(post)
+            td.admin-post-summary-field
+              i.fi-calendar
+              span #{format_time(post.created_at)}
+              i.fi-list
+              span #{ post.type }
+              i.fi-pricetag-multiple
+              span #{ post.labels_content }
+              i.fi-torsos
+              span #{ post.visited_count }
+              i.fi-heart
+              span #{ post.liked_count }
+            td
+              = link_to '编辑', edit_admin_post_path(post), class: 'edit-post-link'
+              = link_to '删除', admin_post_path(post), method: 'DELETE', confirm: '确认删除?'
+

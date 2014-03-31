@@ -1,14 +1,39 @@
-= simple_form_for(@post, :url=> admin_posts_path(@post)) do |f|
-  = f.input :title
-  ul.tab
-    li#content.active
-      | content
-    li#preview url=preview_admin_posts_path
-      | preview
-  = link_to t(:upload_photo), "#", :id=>'upload_photo'
+- url = @post.new_record? ? admin_posts_path : admin_post_path(@post)
+= simple_form_for(@post, url: url, html: {novalidate: '' }) do |f|
+  .row
+    .large-6.columns
+      = f.input :title, label: '标题', "ng-model"=>"title", input_html: { name: 'title' }
+  .row
+    .small-6.large-3.columns
+      = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], label: '类别', "ng-model"=>"type", input_html: { name: 'type' }
+  .row
+    .small-12.large-6.columns
+      = f.simple_fields_for :label do |p|
+        = label_tag :labels, '标签'
+        = text_field_tag :labels, @post.labels_content(true), "ng-model"=>"labels", "ng-init" => "labels= '#{@post.labels_content(true)}'"
+
+  .row
+    .small-12.columns
+      p
+        | 已有标签:
+        span
+          - Label.all.each do |label|
+            a.tag href="#" ng-click="addTag($event)" #{label.name}
+          
+  / tabs and upload file field
+  dl.tabs
+    dd ng-class="{ active: body_active }"
+      a href="" ng-click="changeToBody()" 正文
+    dd ng-class="{ active: !body_active }"
+      a href="#" ng-click="changeToPreview()" 预览
+    = link_to t(:upload_photo), "#", :id=>'upload_photo'
   input[type="file" style="display: none;"]
-  = f.input :content, :as=> :text, :label=>false
-  .preview.wikistyle
-  = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], :include_blank=>false
-  .submit
-    = f.submit
+
+  .content-field ng-show="body_active" ng-model= 'content'
+    = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', "value"=>"#{@post.content}", "ng-model"=>'content', "ng-init"=>"content='#{@post.content}'" }
+
+  .preview.markdown ng-hide="body_active" ng-bind-html=" previewHTML "
+
+  .row
+    .small-12.large-6.columns.posts-button
+      button 提交

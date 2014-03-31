@@ -23,9 +23,13 @@ class Post
   validates :type, :presence=>true, :inclusion => { :in => [ TECH, LIFE, CREATOR ] }
 
   def content_html
+    self.class.render_html(self.content)
+  end
+
+  def self.render_html(content)
     rd = CodeHTML.new
     md = Redcarpet::Markdown.new(rd, autolink: true, fenced_code_blocks: true)
-    md.render(self.content)
+    md.render(content)
   end
 
   def visited
@@ -35,12 +39,12 @@ class Post
   end
 
   def sub_content
-    HTML_Truncator.truncate(content_html,100)
+    HTML_Truncator.truncate(content_html,30)
   end
 
-  def labels_content
+  def labels_content( need_blank=false )
     content = self.labels.collect { |label| label.name }.join(", ")
-    content = '无' if content.blank?
+    content = '无' if content.blank? and !need_blank
     content
   end
 
