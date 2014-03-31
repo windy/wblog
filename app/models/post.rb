@@ -41,4 +41,8 @@ class Post
   def labels_content
     self.labels.collect { |label| label.name }.join(", ")
   end
+
+  def liked_count
+    self.likes.size
+  end
 end

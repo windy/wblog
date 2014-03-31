@@ -16,12 +16,12 @@
     $http.post url
     .success (res)->
       if res.success
-        $scope.count += 1
         $scope.like = $cookies.like = res.id
+        $scope.count = res.count
 
   $scope.cancel = ->
-    $http.delete url + "/" + $scope.like
+    $http.delete url + "/" + $scope.like, (res)->
+      $scope.count = res.count
     # anyway, clear cookie
     delete $cookies["like"]
     $scope.like = null
-    $scope.get_count()
