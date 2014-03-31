@@ -1,7 +1,14 @@
-@app.controller 'ArchivesController', ($scope, $http, $location, $timeout)->
-  url = "/archives.json"
-  $http.get(url).success (res)->
-    $scope.start_with = res.start_with
+@app.controller 'ArchivesController', ($scope, $http, $location, $timeout, $cookies)->
+  url = $location.absUrl() + ".json"
+  start_with = $cookies.start_with if window.location.pathname == $cookies.start_with_type
+  $http
+    url: url
+    method: 'GET'
+    params:
+      start_with: start_with
+      all: true
+  .success (res)->
+    $scope.update_start_with(res.start_with)
     $scope.posts = res.posts
 
   $scope.no_more_flag = false
@@ -14,9 +21,10 @@
       method: 'GET'
       params:
         start_with: $scope.start_with
+        type: $scope.type
     ).success (res)->
       $scope.no_more_flag = true if res.posts.length == 0
-      $scope.start_with = res.start_with
+      $scope.update_start_with(res.start_with)
       $scope.posts = $scope.posts.concat(res.posts)
       $timeout ->
         $scope.loading_flag = false
@@ -27,3 +35,8 @@
 
   $scope.visit = (id)->
     window.location.href = ("/blogs/" + id)
+
+  $scope.update_start_with = (start_with)->
+    $scope.start_with = start_with
+    $cookies.start_with_type = window.location.pathname
+    $cookies.start_with = start_with

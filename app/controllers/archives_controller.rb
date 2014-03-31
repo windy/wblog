@@ -1,14 +1,23 @@
 class ArchivesController < ApplicationController
   def index
-    type = map[archive_params[:type]]
+    type = map[params[:type]]
     limit = 10
-    start_with = archive_params[:start_with]
-    @posts = Post.limit(limit).desc(:created_at)
+    start_with = params[:start_with]
+    @posts = Post.desc(:created_at)
+
     if type
       @posts = @posts.where(type: type)
+      @type = type
     end
 
-    if start_with
+    # all 与 start_with 参数同在, 说明是要获取所有start_with之前的数据
+    if params[:all] and params[:start_with]
+      @posts = @posts.where(:created_at.gte => Time.at(start_with.to_i))
+    else
+      @posts = @posts.limit(limit)
+    end
+
+    if !params[:all] and start_with
       @posts = @posts.where(:created_at.lt => Time.at(start_with.to_i))
     end
 
@@ -28,10 +37,6 @@ class ArchivesController < ApplicationController
     end
   end
 
-  def archive_params
-    params.permit(:type, :start_with)
-  end
-
   private
   def map
   {
@@ -39,10 +44,6 @@ class ArchivesController < ApplicationController
     "tech"=> "技术",
     "creator"=> "创业"
   }
-  end
-
-  def archive_params
-    params.permit(:type, :start_with, :format)
   end
 
   def build_summary(post)
