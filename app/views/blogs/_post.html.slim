@@ -13,9 +13,9 @@ p.ptag
   | 发表于:
   span #{format_date(post.created_at)}
 p ng-controller="LikesController"
-  button.like-button ng-show="! like " ng-click="submit()"
+  button.like-button ng-show="! is_liked " ng-click="submit()"
     |{{ count }}
     span Like
-  button.like-button ng-show=" like " ng-click="cancel()" 
+  button.like-button ng-show=" is_liked " ng-click="cancel()" 
     |{{ count }}
     span Liked

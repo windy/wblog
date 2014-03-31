@@ -6,7 +6,11 @@ WBlog::Application.routes.draw do
       get :rss
     end
     resources :comments, only: [:index, :create]
-    resources :likes, only: [:index, :create, :destroy]
+    resources :likes, only: [:index, :create, :destroy] do
+      member do
+        get :is_liked
+      end
+    end
   end
 
 
