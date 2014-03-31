@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @post.visited
     @prev = Post.where(:created_at.lt => @post.created_at).desc(:created_at).where(:id.ne => @post.id).first
     @next = Post.where(:created_at.gt => @post.created_at).asc(:created_at).where(:id.ne => @post.id).first
     @comments = @post.comments

@@ -21,6 +21,9 @@ html
             = link_to '创建新博客', new_admin_post_path
           li
             = link_to '管理博客', admin_posts_path
+        ul.right
+          li
+            = link_to '返回首页', root_path
     - flash.each do |name, msg|
       - if msg.is_a?(String)
         div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""
