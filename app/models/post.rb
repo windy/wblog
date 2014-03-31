@@ -23,7 +23,7 @@ class Post
   validates :type, :presence=>true, :inclusion => { :in => [ TECH, LIFE, CREATOR ] }
 
   def content_html
-    self.render_html(self.content)
+    self.class.render_html(self.content)
   end
 
   def self.render_html(content)
@@ -39,12 +39,12 @@ class Post
   end
 
   def sub_content
-    HTML_Truncator.truncate(content_html,100)
+    HTML_Truncator.truncate(content_html,30)
   end
 
-  def labels_content
+  def labels_content( need_blank=false )
     content = self.labels.collect { |label| label.name }.join(", ")
-    content = '无' if content.blank?
+    content = '无' if content.blank? and !need_blank
     content
   end
 

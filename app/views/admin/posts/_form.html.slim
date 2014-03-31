@@ -1,14 +1,16 @@
-= simple_form_for(@post, :url=> admin_posts_path(@post)) do |f|
+- url = @post.new_record? ? admin_posts_path : admin_post_path(@post)
+= simple_form_for(@post, url: url, html: {novalidate: '' }) do |f|
   .row
     .large-6.columns
-      = f.input :title, label: '标题', "ng-model"=>"title"
+      = f.input :title, label: '标题', "ng-model"=>"title", input_html: { name: 'title' }
   .row
     .small-6.large-3.columns
-      = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], label: '类别', "ng-model"=>"type"
+      = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], label: '类别', "ng-model"=>"type", input_html: { name: 'type' }
   .row
     .small-12.large-6.columns
       = f.simple_fields_for :label do |p|
-        = p.input :name, label: '标签', "ng-model" => "labels"
+        = label_tag :labels, '标签'
+        = text_field_tag :labels, @post.labels_content(true)
   / tabs and upload file field
   dl.tabs
     dd ng-class="{ active: body_active }"
@@ -19,10 +21,10 @@
   input[type="file" style="display: none;"]
 
   .content-field ng-show="body_active" ng-model= 'content'
-    = f.input :content, :as=> :text, :label => false, input_html: { "ng-model" => "content" }
+    = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', "value"=>"#{@post.content}", "ng-model"=>'content', "ng-init"=>"content='#{@post.content}'" }
 
   .preview.markdown ng-hide="body_active" ng-bind-html=" previewHTML "
 
   .row
     .small-12.large-6.columns.posts-button
-      = f.button :submit, '提交', class: 'button'
+      button 提交

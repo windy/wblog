@@ -21,6 +21,11 @@ html
             = link_to '创建新博客', new_admin_post_path
           li
             a href="#" 管理博客
+    - flash.each do |name, msg|
+      - if msg.is_a?(String)
+        div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""
+          = content_tag :div, msg
+          a.close href="#"  &times;
     .admin-main-field ng-app="app"
       = yield
     = render "layouts/footer"
