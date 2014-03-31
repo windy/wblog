@@ -37,4 +37,8 @@ class Post
   def sub_content
     HTML_Truncator.truncate(content_html,100)
   end
+
+  def labels_content
+    self.labels.collect { |label| label.name }.join(", ")
+  end
 end

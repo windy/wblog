@@ -1,19 +1,28 @@
-.row
+.row ng-controller="ArchivesController"
   .small-12.large-8.columns
     ul.archives-field
-      - 3.times do
-        li
-          a.blog-title href="#" 科学是什么
-          p.tags-field
-            i.fi-calendar
-            span 2014-2-12
-            i.fi-list
-            span 技术
-            i.fi-pricetag-multiple
-            span 生活, 感悟
-            i.fi-torsos
-            span 1010
-            i.fi-heart
-            span 10
+      li ng-repeat=" post in posts "
+        a.blog-title ng-click="visit(post.id)"
+          |{{ post.title }}
+        p.tags-field
+          i.fi-calendar
+          span
+            |{{ post.created_at }}
+          i.fi-list
+          span
+            |{{ post.type }}
+          i.fi-pricetag-multiple
+          span
+            |{{ post.labels }}
+          i.fi-torsos
+          span
+            |{{ post.visited_count }}
+          i.fi-heart
+          span
+            |{{ post.liked_count }}
+      .no-more-field
+        p ng-show="no_more_flag" 没有更多内容
+
       .load-more
-        button.small Load More
+        button.small ng-click="load()" ng-show="!loading_flag" Load More
+        button.small ng-show="loading_flag" Loading
