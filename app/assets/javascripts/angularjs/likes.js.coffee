@@ -20,7 +20,8 @@
         $scope.count = res.count
 
   $scope.cancel = ->
-    $http.delete url + "/" + $scope.like, (res)->
+    $http.delete url + "/" + $scope.like
+    .success (res)->
       $scope.count = res.count
     # anyway, clear cookie
     delete $cookies["like"]
