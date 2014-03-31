@@ -10,12 +10,19 @@
       tbody
         - @posts.each do |post|
           tr
-            td 科学
-            td
-              span 技术
-              span 分类
-              span 喜欢数
-              span 浏览数
+            td 
+              = link_to post.title, blog_path(post)
+            td.admin-post-summary-field
+              i.fi-calendar
+              span #{format_time(post.created_at)}
+              i.fi-list
+              span #{ post.type }
+              i.fi-pricetag-multiple
+              span #{ post.labels_content }
+              i.fi-torsos
+              span #{ post.visited_count }
+              i.fi-heart
+              span #{ post.liked_count }
             td
               = link_to '编辑', edit_admin_post_path(post), class: 'edit-post-link'
               = link_to '删除', admin_post_path(post), method: 'DELETE', confirm: '确认删除?'

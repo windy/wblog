@@ -22,7 +22,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.desc(:created_at)
   end
 
   def create
