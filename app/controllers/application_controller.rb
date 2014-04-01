@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
 
   helper_method :format_time, :format_date
 
+  helper_method :admin_username
+
   def format_time(time)
     time.strftime("%Y-%m-%d %H:%M")
   end
@@ -13,5 +15,12 @@ class ApplicationController < ActionController::Base
 
   protected
   def authericate_user!
+    if ! session[:login]
+      redirect_to new_admin_session_path
+    end
+  end
+
+  def admin_username
+    session[:login] && ENV['ADMIN_USER']
   end
 end

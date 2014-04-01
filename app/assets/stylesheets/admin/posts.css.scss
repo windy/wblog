@@ -28,6 +28,12 @@
     margin-top: 2rem;
   }
 
+  tr {
+    &:hover {
+      background-color: #EEEEEE;
+    }
+  }
+
 }
 
 .edit-post-link {

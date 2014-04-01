@@ -24,8 +24,10 @@ WBlog::Application.routes.draw do
         post :preview
       end
     end
+    resources :sessions, :only=>[:new, :create, :destroy]
     root to: 'dashboard#index'
   end
+
   get '/about' => 'home#index'
   get '/:type' => 'archives#index'
 end

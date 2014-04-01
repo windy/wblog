@@ -24,6 +24,9 @@ html
         ul.right
           li
             = link_to '返回首页', root_path
+          - if admin_username
+            li
+              = link_to admin_username + ' [ 退出 ]', admin_session_path(1), method: 'DELETE'
     - flash.each do |name, msg|
       - if msg.is_a?(String)
         div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""

@@ -1,0 +1,16 @@
+.row ng-controller="AdminSessionsController"
+  .small-12.large-8.columns
+    h3.blog-title 登录后台
+    form ng-submit="login()"
+      .row
+        .small-12.large-8.columns
+          = label_tag 'username', '用户名'
+          = text_field_tag 'username', nil, placeholder: '管理员账号', "ng-model"=>"username"
+          = label_tag 'username', '密码'
+          = password_field_tag 'password', nil, placeholder: '管理员密码', "ng-model"=>"password"
+
+          p
+            .alert-box.warning ng-show=" error_msg "
+              |{{ error_msg }}
+
+      button 登录
