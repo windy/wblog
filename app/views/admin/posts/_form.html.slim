@@ -26,7 +26,7 @@
       a href="" ng-click="changeToBody()" 正文
     dd ng-class="{ active: !body_active }"
       a href="#" ng-click="changeToPreview()" 预览
-    = link_to t(:upload_photo), "#", :id=>'upload_photo'
+    = link_to '上传图片', "#", :id=>'upload_photo'
   input[type="file" style="display: none;"]
 
   .content-field ng-show="body_active" ng-model= 'content'

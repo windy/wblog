@@ -1,3 +1,5 @@
+- content_for(:title) do
+  | #{@type ? @type : '时间线'}
 .row ng-controller="ArchivesController"
   .small-12.large-8.columns
     ul.archives-field ng-model="type" ng-init=" type= '#{@type}' "

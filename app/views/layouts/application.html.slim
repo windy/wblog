@@ -3,7 +3,7 @@ html
     meta charset="utf-8" 
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     title
-      = content_for?(:title) ? yield(:title) + "| WinDy's Blog" : "WinDy's Blog"
+      = content_for?(:title) ? yield(:title) + " | #{ENV['SITE_NAME']}" : ENV['SITE_NAME']
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application"
@@ -18,7 +18,7 @@ html
           section.middle.tab-bar-section
             .row.small-12.large-10.columns
               h1.title.middle-text
-                = link_to 'WinDy', root_path
+                = link_to ENV['SITE_NAME'], root_path
         aslide.left-off-canvas-menu
           ul.off-canvas-list
             li
