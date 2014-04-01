@@ -13,7 +13,7 @@ class NewPostWorker
         :from => ENV['SENDCLOUD_FROM'],
         :fromname => ENV['SENDCLOUD_FROMNAME'],
         :to => to,
-        :subject => "#{ENV['SITE_NAME']} 又写了新博客"
+        :subject => "#{ENV['SITE_NAME']} 又写了新博客",
         :html => <<-EOF
 <p>hi, 我是李亚飞, 很高兴告诉你:</p>
 
