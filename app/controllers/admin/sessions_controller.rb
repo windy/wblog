@@ -5,7 +5,7 @@ class Admin::SessionsController < ApplicationController
   end
 
   def create
-    if ! ENV['ADMIN_USER']
+    if ENV['ADMIN_USER'].blank?
       render :json=> { success: false, message: '系统未配置管理员账户, 无法登录' }
     elsif ENV['ADMIN_USER'] != params[:username]
       render :json=> { success: false, message: '管理员账户错误' }

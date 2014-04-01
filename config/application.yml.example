@@ -1,11 +1,17 @@
-# Add application configuration variables here, as shown below.
-#
-
-
+# 必须配置的
 SITE_NAME: "WinDy's Blog"
 # 后台登录的用户名与密码, 不填的话无法管理后台
 ADMIN_USER: 'admin'
 ADMIN_PASSWORD: 'admin'
 
+# 可选的
 # google analytics, 如果不需要可以留空
 GOOGLE: 'UA-32883596-1'
+
+# SENDCLOUD 邮件订阅功能, 留空用户名表示不需要创建博客后发送订阅邮件
+# 更多参数细节请查阅: /app/workers/new_post_worker.rb
+SENDCLOUD_USER: ''
+SENDCLOUD_PASSWORD: ''
+SENDCLOUD_FROM: ''
+SENDCLOUD_FROMNAME: ''
+SENDCLOUD_SITE_ADDRESS: ''

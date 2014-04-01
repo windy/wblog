@@ -26,6 +26,8 @@ gem 'nokogiri'
 gem 'angularjs-rails'
 gem 'figaro'
 gem 'rqrcode-with-patches', require: 'rqrcode'
+gem 'sidekiq'
+gem 'rest-client'
 
 group :development do
   gem 'quiet_assets'
@@ -39,6 +41,7 @@ group :test do
   gem 'capybara'
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner'
+  gem 'rspec-sidekiq'
 end
 
 group :test, :development do

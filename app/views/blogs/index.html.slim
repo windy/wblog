@@ -30,11 +30,12 @@
     p = link_to '关于我', about_path
     h4 SUBSCRIBE
     ul.subscribe-ul
-      li
-        = link_to '邮件订阅 ', '', "ng-click"=>"click('email')"
-        p
-          .email-subscribe ng-show="type == 'email'"
-            = text_field_tag 'email', nil, placeholder: 'your@email.com'
+      - if ENV['SENDCLOUD_USER'].present?
+        li
+          = link_to '邮件订阅 ', '', "ng-click"=>"click('email')"
+          p
+            .email-subscribe ng-show="type == 'email'"
+              = text_field_tag 'email', nil, placeholder: 'your@email.com'
       li
         = link_to '微信扫一扫', '', "ng-click"=>"click('weixin')"
         p
