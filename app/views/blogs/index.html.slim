@@ -18,11 +18,29 @@
       - @recent.each do |re|
         li = link_to "#{re.title}",blog_path(re)
 
-  .large-3.columns.large-offset-1.self-introduce
+  .large-3.columns.large-offset-1.self-introduce ng-controller='AboutController'
     h4 WELCOME
     p 我是李亚飞, WinDy 是我的网名.
 
     h4 ABOUTME
-    p 关于我
-    p 中国 * 深圳
-    p 邮件订阅, 微信扫一扫
+    p 技术, 创业, 生活
+    p 中国 - 深圳 - 南山
+    p = link_to '关于我', about_path
+    h4 SUBSCRIBE
+    ul.subscribe-ul
+      li
+        = link_to '邮件订阅 ', '', "ng-click"=>"click('email')"
+        p
+          .email-subscribe ng-show="type == 'email'"
+            = text_field_tag 'email', nil, placeholder: 'your@email.com'
+      li
+        = link_to '微信扫一扫', '', "ng-click"=>"click('weixin')"
+        p
+          .weixin-subscribe ng-show="type == 'weixin'"
+            = render partial: "qrcode", locals: { str: root_url }
+      li
+        = link_to 'RSS订阅', '', "ng-click"=>"click('rss')"
+        p
+          .rss-subscribe ng-show="type == 'rss'"
+            = link_to rss_blogs_path do
+              - image_tag('rss.png')
