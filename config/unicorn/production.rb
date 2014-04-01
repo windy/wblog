@@ -4,7 +4,7 @@ worker_processes   1
 preload_app        true
 timeout            180
 listen             '/tmp/unicorn_wblog.sock'
-user               'user', 'user'
+user               'ruby', 'ruby'
 working_directory  app_path
 pid                "#{app_path}/tmp/pids/unicorn_wblog.pid"
 stderr_path        "log/unicorn.log"
