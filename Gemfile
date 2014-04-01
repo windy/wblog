@@ -1,8 +1,9 @@
-if ENV['RAILS_ENV'] == 'production'
-  source 'https://rubygems.org'
-else
+if ENV['RUBYTAOBAO']
   source 'http://ruby.taobao.org'
+else
+  source 'https://rubygems.org'
 end
+
 ruby '2.0.0'
 
 gem 'rails', '4.0.4'
