@@ -25,6 +25,7 @@ gem 'html_truncator'
 gem 'nokogiri'
 gem 'angularjs-rails'
 gem 'figaro'
+gem 'rqrcode-with-patches', require: 'rqrcode'
 
 group :development do
   gem 'quiet_assets'
