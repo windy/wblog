@@ -21,10 +21,11 @@ p ng-controller="LikesController"
     span Liked
   div ng-controller = "QRCodesController"
     .qrcode
-      i.fi-link
-      a href="#" ng-model="qrcode" ng-init="qrcode=false" ng-click="show()" 二维码
+      span.has-tip data-tooltip="" title="使用手机继续阅读 or 帮我分享至微信朋友圈"
+        i.fi-link
+        a href="#" ng-model="qrcode" ng-init="qrcode=false" ng-click="show()" 二维码
     .social-share ng-show='qrcode'
-      = debug blog_url(post)
-      = render partial: "qrcode", locals: { str: blog_url(post) }
+      .qrcode-wrapper
+        = render partial: "qrcode", locals: { str: blog_url(post) }
       
     
