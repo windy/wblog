@@ -25,6 +25,11 @@
   text-align: right;
 }
 
+.blog-over {
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
 .recent-title {
   border-bottom: 1px solid #dddddd;
   margin-bottom: 1rem;
@@ -63,6 +68,13 @@
 .qrcode-wrapper {
   float: right;
   margin-top: -2rem;
+  text-align: right;
+  table {
+    float: right;
+  }
+  p {
+    clear: both;
+  }
 }
 
 .subscribe-ul {
