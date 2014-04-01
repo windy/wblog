@@ -22,6 +22,12 @@ class Post
   validates :content, :presence=>true, :length => { :minimum=> 30 }
   validates :type, :presence=>true, :inclusion => { :in => [ TECH, LIFE, CREATOR ] }
 
+  after_create do
+    unless ENV['SENDCLOUD_USER']
+      NewPostWorker.perform_async(self.title, Subscribe.subscribe_list)
+    end
+  end
+
   def content_html
     self.class.render_html(self.content)
   end

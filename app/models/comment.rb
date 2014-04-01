@@ -9,7 +9,7 @@ class Comment
   belongs_to :post
 
   validates :name, presence: true
-  validates :email, confirmation: true,:format => /@/
+  validates :email, presence: true,:format => /@/
   validates :content, presence: true
   validates_presence_of :post_id
 end
