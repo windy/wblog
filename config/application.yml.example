@@ -1,5 +1,8 @@
 # Add application configuration variables here, as shown below.
+#
 
+
+SITE_NAME: "WinDy's Blog"
 # 后台登录的用户名与密码, 不填的话无法管理后台
 ADMIN_USER: 'admin'
 ADMIN_PASSWORD: 'admin'

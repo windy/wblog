@@ -2,7 +2,7 @@ html
   head
     meta charset="utf-8" 
     meta name="viewport" content="width=device-width, initial-scale=1.0"
-    title Admin Page for WinDy's Blog
+    title Admin Page for #{ENV['SITE_NAME']}
     = stylesheet_link_tag    "application"
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application"
@@ -12,7 +12,7 @@ html
       ul.title-area
         li.name
           h1
-            = link_to 'Dashboard For WinDy', admin_root_path
+            = link_to "Dashboard For #{ENV['SITE_NAME']}", admin_root_path
         li.toggle-topbar.menu-icon
           a href="#" Menu
       section.top-bar-section
