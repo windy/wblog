@@ -1,0 +1,28 @@
+development:
+  sessions:
+    default:
+      database: w_blog_development
+      hosts:
+        - localhost:27017
+  options:
+
+production:
+  sessions:
+    default:
+      database: w_blog_production
+      hosts:
+        - localhost:27017
+  options:
+
+test:
+  sessions:
+    default:
+      database: w_blog_test
+      hosts:
+        - localhost:27017
+      options:
+        read: primary
+        # In the test environment we lower the retries and retry interval to
+        # low amounts for fast failures.
+        max_retries: 1
+        retry_interval: 0

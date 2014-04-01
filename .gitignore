@@ -20,5 +20,6 @@
 
 *.lock
 
-# Ignore application configuration
-/config/application.yml
+/config/*.yml
+/public/assets/*
+*.old
