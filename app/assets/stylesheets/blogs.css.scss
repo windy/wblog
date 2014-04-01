@@ -51,3 +51,12 @@
     border-bottom: 1px solid #dddddd;
   }
 }
+
+.qrcode {
+  display: inline-block;
+  float: right;
+  margin-top: -5.5rem;
+  i {
+    margin-right: 0.5rem;
+  }
+}

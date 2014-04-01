@@ -19,3 +19,12 @@ p ng-controller="LikesController"
   button.like-button ng-show=" is_liked " ng-click="cancel()" 
     |{{ count }}
     span Liked
+  div ng-controller = "QRCodesController"
+    .qrcode
+      i.fi-link
+      a href="#" ng-model="qrcode" ng-init="qrcode=false" ng-click="show()" 二维码
+    .social-share ng-show='qrcode'
+      = debug blog_url(post)
+      = render partial: "qrcode", locals: { str: blog_url(post) }
+      
+    
