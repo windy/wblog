@@ -1,4 +1,4 @@
-@app.controller 'AdminPostsController', ($scope, $http, $location, $timeout, $cookies, $sce)->
+@app.controller 'AdminPostsController', [ '$scope', '$http', '$location', '$timeout', '$cookies', ($scope, $http, $location, $timeout, $cookies)->
 
   $scope.body_active = true
 
@@ -18,3 +18,4 @@
       $scope.labels += ", #{new_labels}"
     else
       $scope.labels = new_labels
+]

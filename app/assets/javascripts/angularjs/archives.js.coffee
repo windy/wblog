@@ -1,4 +1,4 @@
-@app.controller 'ArchivesController', ($scope, $http, $location, $timeout, $cookies)->
+@app.controller 'ArchivesController',[ '$scope', '$http', '$location', '$timeout', '$cookies', ($scope, $http, $location, $timeout, $cookies)->
   url = $location.absUrl() + ".json"
   start_with = $cookies.start_with if window.location.pathname == $cookies.start_with_type
   $http
@@ -40,3 +40,4 @@
     $scope.start_with = start_with
     $cookies.start_with_type = window.location.pathname
     $cookies.start_with = start_with
+]

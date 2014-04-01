@@ -1,4 +1,4 @@
-@app.controller 'LikesController', ($scope, $http, $location, $cookies)->
+@app.controller 'LikesController', ['$scope', '$http', '$location', '$cookies', ($scope, $http, $location, $cookies)->
   url = $location.absUrl() + "/likes"
 
   $http.get url
@@ -35,3 +35,4 @@
     # anyway, clear cookie
     delete $cookies["like"]
     $scope.like = null
+]

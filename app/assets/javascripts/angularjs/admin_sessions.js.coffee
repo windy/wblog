@@ -1,4 +1,4 @@
-@app.controller 'AdminSessionsController', ($scope, $http, $timeout)->
+@app.controller 'AdminSessionsController', [ '$scope', '$http', '$timeout', ($scope, $http, $timeout)->
   url = '/admin/sessions'
   
   $scope.login = ->
@@ -17,3 +17,4 @@
       $timeout ->
         $scope.error_msg = null
       , 5000
+]

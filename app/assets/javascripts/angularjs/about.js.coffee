@@ -1,4 +1,4 @@
-@app.controller 'AboutController', ($scope)->
+@app.controller 'AboutController', [ '$scope', ($scope)->
   $scope.type = null
 
   $scope.click = (v)->
@@ -8,3 +8,4 @@
     $scope.type = v
   $scope.weixin_click = ->
     $scope.weixin = !$scope.weixin
+]
