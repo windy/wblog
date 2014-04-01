@@ -19,4 +19,9 @@ class BlogsController < ApplicationController
     @next = Post.where(:created_at.gt => @post.created_at).asc(:created_at).where(:id.ne => @post.id).first
     @comments = @post.comments
   end
+  
+  def edit
+    @post = Post.find( params[:id] )
+    redirect_to edit_admin_post_path(@post)
+  end
 end
