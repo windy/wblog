@@ -1,7 +1,7 @@
 WBlog::Application.routes.draw do
   root :to => 'blogs#index'
 
-  resources :blogs, :only=>[:index, :show] do
+  resources :blogs, :only=>[:index, :show, :edit] do
     collection do
       get :rss
     end
