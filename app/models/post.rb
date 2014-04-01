@@ -23,7 +23,7 @@ class Post
   validates :type, :presence=>true, :inclusion => { :in => [ TECH, LIFE, CREATOR ] }
 
   after_create do
-    unless ENV['SENDCLOUD_USER']
+    if ENV['SENDCLOUD_USER'].present?
       NewPostWorker.perform_async(self.title, Subscribe.subscribe_list)
     end
   end

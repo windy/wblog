@@ -1,4 +1,4 @@
-- if ENV['GOOGLE']
+- if ENV['GOOGLE'].present?
   javascript:
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', '#{ENV['GOOGLE']}']);

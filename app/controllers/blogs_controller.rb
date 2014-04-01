@@ -1,5 +1,6 @@
 # encoding : utf-8
 class BlogsController < ApplicationController
+
   def index
     @newest = Post.desc(:created_at).first
     @recent = Post.desc(:created_at).to_a[1..5]
