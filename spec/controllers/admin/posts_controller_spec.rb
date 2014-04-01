@@ -1,6 +1,10 @@
 require 'spec_helper'
 
 describe Admin::PostsController do
+
+  before do
+    session[:login] = true
+  end
   it "preview should return ok" do
     post :preview
     response.body.should == ""
