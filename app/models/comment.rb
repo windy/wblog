@@ -12,4 +12,10 @@ class Comment
   validates :email, presence: true,:format => /@/
   validates :content, presence: true
   validates_presence_of :post_id
+
+  after_create do
+    if ENV['SENDCLOUD_USER'].present? && ENV['ADMIN_USER'].present? && ENV['ADMIN_USER'] =~ /@/
+      NewCommentWorker.perform_async(self.name, self.content, self.post.title, ENV['ADMIN_USER'])
+    end
+  end
 end

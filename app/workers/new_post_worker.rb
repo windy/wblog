@@ -2,7 +2,11 @@ class NewPostWorker
   include Sidekiq::Worker
 
   def perform(title, to)
-    send_mail(title, to)
+    logger.info "[mail] new post mail: title=#{title}, to=#{to}"
+    response = send_mail(title, to)
+    logger.info "[mail] result is #{response}"
+  ensure
+    logger.info "[mail] new post mail end: title=#{title}, to=#{to}"
   end
 
   def send_mail(title, to)

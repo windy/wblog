@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :subscribe do
-    email "MyString"
+    email "tester@mail.com"
     enable false
   end
 end
