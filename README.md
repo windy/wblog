@@ -1,7 +1,7 @@
 WBlog
 =======
 
-为移动而生的 Ruby on Rails 开源博客.
+为移动而生的 Ruby on Rails 开源博客. WBlog 基于 MIT 协议, 自由使用.
 
 * 用户极为友好的阅读体验
 * 自带干净的评论系统
@@ -32,6 +32,20 @@ WBlog
 
 成为 Ruby on Rails 下最好用的独立博客建站系统
 
+### 如何使用
+
+WBlog 是一个基本的博客系统, 使用它之前, 你需要准备一台 VPS 独立主机, 安装好 Ruby on Rails 与 Mongodb. 我希望你是熟悉 Ruby on Rails 的, 这样方便定制 WBlog, 现在 WBlog 还太小.
+
+假定你有环境后, 克隆本代码. 然后与往常的 Rails 项目一样, 输入
+
+```shell
+bundle install
+cp config/application.yml
+rails s
+```
+
+OK, That's all.
+
 ### 技术栈
 
 * Ruby on Rails 4.0.4 / Ruby 2.0
@@ -44,7 +58,7 @@ WBlog
 
 * 增加评论管理功能
 * 添加邮件订阅功能
-* 添加 code review, 加入开源联盟
+* 添加 travis, code climate, 加入开源联盟
 
 
 ## Ruby on Rails 其他开源博客推荐
