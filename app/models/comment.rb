@@ -15,6 +15,7 @@ class Comment
 
   after_create do
     if ENV['SENDCLOUD_USER'].present? && ENV['ADMIN_USER'].present? && ENV['ADMIN_USER'] =~ /@/
+      Rails.logger.info 'comment created, comment worker start'
       NewCommentWorker.perform_async(self.name, self.content, self.post.title, ENV['ADMIN_USER'])
     end
   end
