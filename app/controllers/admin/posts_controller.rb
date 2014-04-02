@@ -10,6 +10,16 @@ class Admin::PostsController < ApplicationController
     @post = Post.find( params[:id] )
   end
 
+  def show
+    post = Post.find( params[:id] )
+    render :json=> {
+      title: post.title,
+      type: post.type,
+      labels: post.labels_content(true),
+      content: post.content
+    }
+  end
+
   def destroy
     @post = Post.find( params[:id] )
     if @post.destroy
