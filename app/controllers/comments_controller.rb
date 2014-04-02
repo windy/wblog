@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     if comment.save
       render :json=> { success: true, data: build_json(comment) }
     else
-      render :json=> { success: false }
+      render :json=> { success: false, message: comment.errors.full_messages.join(", ") }
     end
   end
 

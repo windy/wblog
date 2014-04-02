@@ -15,6 +15,7 @@ WBlog::Application.routes.draw do
 
 
   resources :archives
+  resources :subscribes
   # photos
   resources :photos, only: [:create]
   get '/qrcodes' => 'qrcodes#show'

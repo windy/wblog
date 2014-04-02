@@ -102,4 +102,14 @@
   .rss-subscribe {
     margin-top: 0.5rem;
   }
+
+  .subscribe-success {
+    margin-left: 1rem;
+    color: green;
+  }
+
+  .subscribe-fail {
+    margin-left: 1rem;
+    color: red;
+  }
 }

@@ -1,6 +1,10 @@
 class NewPostWorker
   include Sidekiq::Worker
 
+  sidekiq_retry_in do |count|
+    3
+  end
+
   def perform(title, to)
     logger.info "[mail] new post mail: title=#{title}, to=#{to}"
     response = send_mail(title, to)

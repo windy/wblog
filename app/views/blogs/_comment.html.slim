@@ -10,7 +10,7 @@
           = text_field_tag(:email, nil, placeholder: '你的邮箱', 'ng-model'=> 'email', 'ng-pattern'=>"/^.+@.+$/", 'ng-required'=>"true")
       button ng-click="submit()" ng-disabled="form.$invalid" 发表
       p.comment-success ng-show="publish_success" 发布成功
-      p.comment-fail ng-show="publish_success == false" 发布失败
+      p.comment-fail ng-show="publish_success == false" 发布失败: {{ publish_fail_msg }}
     .comment-diag ng-cloak=""
       .comment-wrapper ng-repeat=" comment in comments "
         p.name

@@ -1,6 +1,10 @@
 class NewCommentWorker
   include Sidekiq::Worker
 
+  sidekiq_retry_in do |count|
+    3
+  end
+
   def perform(name, content, title, to)
     logger.info "[mail] new comment mail: name=#{name}, content=#{content}, title=#{title}, to=#{to}"
     response = send_mail(name, content, title, to)

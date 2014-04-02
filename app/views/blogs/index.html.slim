@@ -45,7 +45,10 @@
         li
           = link_to '邮件订阅 ', '', "ng-click"=>"click('email')"
           .email-subscribe ng-show="type == 'email'"
-            = text_field_tag 'email', nil, placeholder: 'your@email.com'
+            = text_field_tag 'email', nil, placeholder: 'your@email.com', 'ng-model'=>'email'
+            button.small ng-click="subscribe()" ng-disabled="! email_validate()" 订阅
+            span.subscribe-success ng-show="subscribe_success" 订阅成功
+            span.subscribe-fail ng-show="subscribe_success == false" {{subscribe_fail_msg}}
       li
         = link_to '微信扫一扫', '', "ng-click"=>"click('weixin')"
         .weixin-subscribe ng-show="type == 'weixin'"

@@ -11,13 +11,13 @@ describe Subscribe do
   end
 
   it "default is true" do
-    subscribe = Subscribe.create(email: 'a@b')
+    subscribe = Subscribe.create(email: 'tester@test.com')
     expect(subscribe.enable).to be_true
   end
 
   it "subscribe_list" do
-    subscribe = Subscribe.create(email: 'a@b')
-    subscribe = Subscribe.create(email: 'a1@b')
+    subscribe = Subscribe.create(email: 'tester@test.com')
+    subscribe = Subscribe.create(email: 'tester1@test.com')
     expect(Subscribe.subscribe_list.split(';').size).to eq(2)
   end
 end
