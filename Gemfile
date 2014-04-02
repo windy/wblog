@@ -27,6 +27,7 @@ gem 'nokogiri'
 gem 'angularjs-rails'
 gem 'figaro'
 gem 'rqrcode-with-patches', require: 'rqrcode'
+gem 'chunky_png'
 gem 'sidekiq'
 gem 'rest-client'
 

@@ -258,6 +258,7 @@ DEPENDENCIES
   angularjs-rails
   capybara
   carrierwave-mongoid
+  chunky_png
   coffee-rails (~> 4.0.1)
   database_cleaner
   factory_girl_rails
