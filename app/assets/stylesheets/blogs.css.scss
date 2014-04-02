@@ -94,7 +94,12 @@
 
 .subscribe-ul {
   list-style-type: none;
+  margin-left: 0;
   li {
     margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+  .rss-subscribe {
+    margin-top: 0.5rem;
   }
 }

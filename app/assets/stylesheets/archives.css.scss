@@ -13,8 +13,9 @@
 
   .blog-title {
     color: #111111;
-    font-size: 1.2rem;
-    font-weight: 500;
+    &:hover {
+      color: red;
+    }
     border: none;
   }
 
