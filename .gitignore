@@ -18,6 +18,7 @@
 
 /public/uploads/*
 
-/config/*.yml
+/config/application.yml
+/config/mongoid.yml
 /public/assets/*
 *.old

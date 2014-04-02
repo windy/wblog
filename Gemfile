@@ -29,6 +29,7 @@ gem 'figaro'
 gem 'rqrcode-with-patches', require: 'rqrcode'
 gem 'chunky_png'
 gem 'sidekiq'
+gem 'mina-sidekiq'
 gem 'rest-client'
 
 group :development do
