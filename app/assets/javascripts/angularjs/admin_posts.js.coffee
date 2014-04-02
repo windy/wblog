@@ -2,6 +2,17 @@
 
   $scope.body_active = true
 
+  $scope.init = (id)->
+    url = '/admin/posts/' + id + '.json'
+    $http
+      url: url
+      method: 'GET'
+    .success (res)->
+      $scope.title = res.title
+      $scope.type = res.type
+      $scope.labels = res.labels
+      $scope.content = res.content
+
   $scope.changeToBody = ->
     $scope.body_active = true
 

@@ -10,7 +10,7 @@
     .small-12.large-6.columns
       = f.simple_fields_for :label do |p|
         = label_tag :labels, '标签'
-        = text_field_tag :labels, @post.labels_content(true), "ng-model"=>"labels", "ng-init" => "labels= '#{@post.labels_content(true)}'"
+        = text_field_tag :labels, nil, "ng-model"=>"labels"
 
   .row
     .small-12.columns
@@ -30,7 +30,7 @@
   input[type="file" style="display: none;"]
 
   .content-field ng-show="body_active" ng-model= 'content'
-    = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', "value"=>"#{@post.content}", "ng-model"=>'content', "ng-init"=>"content='#{@post.content}'" }
+    = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', "ng-model"=>'content'  }
 
   .preview.markdown ng-hide="body_active" ng-bind-html=" previewHTML "
 
