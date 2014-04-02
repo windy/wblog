@@ -11,7 +11,7 @@ set :app_path, "#{deploy_to}/#{current_path}"
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/mongoid.yml', 'config/application.yml', 'log', 'tmp', 'public/uploads' ]
+set :shared_paths, ['config/mongoid.yml', 'config/application.yml', 'log', 'tmp', 'public/uploads', 'public/personal' ]
 
 set :user, 'ruby'    # Username in the server to SSH to.
 
@@ -21,7 +21,7 @@ task :environment do
 end
 
 task :setup => :environment do
-  ['config', 'log', 'tmp', 'public/uploads'].each do |dir|
+  ['config', 'log', 'tmp', 'public/uploads', 'public/personal'].each do |dir|
     queue! %[mkdir -p "#{deploy_to}/shared/#{dir}"]
     queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/#{dir}"]
   end
