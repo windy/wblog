@@ -30,5 +30,5 @@ WBlog::Application.routes.draw do
   end
 
   get '/about' => 'home#index'
-  get '/:type' => 'archives#index'
+  get '/:type' => 'archives#index', constraints: { type: /tech|life|creator/ }
 end

@@ -6,10 +6,12 @@ html
       = yield(:meta)
     title
       = content_for?(:title) ? yield(:title) + " | #{ENV['SITE_NAME']}" : ENV['SITE_NAME']
-    = stylesheet_link_tag    "application"
+    = stylesheet_link_tag    "application", media: 'all'
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    / 增加 favico 图标
+    link href="/favicon.png" type='image/png' rel="icon"
   body
     .off-canvas-wrap 
       .inner-wrap
