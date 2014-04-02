@@ -1,6 +1,7 @@
 # 必须配置的
 SITE_NAME: "WinDy's Blog"
 # 后台登录的用户名与密码, 不填的话无法管理后台
+# 建议使用个人邮箱, 如果同时配置了 SENDCLOUD_USER, 则启用邮件通知, 源代码参考: /app/models/comment.rb
 ADMIN_USER: 'admin'
 ADMIN_PASSWORD: 'admin'
 
