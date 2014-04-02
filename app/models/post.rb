@@ -44,8 +44,17 @@ class Post
     self.visited_count
   end
 
+  # 显示给首页截断数据
   def sub_content
-    HTML_Truncator.truncate(content_html,30)
+    HTML_Truncator.truncate(content_html, 300, length_in_chars: true)
+  end
+
+  # 显示给 meta description
+  def meta_content
+    html = HTML_Truncator.truncate(content_html, 100, :length_in_chars => true, ellipsis: '')
+    # 加上 div 以方便 Nokogiri 获取 text()
+    html = '<div>' + html + '</div>'
+    Nokogiri.parse(html).text()
   end
 
   def labels_content( need_blank=false )
