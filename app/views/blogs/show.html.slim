@@ -1,3 +1,7 @@
+- content_for(:meta) do
+  meta name="description" content="#{@post.meta_content}"
+  meta name="keywords" content=@post.labels_content
+
 - content_for(:title) do
   | #{@post.title}
 .row
