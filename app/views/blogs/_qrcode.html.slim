@@ -1,4 +1,3 @@
 .qrcode-image
-  - qr = RQRCode::QRCode.new(str)
-  == qr.as_html
+  = image_tag( qrcodes_path(str: str) )
   p 使用手机继续阅读 or 帮我分享至微信朋友圈

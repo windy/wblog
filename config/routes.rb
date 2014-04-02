@@ -16,7 +16,8 @@ WBlog::Application.routes.draw do
 
   resources :archives
   # photos
-  resources :photos, :only=>[:create]
+  resources :photos, only: [:create]
+  get '/qrcodes' => 'qrcodes#show'
   
   namespace :admin do
     resources :posts do
