@@ -1,7 +1,7 @@
 class QrcodesController < ApplicationController
   def show
     str = params[:str].to_s
-    max_length = 50
+    max_length = 200
     if str.length > max_length
       render nothing: true, status: 404
       return

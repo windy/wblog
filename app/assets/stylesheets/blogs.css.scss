@@ -56,6 +56,21 @@
   }
 }
 
+.aboutme-index {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    margin-left: 0;
+    padding-bottom: 0.5rem;
+    span {
+      &:first-child{
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
+
 .qrcode {
   display: inline-block;
   float: right;
@@ -79,7 +94,12 @@
 
 .subscribe-ul {
   list-style-type: none;
+  margin-left: 0;
   li {
     margin-left: 0;
+    margin-bottom: 0.5rem;
+  }
+  .rss-subscribe {
+    margin-top: 0.5rem;
   }
 }
