@@ -10,7 +10,7 @@ WBlog
 访问我的博客以体验: <http://yafeilee.me>
 
 
-## 为什么重写 WBlog
+### 为什么重写 WBlog
 
 老的 WBlog 是两年前构建的, 体验越来越差, 而个人不喜欢托管博客到其他的站点, 又没有合适的 Ruby on Rails 博客系统.
 
@@ -20,19 +20,19 @@ WBlog
 * markdown, 简洁而不简单的后台
 * 要独立站点
 
-## 特色
+### 特色
 
 * 采用 Foundation 5, 自适应于所有终端
 * 优先考虑移动用户, 可方便使用二维码扫描与关注
 * 自带评论系统, 干净而方便
 * markdown 支持, 博客语法高亮, 方便技术性博客
-* 开源可商用, 个性化能力越强 ( 与非独立博客相比 )
+* 开源可商用, 个性化能力超强 ( 与非独立博客相比 )
 
-## 期望
+### 期望
 
 成为 Ruby on Rails 下最好用的独立博客建站系统
 
-## 技术栈
+### 技术栈
 
 * Ruby on Rails 4.0.4 / Ruby 2.0
 * AngularJS
@@ -40,8 +40,15 @@ WBlog
 * slim
 * Mongodb
 
+### TODO
 
-## Ruby on Rails 开源博客推荐
+* 增加评论管理功能
+* 添加邮件订阅功能
+* 添加 code review, 加入开源联盟
+
+
+## Ruby on Rails 其他开源博客推荐
 
 * writings.io: <https://github.com/chloerei/writings>
 * jekyll: <http://jekyllrb.com/>
+* octopress: <http://octopress.org/>
