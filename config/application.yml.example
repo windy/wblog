@@ -4,6 +4,9 @@ SITE_NAME: "WinDy's Blog"
 ADMIN_USER: 'admin'
 ADMIN_PASSWORD: 'admin'
 
+# Rails secret token, 用 rake secret 生成一个填这里, 不要跟别人的一样
+SECRET_TOKEN: 'e4122773d4324fce978c52cde790d84d14f7194f377aea41b7b8302d1d10150e6076a3b7e5e0c1f24ca330cf0a058482c95ea37908bba1722d0761ba5d4e566a'
+
 # SEO 搜索优化, 不填则不显示
 # 首页介绍
 INTRODUCE: '这是李亚飞的博客, 李亚飞是暂住在深圳的一名 Ruby 程序员, 这里是关于技术, 创业, 生活的思考'
