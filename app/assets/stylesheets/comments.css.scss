@@ -55,6 +55,17 @@
   }
 }
 
+.comment-submit[disabled] {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.comment-submit {
+  background-color: #008cba;
+  opacity: 0.8;
+}
+
+
 .comment-success {
   color: #66FAB5;
 }
