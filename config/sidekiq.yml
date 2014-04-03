@@ -6,4 +6,4 @@ staging:
 production:
   :concurrency: 20
 :queues:
-  - [wblog, 2]
+  - [default, 2]
