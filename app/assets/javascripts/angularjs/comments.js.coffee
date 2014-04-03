@@ -17,6 +17,7 @@
         $scope.comments.unshift(res.data)
       else
         $scope.publish_success = false
+        $scope.publish_fail_msg = res.message
       $timeout ->
         $scope.publish_success = null
       , 3*1000

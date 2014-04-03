@@ -53,6 +53,11 @@ html
                 i.fi-torso
                 | 关于我
         section.main-section ng-app="app"
+          - flash.each do |name, msg|
+            - if msg.is_a?(String)
+              div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""
+                = content_tag :div, msg
+                a.close href="#"  &times;
           = yield
           = render "layouts/footer"
         a.exit-off-canvas
