@@ -17,9 +17,9 @@ p ng-controller="LikesController" ng-cloak=""
   button.like-button ng-show="! is_liked " ng-click="submit()"
     |{{ count }}
     span Like
-  button.like-button ng-show=" is_liked " ng-click="cancel()" 
+  button.like-button.liked ng-show=" is_liked " ng-click="cancel()" 
     |{{ count }}
-    span Liked
+    span Like
   div ng-controller = "QRCodesController"
     .qrcode
       a href="#" ng-model="qrcode" ng-init="qrcode=false" ng-click="show()"
