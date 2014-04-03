@@ -1,4 +1,4 @@
-@app.controller 'AdminSessionsController', [ '$scope', '$http', '$timeout', ($scope, $http, $timeout)->
+@app.controller 'AdminSessionsController', [ '$scope', '$http', '$timeout', '$cookies', ($scope, $http, $timeout, $cookies)->
   url = '/admin/sessions'
   
   $scope.login = ->
@@ -10,7 +10,8 @@
         password: $scope.password
     .success (res)->
       if res.success
-        window.location = '/admin'
+        urlback = $cookies.urlback || 'admin'
+        window.location = urlback
       else
         $scope.password = ''
         $scope.error_msg = res.message
