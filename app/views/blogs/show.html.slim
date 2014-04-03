@@ -10,7 +10,7 @@
 .comment-field
   = render partial: 'comment', locals: { comments: @comments, post: @post }
   .row
-    .small-12.large-8.columns
+    .small-12.large-9.large-centered.columns
       - if @prev
         = link_to blog_path(@prev), class: 'prev' do
           i.fi-arrow-left

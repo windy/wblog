@@ -11,7 +11,7 @@
       button ng-click="submit()" ng-disabled="form.$invalid" 发表
       p.comment-success ng-show="publish_success" 发布成功
       p.comment-fail ng-show="publish_success == false" 发布失败
-    .comment-diag
+    .comment-diag ng-cloak=""
       .comment-wrapper ng-repeat=" comment in comments "
         p.name
           |{{ comment.name + "  • " }}
