@@ -1,4 +1,6 @@
 class SubscribesController < ApplicationController
+  def index
+  end
   def create
     subscribe = Subscribe.find_or_initialize_by(email: params[:email])
     subscribe.enable = true
@@ -10,12 +12,14 @@ class SubscribesController < ApplicationController
     end
   end
 
-  def destroy
+  def cancel
     if subscribe = Subscribe.where(email: params[:email]).first
       subscribe.enable = false
       subscribe.save
     end
 
+    flash[:notice] = "退订成功: #{params[:email]}"
     render :json => { success: true }
   end
+
 end

@@ -28,6 +28,8 @@ class NewPostWorker
 <p>#{ENV['SITE_NAME']} 新博客到了: #{title}</p>
 
 <p>具体内容请访问: http://yafeilee.me</p>
+
+<p><a href="http://yafeilee.me/unsubscribe?id=5F46EF">点此退订</a></p>
         EOF
       }
     return response

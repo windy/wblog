@@ -15,7 +15,12 @@ WBlog::Application.routes.draw do
 
 
   resources :archives
-  resources :subscribes
+  resources :subscribes do
+    collection do
+      post :cancel
+    end
+  end
+  get '/unsubscribe' => 'subscribes#index'
   # photos
   resources :photos, only: [:create]
   get '/qrcodes' => 'qrcodes#show'
