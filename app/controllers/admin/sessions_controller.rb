@@ -12,6 +12,7 @@ class Admin::SessionsController < ApplicationController
     elsif ENV['ADMIN_PASSWORD'] != params[:password]
       render :json=> { success: false, message: '管理员密码错误' }
     else
+      flash[:notice] = '登录成功'
       session[:login] = true
       render :json=> { success: true }
     end
