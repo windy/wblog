@@ -1,10 +1,4 @@
-h2.blog-title #{post.title}
-p.ptag
-  i.fi-list
-  span #{post.type}
-p.ptag
-  i.fi-pricetag-multiple
-  span #{post.labels_content}
+= render partial: 'post_head', locals: { post: post }
 
 .content.markdown
   == post.content_html
