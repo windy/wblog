@@ -8,6 +8,7 @@
   $scope.publish_success = null
 
   $scope.submit = ->
+    $scope.submitting = true
     comment = { content: $scope.content, name: $scope.name, email: $scope.email }
     $http.post(url, comment)
     .success (res)->
@@ -21,7 +22,8 @@
       $timeout ->
         $scope.publish_success = null
       , 3*1000
-        
-    .error (data)->
-      alert(data)
+    .error ->
+      alert('xx')
+    .finally ->
+      $scope.submitting = false
 ]
