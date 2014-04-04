@@ -19,11 +19,13 @@
       else
         $scope.publish_success = false
         $scope.publish_fail_msg = res.message
-      $timeout ->
-        $scope.publish_success = null
-      , 3*1000
-    .error ->
-      alert('xx')
+    .error (data, status)->
+      $scope.publish_success = false
+      $scope.publish_fail_msg = '网络错误, 请重试, 错误码为: ' + status
     .finally ->
       $scope.submitting = false
+      $scope.timeout = $timeout ->
+        $timeout.cancel($scope.timeout)
+        $scope.publish_success = null
+      , 5*1000
 ]
