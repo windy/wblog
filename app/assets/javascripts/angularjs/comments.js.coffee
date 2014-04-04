@@ -8,6 +8,7 @@
   $scope.publish_success = null
 
   $scope.submit = ->
+    $scope.submitting = true
     comment = { content: $scope.content, name: $scope.name, email: $scope.email }
     $http.post(url, comment)
     .success (res)->
@@ -18,10 +19,13 @@
       else
         $scope.publish_success = false
         $scope.publish_fail_msg = res.message
-      $timeout ->
+    .error (data, status)->
+      $scope.publish_success = false
+      $scope.publish_fail_msg = '网络错误, 请重试, 错误码为: ' + status
+    .finally ->
+      $scope.submitting = false
+      $scope.timeout = $timeout ->
+        $timeout.cancel($scope.timeout)
         $scope.publish_success = null
-      , 3*1000
-        
-    .error (data)->
-      alert(data)
+      , 5*1000
 ]
