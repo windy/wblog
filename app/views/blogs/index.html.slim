@@ -5,17 +5,24 @@
   | 首页
 .row
   .small-12.large-8.columns
-    = render partial: 'post_head', locals: { post: @newest }
-    .content.markdown
-      == @newest.sub_content
+    - unless @newest
+      h2.blog-title 这里还没有博客
+      p
+        | 这里还没有博客, 请访问
+        = link_to '管理页面', new_admin_post_path
+        | 来创建第一篇博客
+    - else
+      = render partial: 'post_head', locals: { post: @newest }
+      .content.markdown
+        == @newest.sub_content
 
-      = link_to "阅读全文 >>", blog_path(@newest)
-      p.published-at 发表于 #{format_date(@newest.created_at)}
+        = link_to "阅读全文 >>", blog_path(@newest)
+        p.published-at 发表于 #{format_date(@newest.created_at)}
 
-    h4.recent-title RECENT
-    ul.recent-content
-      - @recent.each do |re|
-        li = link_to "#{re.title}",blog_path(re)
+      h4.recent-title RECENT
+      ul.recent-content
+        - @recent.each do |re|
+          li = link_to "#{re.title}",blog_path(re)
 
   .large-3.columns.large-offset-1.self-introduce.self-introduce-index ng-controller='AboutController'
     h4 WELCOME
