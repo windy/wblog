@@ -8,6 +8,7 @@ WBlog
 * 简洁而不简单的发布博客流程
 
 访问我的博客以体验: <http://yafeilee.me>
+后台禁止爬虫, 使用: <http://yafeilee.me/admin> 访问, 用户名密码可配置.
 
 
 ### 为什么重写 WBlog
@@ -50,6 +51,7 @@ OK, That's all.
 
 * Ruby on Rails 4.0.4 / Ruby 2.0
 * AngularJS
+* Foundation 5
 * mina
 * slim
 * Mongodb
