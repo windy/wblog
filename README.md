@@ -71,3 +71,4 @@ OK, That's all.
 * writings.io: <https://github.com/chloerei/writings>
 * jekyll: <http://jekyllrb.com/>
 * octopress: <http://octopress.org/>
+* middleman: <https://github.com/middleman/middleman>
