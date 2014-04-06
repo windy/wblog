@@ -8,6 +8,7 @@ WBlog
 * 简洁而不简单的发布博客流程
 
 访问我的博客以体验: <http://yafeilee.me>
+
 后台禁止爬虫, 使用: <http://yafeilee.me/admin> 访问, 用户名密码可配置.
 
 
@@ -59,8 +60,10 @@ OK, That's all.
 ### TODO
 
 * 增加评论管理功能
-* 添加邮件订阅功能
 * 添加 travis, code climate, 加入开源联盟
+* 其他功能见 ISSUES 上
+
+欢迎 fork 并改进这些功能.
 
 
 ## Ruby on Rails 其他开源博客推荐
