@@ -87,6 +87,8 @@
   .comment-content {
     word-wrap: break-word;
     color: #DDDDDD;
+    white-space: pre-wrap;
+    word-break: break-all;
   }
   
 }
