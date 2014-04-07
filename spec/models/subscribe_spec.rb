@@ -18,6 +18,11 @@ describe Subscribe do
   it "subscribe_list" do
     subscribe = Subscribe.create(email: 'tester@test.com')
     subscribe = Subscribe.create(email: 'tester1@test.com')
-    expect(Subscribe.subscribe_list.split(';').size).to eq(2)
+    expect(Subscribe.subscribe_list.size).to eq(2)
+  end
+
+  it "unsubscribe?" do
+    subscribe = Subscribe.create(email: 'tester@test.com', enable: false)
+    expect(Subscribe.unsubscribe?('tester@test.com')).to be_true
   end
 end

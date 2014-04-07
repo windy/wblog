@@ -27,9 +27,15 @@ class NewCommentWorker
 
 <p>评论人: #{name}</p>
 
-<p>评论内容: #{content}</p>
+<p>评论内容: #{content[0..15]}...</p>
 
 <p>被评论博客: #{title}</p>
+
+<p>&nbsp;</p>
+
+<p>---------- 退订地址请点击:</p>
+
+<p><a href="http://yafeilee.me/unsubscribe?id=5F46EF">点此退订</a></p>
         EOF
       }
     return response

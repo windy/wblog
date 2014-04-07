@@ -24,7 +24,9 @@ class Post
 
   after_create do
     if ENV['SENDCLOUD_USER'].present?
-      NewPostWorker.perform_async(self.title, Subscribe.subscribe_list)
+      Subscribe.subscribe_list.each do |email|
+        NewPostWorker.perform_async(self.title, email)
+      end
     end
   end
 
