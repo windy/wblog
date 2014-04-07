@@ -29,6 +29,10 @@ class NewPostWorker
 
 <p>具体内容请访问: http://yafeilee.me</p>
 
+<p>&nbsp;</p>
+
+<p>---------- 退订地址请点击:</p>
+
 <p><a href="http://yafeilee.me/unsubscribe?id=5F46EF">点此退订</a></p>
         EOF
       }
