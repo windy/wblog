@@ -11,6 +11,8 @@ WBlog
 
 后台禁止爬虫, 使用: <http://yafeilee.me/admin> 访问, 用户名密码可配置.
 
+![screenshot](https://github.com/windy/wblog/raw/master/doc/wblog.gif)
+
 
 ### 为什么重写 WBlog
 
