@@ -44,7 +44,7 @@ WBlog 是一个基本的博客系统, 使用它之前, 你需要准备一台 VPS
 
 ```shell
 bundle install
-cp config/application.yml
+cp config/application.yml.example config/application.yml
 rails s
 ```
 
