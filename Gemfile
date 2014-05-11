@@ -32,6 +32,7 @@ gem 'sidekiq'
 gem 'rest-client'
 
 group :development do
+  gem 'spring'
   gem 'quiet_assets'
   gem 'guard'
   gem 'guard-rails'
