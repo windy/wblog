@@ -28,6 +28,7 @@ gem 'rqrcode-with-patches', require: 'rqrcode'
 gem 'chunky_png'
 gem 'sidekiq'
 gem 'rest-client'
+gem 'unicorn'
 
 group :development do
   gem 'spring'
