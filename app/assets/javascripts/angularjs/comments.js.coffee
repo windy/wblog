@@ -1,8 +1,7 @@
 @app.controller 'CommentsController', ['$scope', '$http', '$location', '$timeout', ($scope, $http, $location, $timeout)->
-  url = $location.absUrl() + "/comments.json"
+  url = window.location.pathname + "/comments.json"
 
   $http.get(url).success (data)->
-    console.log data
     $scope.comments = data
 
   $scope.publish_success = null
