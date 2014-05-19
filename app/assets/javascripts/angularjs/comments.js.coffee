@@ -1,14 +1,18 @@
-@app.controller 'CommentsController', ['$scope', '$http', '$location', '$timeout', ($scope, $http, $location, $timeout)->
-  url = $location.absUrl() + "/comments.json"
+@app.controller 'CommentsController', ['$scope', '$http', '$location', '$timeout', '$cookies', ($scope, $http, $location, $timeout, $cookies)->
+  url = window.location.pathname + "/comments.json"
+
+  $scope.name = $cookies.name
+  $scope.email = $cookies.email
 
   $http.get(url).success (data)->
-    console.log data
     $scope.comments = data
 
   $scope.publish_success = null
 
   $scope.submit = ->
     $scope.submitting = true
+    $cookies.name = $scope.name
+    $cookies.email = $scope.email
     comment = { content: $scope.content, name: $scope.name, email: $scope.email }
     $http.post(url, comment)
     .success (res)->

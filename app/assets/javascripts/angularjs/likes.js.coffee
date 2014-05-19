@@ -1,5 +1,5 @@
 @app.controller 'LikesController', ['$scope', '$http', '$location', '$cookies', ($scope, $http, $location, $cookies)->
-  url = $location.absUrl() + "/likes"
+  url = window.location.pathname + "/likes"
 
   $http.get url
   .success (res)->
@@ -9,7 +9,7 @@
 
   if $scope.like
     $http
-      url: $location.absUrl() + "/likes/#{$scope.like}/is_liked"
+      url: window.location.pathname + "/likes/#{$scope.like}/is_liked"
       method: 'GET'
     .success (res)->
       if  res == 'true'
