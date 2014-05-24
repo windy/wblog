@@ -26,7 +26,7 @@ WBlog
 
 ### 特色
 
-* 采用 Foundation 5, 自适应于所有终端
+* 自适应于所有屏幕终端, 方便微信分享与评论
 * 优先考虑移动用户, 可方便使用二维码扫描与关注
 * 自带评论系统, 干净而方便
 * markdown 支持, 博客语法高亮, 方便技术性博客
@@ -34,7 +34,7 @@ WBlog
 
 ### 期望
 
-成为 Ruby on Rails 下最好用的独立博客建站系统
+成为 `Ruby on Rails` 下最好用的独立博客建站系统
 
 ### 如何使用
 
@@ -45,6 +45,7 @@ WBlog 是一个基本的博客系统, 使用它之前, 你需要准备一台 VPS
 ```shell
 bundle install
 cp config/application.yml.example config/application.yml
+cp config/database.yml.example config/database.yml
 rails s
 ```
 
@@ -52,7 +53,7 @@ OK, That's all.
 
 ### 技术栈
 
-* Ruby on Rails 4.0.4 / Ruby 2.0
+* Ruby on Rails 4.1.1 / Ruby 2.0
 * AngularJS
 * Foundation 5
 * mina
