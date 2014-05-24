@@ -1,0 +1,12 @@
+p
+  | 你的博客有新的评论:
+p
+  span 来自: 
+  = mail_to @comment.email, @comment.name
+p 评论内容: 
+pre
+  | #{@comment.content}
+
+p 
+  | 博客链接: 
+  = link_to @comment.post.title, blog_url(@comment.post)

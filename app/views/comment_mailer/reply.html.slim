@@ -1,0 +1,11 @@
+p 你评论过的博客有新的回复:
+
+p 评论人: #{@comment.name}
+
+p 评论内容: 
+
+pre #{@comment.content}
+
+p
+  | 被评论博客: 
+  = link_to @comment.post.title, blog_url(@comment.post)

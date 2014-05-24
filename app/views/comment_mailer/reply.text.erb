@@ -1,0 +1,9 @@
+你评论过的博客有新的回复:
+
+评论人: <%= @comment.name %>
+
+评论内容: <%= @comment.content %>
+
+被评论博客: <%= @comment.post.title %>
+
+访问这里回复: <%= blog_url(@comment.post) %>

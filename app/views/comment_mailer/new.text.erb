@@ -1,0 +1,9 @@
+你的博客有新的评论:
+
+来自: <%= @comment.name %> <<%= @comment.email %>>
+
+评论内容: <%= @comment.content %>
+
+博客标题: <%= @comment.post.title %>
+
+博客链接: <%= blog_url(@comment.post) %>

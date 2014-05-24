@@ -5,40 +5,9 @@ class NewCommentWorker
     3
   end
 
-  def perform(name, content, title, to)
-    logger.info "[mail] new comment mail: name=#{name}, content=#{content}, title=#{title}, to=#{to}"
-    response = send_mail(name, content, title, to)
-    logger.info "[mail] result is #{response}"
-  ensure
-    logger.info "[mail] new comment mail end: name=#{name}, content=#{content}, title=#{title}, to=#{to}"
-  end
-
-  def send_mail(name, content, title, to)
-    response = RestClient.post "https://sendcloud.sohu.com/webapi/mail.send.xml",
-      {
-        :api_user => "postmaster@#{ENV['SENDCLOUD_USER']}.sendcloud.org",
-        :api_key => ENV['SENDCLOUD_PASSWORD'],
-        :from => ENV['SENDCLOUD_FROM'],
-        :fromname => ENV['SENDCLOUD_FROMNAME'],
-        :to => to,
-        :subject => "你的博客又有新的评论",
-        :html => <<-EOF
-<p>很高兴的通知你, 你的博客有新的评论:</p>
-
-<p>评论人: #{name}</p>
-
-<p>评论内容: #{content[0..15]}...</p>
-
-<p>被评论博客: #{title}</p>
-
-<p>&nbsp;</p>
-
-<p>---------- 退订地址请点击:</p>
-
-<p><a href="http://yafeilee.me/unsubscribe?id=5F46EF">点此退订</a></p>
-        EOF
-      }
-    return response
+  def perform(comment_id, to)
+    logger.info "new comment mail: #{comment_id}"
+    CommentMailer.new(comment_id.to_s, to).deliver
   end
 end
 
