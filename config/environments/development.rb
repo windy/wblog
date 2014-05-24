@@ -27,12 +27,12 @@ WBlog::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
+    address: ENV["MAIL_SERVER"],
     port: 25,
     domain: ENV["DOMAIN_NAME"],
     authentication: "plain",
-    user_name: ENV["SENDGRID_USERNAME"],
-    password: ENV["SENDGRID_PASSWORD"]
+    user_name: ENV["MAIL_USERNAME"],
+    password: ENV["MAIL_PASSWORD"]
   }
   # Send email in development mode.
   config.action_mailer.perform_deliveries = true

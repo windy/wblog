@@ -72,13 +72,15 @@ WBlog::Application.configure do
   # Send deprecation notices to registered listeners.
   config.active_support.deprecation = :notify
 
+  config.action_mailer.default_url_options = { :host => ENV["DOMAIN_NAME"] }
+
   config.action_mailer.smtp_settings = {
-    address: "smtp.sendgrid.net",
+    address: ENV["MAIL_SERVER"],
     port: 25,
     domain: ENV["DOMAIN_NAME"],
     authentication: "plain",
-    user_name: ENV["SENDGRID_USERNAME"],
-    password: ENV["SENDGRID_PASSWORD"]
+    user_name: ENV["MAIL_USERNAME"],
+    password: ENV["MAIL_PASSWORD"]
   }
 
 

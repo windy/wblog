@@ -23,5 +23,8 @@ module WBlog
     config.generators do |g|
       g.test_framework :rspec, view_specs: false
     end
+
+    # action mailer
+    config.action_mailer.preview_path = "#{Rails.root}/spec/mailers/previews"
   end
 end

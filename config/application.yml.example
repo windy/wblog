@@ -16,10 +16,8 @@ INTRODUCE: '这是李亚飞的博客, 李亚飞是暂住在深圳的一名 Ruby 
 # google analytics, 如果不需要可以留空
 GOOGLE: 'UA-32883596-1'
 
-# SENDCLOUD 邮件订阅功能, 留空用户名表示不需要创建博客后发送订阅邮件
-# 更多参数细节请查阅: /app/workers/new_post_worker.rb
-SENDCLOUD_USER: ''
-SENDCLOUD_PASSWORD: ''
-SENDCLOUD_FROM: ''
-SENDCLOUD_FROMNAME: ''
-SENDCLOUD_SITE_ADDRESS: ''
+# 邮件订阅通知与评论邮件通知功能, 留空用户名表示不需要创建博客后发送订阅邮件
+MAIL_SERVER: ''
+DOMAIN_NAME: ''
+MAIL_USERNAME: ''
+MAIL_PASSWORD: ''
