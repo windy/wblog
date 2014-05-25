@@ -31,7 +31,7 @@
   .content-field ng-show="body_active" ng-model= 'content'
     = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', "ng-model"=>'content', 'ng-initial'=>'' }
 
-  .preview.markdown ng-hide="body_active" ng-bind-html=" previewHTML "
+  .preview.markdown ng-hide="body_active" ng-bind-html=" trustAsPreviewHTML() "
 
   .row
     .small-12.large-6.columns.posts-button

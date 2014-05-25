@@ -12,7 +12,15 @@ $(document).ready ->
     type: 'POST'
     url: "/photos"
     success: (data,status,xhr)->
-      insertAtCaret('post_content', data)
+      txtBox = $("#post_content")
+      caret_pos = txtBox.caret('pos')
+      src_merged = "\n" + data + "\n"
+      source = txtBox.val()
+      before_text = source.slice(0, caret_pos)
+      txtBox.val(before_text + src_merged + source.slice(caret_pos+1, source.count))
+      txtBox.caret('pos',caret_pos + src_merged.length)
+      txtBox.scope().content = txtBox.val()
+      txtBox.focus()
   
 
   $('input[type=file]').fileUpload opt
