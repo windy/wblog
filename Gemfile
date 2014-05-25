@@ -29,6 +29,7 @@ gem 'chunky_png'
 gem 'sidekiq'
 gem 'rest-client'
 gem 'unicorn'
+gem 'newrelic_rpm'
 
 group :development do
   gem 'spring'

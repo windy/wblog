@@ -139,6 +139,7 @@ GEM
       connection_pool (~> 2.0)
       optionable (~> 0.2.0)
     multi_json (1.10.0)
+    newrelic_rpm (3.8.1.221)
     nio4r (1.0.0)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
@@ -285,6 +286,7 @@ DEPENDENCIES
   mongoid
   mongoid-pagination
   mongoid-rspec
+  newrelic_rpm
   nokogiri
   pry-nav
   pry-rails
