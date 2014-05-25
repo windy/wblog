@@ -1,0 +1,23 @@
+.row.admin-posts-field
+  .small-12.columns
+    h3.blog-title 评论管理
+    h4.blog-title
+      = link_to @post.title, blog_path(@post), target: '_blank'
+    table width="100%"
+      thead
+        tr
+          th 名字
+          th 邮箱
+          th 内容
+          th 操作
+      tbody
+        - @comments.each do |comment|
+          tr
+            td #{comment.name}
+            td 
+              = mail_to comment.email
+            td 
+              p.pre #{comment.content}
+            td
+              = link_to '回复', blog_path(@post), target: '_blank', class: 'edit-post-link'
+              = link_to '删除', admin_post_comment_path(@post, comment), method: 'DELETE', 'data-confirm'=> '确认删除?'
