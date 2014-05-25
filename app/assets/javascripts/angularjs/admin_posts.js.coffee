@@ -1,4 +1,4 @@
-@app.controller 'AdminPostsController', [ '$scope', '$http', '$location', '$timeout', '$cookies', ($scope, $http, $location, $timeout, $cookies)->
+@app.controller 'AdminPostsController', [ '$scope', '$http', '$location', '$timeout', '$cookies', '$sce', ($scope, $http, $location, $timeout, $cookies, $sce)->
 
   $scope.body_active = true
 
@@ -22,6 +22,9 @@
     $http.post '/admin/posts/preview', { content: $scope.content }
     .success (res)->
       $scope.previewHTML = res
+
+  $scope.trustAsPreviewHTML = ()->
+    $sce.trustAsHtml($scope.previewHTML)
 
   $scope.addTag = (e)->
     new_labels= $(e.target).text()
