@@ -47,7 +47,7 @@ class Admin::PostsController < ApplicationController
 
     if @post.save
       flash[:notice] = '创建博客成功'
-      redirect_to admin_root_path
+      redirect_to admin_posts_path
     else
       flash[:error] = '创建失败'
       render :new
