@@ -24,6 +24,7 @@
               i.fi-heart
               span #{ post.liked_count }
             td
+              = link_to '评论', admin_post_comments_path(post.id), class: 'edit-post-link'
               = link_to '编辑', edit_admin_post_path(post), class: 'edit-post-link'
               = link_to '删除', admin_post_path(post), method: 'DELETE', confirm: '确认删除?'
 

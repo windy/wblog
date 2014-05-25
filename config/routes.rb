@@ -30,6 +30,7 @@ WBlog::Application.routes.draw do
       collection do
         post :preview
       end
+      resources :comments
     end
     resources :sessions, :only=>[:new, :create, :destroy]
     root to: 'dashboard#index'
