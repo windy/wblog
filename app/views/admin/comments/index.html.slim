@@ -9,6 +9,7 @@
           th 名字
           th 邮箱
           th 内容
+          th 时间
           th 操作
       tbody
         - @comments.each do |comment|
@@ -18,6 +19,9 @@
               = mail_to comment.email
             td 
               p.pre #{comment.content}
+            td
+              = format_time(comment.created_at)
+
             td
               = link_to '回复', blog_path(@post), target: '_blank', class: 'edit-post-link'
               = link_to '删除', admin_post_comment_path(@post, comment), method: 'DELETE', 'data-confirm'=> '确认删除?'
