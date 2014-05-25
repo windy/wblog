@@ -29,7 +29,7 @@ html
               = link_to admin_username + ' [ 退出 ]', admin_session_path(1), method: 'DELETE'
     - flash.each do |name, msg|
       - if msg.is_a?(String)
-        div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""
+        div class=("alert-box #{name.to_sym == :notice ? "success" : "alert"}") data-alert=""
           = content_tag :div, msg
           a.close href="#"  &times;
     .admin-main-field ng-app="app"
