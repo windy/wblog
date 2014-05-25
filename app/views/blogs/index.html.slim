@@ -42,7 +42,7 @@
           =  link_to '关于我', about_path
     h4 SUBSCRIBE
     ul.subscribe-ul
-      - if ENV['SENDCLOUD_USER'].present?
+      - if ENV['MAIL_SERVER'].present?
         li
           = link_to '邮件订阅 ', '', "ng-click"=>"click('email')"
           .email-subscribe ng-show="type == 'email'"
