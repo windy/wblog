@@ -16,7 +16,7 @@
       .content.markdown
         == @newest.sub_content
 
-        = link_to "阅读全文 >>", blog_path(@newest)
+        = link_to "阅读全文 >>", blog_path(@newest), class: 'read-more'
         p.published-at 发表于 #{format_date(@newest.created_at)}
 
       h4.recent-title RECENT
