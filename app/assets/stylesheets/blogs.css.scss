@@ -6,6 +6,8 @@
 .ptag {
   text-align: right;
   margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 95%;
   span {
     margin-left: 0.5rem;
   }
@@ -19,13 +21,20 @@
 }
 
 .read-more {
-  border-bottom: 1px solid #dddddd;
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.275rem;
+  margin-top: 1rem;
+  display: inline-block;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  color: #333;
+  &:hover {
+    color: #333;
+    border-color: #aaa;
+  }
 }
 
 .published-at {
   text-align: right;
+  color: #999;
 }
 
 .blog-over {
@@ -44,34 +53,6 @@
     list-style: disc;
   }
   padding-left: 0rem;
-}
-
-@media only screen and (max-width: 40em) {
-  .self-introduce-index {
-    display: none;
-  }
-}
-.self-introduce {
-  margin-top: 2.2rem;
-
-  h1, h2, h3, h4, h5, h6 {
-    border-bottom: 1px solid #dddddd;
-  }
-}
-
-.aboutme-index {
-  list-style-type: none;
-  margin-left: 0;
-  padding-left: 0;
-  li {
-    margin-left: 0;
-    padding-bottom: 0.5rem;
-    span {
-      &:first-child{
-        margin-right: 0.5rem;
-      }
-    }
-  }
 }
 
 .qrcode {

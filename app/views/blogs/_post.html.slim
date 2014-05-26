@@ -3,9 +3,12 @@
 .content.markdown
   == post.content_html
 
-p.ptag
+p.ptag.published-at
   | 发表于:
   span #{format_date(post.created_at)}
+
+= render 'common/copyright'
+
 hr.blog-over
 p ng-controller="LikesController" ng-cloak=""
   button.like-button ng-show="! is_liked " ng-click="submit()"
