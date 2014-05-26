@@ -49,7 +49,7 @@ class Admin::PostsController < ApplicationController
       flash[:notice] = '创建博客成功'
       redirect_to admin_posts_path
     else
-      flash[:error] = '创建失败'
+      flash.now[:error] = '创建失败'
       render :new
     end
   end
