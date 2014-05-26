@@ -4,7 +4,9 @@
 }
 
 .ptag {
-  text-align: right;
+  @media only screen and (min-width: 40.063em) {
+    text-align: right;
+  }
   margin-bottom: 0.5rem;
   color: #666;
   font-size: 95%;
@@ -33,7 +35,10 @@
 }
 
 .published-at {
-  text-align: right;
+  @media only screen and (min-width: 40.063em) {
+    text-align: right;
+  }
+  margin-top: 1rem;
   color: #999;
 }
 
