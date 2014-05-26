@@ -1,0 +1,22 @@
+.self-introduce {
+  margin-top: 2.2rem;
+
+  h1, h2, h3, h4, h5, h6 {
+    border-bottom: 1px solid #dddddd;
+  }
+}
+
+.aboutme-index {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    margin-left: 0;
+    padding-bottom: 0.5rem;
+    span {
+      &:first-child{
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}
