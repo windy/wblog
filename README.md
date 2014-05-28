@@ -62,9 +62,9 @@ OK, That's all.
 
 ### TODO
 
-* 增加评论管理功能
 * 添加 travis, code climate, 加入开源联盟
-* 其他功能见 ISSUES 上
+* 添加 atwho 功能
+* 重构分类, 支持自由配置分类
 
 欢迎 fork 并改进这些功能.
 
