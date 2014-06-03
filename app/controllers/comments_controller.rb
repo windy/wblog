@@ -9,8 +9,8 @@ class CommentsController < ApplicationController
 
   def create
     @post = Post.find( params[:blog_id] )
-    comment = Comment.new(comment_params)
-    comment.post = @post
+    comment = @post.comments.build(comment_params)
+
     if comment.save
       render :json=> { success: true, data: build_json(comment) }
     else
