@@ -1,7 +1,6 @@
 class PhotosController < ApplicationController
   def create
-    @photo = Photo.new
-    @photo.image = params["Filedata"]
+    @photo = Photo.new(image: params["Filedata"])
     @photo.save!
     render :text=> md_url(@photo.image.url)
   end
