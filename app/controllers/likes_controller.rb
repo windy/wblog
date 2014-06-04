@@ -17,7 +17,7 @@ class LikesController < ApplicationController
 
   def create
     post = Post.find( params[:blog_id] )
-    like = post.liks.build
+    like = post.likes.build
 
     if like.save
       render :json=> { success: true, id: like.id.to_s, count: post.liked_count }
