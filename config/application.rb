@@ -17,6 +17,8 @@ module WBlog
     config.time_zone = 'Beijing'
     config.action_controller.action_on_unpermitted_parameters = :log
 
+    config.filter_parameters += [ :password ]
+
     # generators
     config.generators.assets = false
     config.generators.helper = false

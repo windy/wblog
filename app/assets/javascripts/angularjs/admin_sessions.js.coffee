@@ -5,7 +5,7 @@
     $http
       url: url
       method: 'POST'
-      params:
+      data:
         username: $scope.username
         password: $scope.password
     .success (res)->
