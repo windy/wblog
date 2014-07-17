@@ -46,6 +46,7 @@ group :test do
   gem 'mongoid-rspec', :require => false
   gem 'database_cleaner'
   gem 'rspec-sidekiq'
+  gem "codeclimate-test-reporter", group: :test, require: nil
 end
 
 group :test, :development do
