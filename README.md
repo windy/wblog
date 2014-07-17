@@ -1,5 +1,6 @@
 WBlog
 =======
+[![Build Status](https://travis-ci.org/windy/wblog.svg?branch=master)](https://travis-ci.org/windy/wblog)
 
 为移动而生的 Ruby on Rails 开源博客. WBlog 基于 MIT 协议, 自由使用.
 
