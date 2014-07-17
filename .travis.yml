@@ -10,9 +10,6 @@ before_install:
   - "gem install bundler --pre"
   - "bundle -v"
 
-before_script:
-  - "bundle exec rake travis:before_script"
-
 rvm:
   - 2.0.0
   - ruby-head
