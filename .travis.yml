@@ -12,6 +12,8 @@ before_install:
 
 before_script:
     - "bundle exec rake travis:before_script"
+services:
+    - mongodb
 
 rvm:
   - 2.0.0
