@@ -65,7 +65,6 @@ OK, That's all.
 
 ### TODO
 
-* 添加 travis, code climate, 加入开源联盟
 * 添加 atwho 功能
 * 重构分类, 支持自由配置分类
 
