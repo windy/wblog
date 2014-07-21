@@ -11,6 +11,7 @@ require 'rspec/autorun'
 Dir[Rails.root.join("spec/support/**/*.rb")].each {|f| require f}
 
 RSpec.configure do |config|
+  config.infer_spec_type_from_file_location!
   config.include FactoryGirl::Syntax::Methods
   config.before :each do
     DatabaseCleaner.strategy = :truncation
