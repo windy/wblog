@@ -19,4 +19,4 @@ services:
 
 rvm:
   - 2.0.0
-  - ruby-head
+  - 2.1.0
