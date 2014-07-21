@@ -38,12 +38,7 @@ class Admin::PostsController < ApplicationController
   def create
     labels = params.delete(:labels).to_s
     @post = Post.new( params.permit(:title, :content, :type) )
-
-    labels.split(",").each do |name|
-      label = Label.find_or_initialize_by(name: name.strip)
-      label.save!
-      @post.labels << label
-    end
+    initialize_or_create_labels(labels)
 
     if @post.save
       flash[:notice] = '创建博客成功'
@@ -58,14 +53,7 @@ class Admin::PostsController < ApplicationController
     @post = Post.find( params[:id] )
 
     labels = params.delete(:labels).to_s
-    #clear labels
-    @post.labels = []
-
-    labels.split(",").each do |name|
-      label = Label.find_or_initialize_by(name: name.strip)
-      label.save!
-      @post.labels << label
-    end
+    initialize_or_create_labels(labels)
 
     if @post.update( params.permit(:title, :content, :type) )
       flash[:notice] = '更新博客成功'
@@ -78,5 +66,15 @@ class Admin::PostsController < ApplicationController
 
   def preview
     render :text => Post.render_html(params[:content] || "")
+  end
+
+  private
+  def initialize_or_create_labels(labels)
+    @post.labels = []
+    labels.split(",").each do |name|
+      label = Label.find_or_initialize_by(name: name.strip)
+      label.save!
+      @post.labels << label
+    end
   end
 end
