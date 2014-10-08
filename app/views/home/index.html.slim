@@ -1,5 +1,67 @@
 - content_for(:title) do
   | 关于我
-.row
-  .small-12.large-9.large-centered.columns.self-introduce 
-    = render 'common/aboutme'
+- content_for(:main) do
+  /! 导航
+  .about-page ng-app='app' ng-controller='AboutScrollController'
+    .top-bar-wrapper.contain-to-grid.fixed
+      .row
+        .small-12.columns
+          nav.top-bar data-topbar='' role='navigation'
+            ul.title-area
+              li.name
+                h1
+                  a href='/' WinDy's Blog
+            section.top-bar-section
+              ul.right
+                li
+                  a href='#about' du-smooth-scroll='' du-scrollspy='' 关于
+                li
+                  a href='#work' du-smooth-scroll='' du-scrollspy='' 作品
+                li
+                  a href='#contact' du-smooth-scroll='' du-scrollspy='' 联系
+    header.intro
+      .intro-heading
+        .row
+          .small-12.columns
+            h1.heading 李亚飞
+            .sub-heading
+              p 
+                | 懒, 是人类进步的动力
+                br
+                | 所谓技术, 就是让你的生活越来越懒
+            a.circle href='#about' du-smooth-scroll=''
+              i.fa.fa-angle-double-down
+    section#about
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title 关于我
+          p Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on the preview page. The theme is open source, and you can use it for any purpose, personal or commercial.
+          p Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on the preview page. The theme is open source, and you can use it for any purpose, personal or commercial.
+          p Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on the preview page. The theme is open source, and you can use it for any purpose, personal or commercial.
+    section#work
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title 作品
+          p Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on the preview page. The theme is open source, and you can use it for any purpose, personal or commercial.
+          p Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on the preview page. The theme is open source, and you can use it for any purpose, personal or commercial.
+          p Grayscale is a free Bootstrap 3 theme created by Start Bootstrap. It can be yours right now, simply download the template on the preview page. The theme is open source, and you can use it for any purpose, personal or commercial.
+    section#contact
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title 联系我
+          p.mail_to
+            = mail_to 'lyfi2003@gmail.com'
+          ul.contact-ul
+            li
+              a href='https://github.com/windy' target='_blank'
+                i.fa.fa-github
+                | Github
+            li
+              a href='http://www.douban.com/people/41759170/' target='_blank'
+                i.douban
+                  | 豆
+                | Douban
+            li
+              a href='http://www.linkedin.com/pub/yafei-lee/77/3b/505' target='_blank'
+                i.fa.fa-linkedin-square
+                | LinkedIn

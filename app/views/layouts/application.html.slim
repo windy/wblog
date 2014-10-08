@@ -13,53 +13,56 @@ html
     / 增加 favico 图标
     link href="/favicon.png" type='image/png' rel="icon"
   body
-    .off-canvas-wrap data-offcanvas=''
-      .inner-wrap
-        nav.tab-bar
-          section.left-small
-            a.left-off-canvas-toggle.menu-icon href="#"
-              span
-          h1.title.middle-text
-            = link_to ENV['SITE_NAME'], root_path
-        aslide.left-off-canvas-menu
-          ul.off-canvas-list
-            li
-              label Menu
-            li
-              = link_to root_path do
-                i.fi-home
-                | 首页
-            li
-              = link_to '/tech' do
-                i.fi-social-evernote
-                | 技术
-            li
-              = link_to '/life' do
-                i.fi-torsos-male-female
-                | 生活
-            li
-              = link_to '/creator' do
-                i.fi-lightbulb
-                | 创业
-            li
-              label Archive
-            li
-              = link_to archives_path do
-                i.fi-align-justify
-                | 时间线
-            li
-              label About
-              = link_to about_path do
-                i.fi-torso
-                | 关于我
-        section.main-section ng-app="app"
-          - flash.each do |name, msg|
-            - if msg.is_a?(String)
-              div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""
-                = content_tag :div, msg
-                a.close href="#"  &times;
-          = yield
-          = render "layouts/footer"
-        a.exit-off-canvas
+    - if content_for?(:main)
+      = yield(:main)
+    - else
+      .off-canvas-wrap data-offcanvas=''
+        .inner-wrap
+          nav.tab-bar
+            section.left-small
+              a.left-off-canvas-toggle.menu-icon href="#"
+                span
+            h1.title.middle-text
+              = link_to ENV['SITE_NAME'], root_path
+          aslide.left-off-canvas-menu
+            ul.off-canvas-list
+              li
+                label Menu
+              li
+                = link_to root_path do
+                  i.fi-home
+                  | 首页
+              li
+                = link_to '/tech' do
+                  i.fi-social-evernote
+                  | 技术
+              li
+                = link_to '/life' do
+                  i.fi-torsos-male-female
+                  | 生活
+              li
+                = link_to '/creator' do
+                  i.fi-lightbulb
+                  | 创业
+              li
+                label Archive
+              li
+                = link_to archives_path do
+                  i.fi-align-justify
+                  | 时间线
+              li
+                label About
+                = link_to about_path do
+                  i.fi-torso
+                  | 关于我
+          section.main-section ng-app="app"
+            - flash.each do |name, msg|
+              - if msg.is_a?(String)
+                div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""
+                  = content_tag :div, msg
+                  a.close href="#"  &times;
+            = yield
+            = render "layouts/footer"
+          a.exit-off-canvas
 
     = render 'layouts/google_analytics'

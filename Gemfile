@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'foundation-rails', '~> 5.2.1'
 gem 'foundation-icons-sass-rails'
+gem 'font-awesome-sass'
 
 gem 'mongoid'
 gem 'mongoid-pagination'
