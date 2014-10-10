@@ -3,6 +3,7 @@
 //= require foundation/foundation
 //= require foundation/foundation.topbar
 //= require foundation/foundation.offcanvas
+//= require foundation/foundation.magellan
 //= require angularjs
 //= require 'jquery.html5-fileupload'
 //= require_tree .

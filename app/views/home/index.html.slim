@@ -1,5 +1,97 @@
 - content_for(:title) do
   | 关于我
-.row
-  .small-12.large-9.large-centered.columns.self-introduce 
-    = render 'common/aboutme'
+- content_for(:main) do
+  /! 导航
+  .about-page ng-app='app' ng-controller='AboutScrollController'
+    .top-bar-wrapper.contain-to-grid.fixed ng-class="{ active: ! is_top() }"
+      .row
+        .small-12.columns
+          nav.top-bar data-topbar='' role='navigation'
+            ul.title-area
+              li.name
+                h1
+                  a href='/' WinDy's Blog
+            section.top-bar-section
+              ul.right
+                li
+                  a href='#about' du-smooth-scroll='' du-scrollspy='' 关于
+                li
+                  a href='#work' du-smooth-scroll='' du-scrollspy='' 作品
+                li
+                  a href='#contact' du-smooth-scroll='' du-scrollspy='' 联系
+    #intro
+    header.intro
+      .intro-heading
+        .row
+          .small-12.columns
+            h1.heading 李亚飞
+            .sub-heading
+              p 
+                | 懒, 是人类进步的动力
+                br
+                | 所谓技术, 就是让你的生活越来越懒
+            a.circle href='#about' du-smooth-scroll=''
+              i.fa.fa-angle-double-down
+    section#about
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title 关于我
+          p 我是李亚飞, 一个在中国深圳的网页开发工程师( Web Developer ).
+          p 
+            | 曾经在
+            a href='http://sangfor.com' 深信服
+            | 工作大约 5 年. 在那里, 从一个菜鸟成长为一个资深工程师, 还有幸带领一个很酷的团队帮助公司进行自动化测试方向的研究与推进. 掌握的技术大约有: Linux, Ruby, Ruby on Rails, Testing Automation
+          p
+            | 在今年 3 月份, 为了那份创业梦, 出山开发了 cywin.cn, 这是一个股权众筹平台, 帮助创业团队更好的融资. 借此, 也将自己的 Ruby on Rails 技术全部注入在内
+          p 
+            | 现在, 想先休息一段时间, 接下来做一个自由职业者, 接手一些关于 Web 开发的外包工作
+    section#work
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title 作品
+          ul.works
+            li
+              span.name ATM/ATT
+              span.brief 测试业界领先的关键字驱动的自动化测试平台
+              span.link 公司所属
+              span.time #{time_ago_in_words(DateTime.new(2013))} 前
+            li
+              span.name WBlog
+              span.brief Rails 社区正缺了一个独立博客建站系统
+              span.link
+                a href='https://github.com/windy/wblog' target='_blank' https://github.com/windy/wblog
+              span.time #{time_ago_in_words(DateTime.new(2014,3,1))} 前
+            li
+              span.name Cywin
+              span.brief 一个股权众筹的商业平台
+              span.link
+                a href='http://cywin.cn'  target='_blank' http://cywin.cn
+              span.time #{time_ago_in_words(1.month.ago)} 前
+    section#contact
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title 联系我
+          p
+            | 我目前处于自由职业状态, 如果你想给你的公司或个人制作一个精美简洁的网站, 或许我可以帮到你
+          p
+            | 不要紧张, 请随时联系我
+          p.mail_to
+            = mail_to 'lyfi2003@gmail.com'
+          ul.contact-ul
+            li
+              a href='https://github.com/windy' target='_blank'
+                i.fa.fa-github
+                | Github
+            li
+              a href='http://www.douban.com/people/41759170/' target='_blank'
+                i.douban
+                  | 豆
+                | Douban
+            li
+              a href='http://www.linkedin.com/pub/yafei-lee/77/3b/505' target='_blank'
+                i.fa.fa-linkedin-square
+                | LinkedIn
+    .footer
+      .row
+        .small-12.columns
+          div Copyright © yafeilee.me
