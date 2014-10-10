@@ -23,20 +23,40 @@
 
 
 .about-page {
-  .top-bar-wrapper {
-    background: 0 0;
-    .top-bar {
+  @media only screen and (min-width: 40.063em) {
+    .top-bar-wrapper {
       background: 0 0;
-      padding: 1.5rem 0;
-    }
-    
-    .top-bar-section ul{
-      li, li a {
-        background: 0 0;
+      transition: background .5s ease-in-out,padding .5s ease-in-out;
+      &.active {
+        background: #000;
+        border-bottom: 1px solid #666;
+
+        .top-bar {
+          margin: 0.5rem 0;
+        }
       }
 
-      li a:hover {
-        background: #666;
+      .top-bar {
+        background: 0 0;
+        margin: 1.5rem 0;
+        .name h1 {
+          font-size: 1.325rem;
+        }
+      }
+      
+      .top-bar-section ul{
+        li, li a {
+          background: 0 0;
+          font-size: 1rem;
+        }
+
+        li a:hover {
+          background: #666;
+        }
+
+        li a.active {
+          background: #4C4C4C;
+        }
       }
     }
   }
@@ -111,6 +131,42 @@
       color: #eee;
       text-align: center;
     }
+
+    .works {
+      color: #eee;
+      background-color: rgba(63, 63, 63, 0.6);
+      list-style: none;
+      padding: 2rem 1rem;
+      li {
+        margin: 1rem 0;
+      }
+
+      .name {
+        margin-right: 0.5rem;
+        font-size: 1.125rem;
+        font-weight: 600;
+        &:after {
+          margin-left: 0.5rem;
+          font-weight: 400;
+          content: '--';
+        }
+      }
+
+      .brief {
+        margin-right: 1rem;
+        color: #dfdfdf;
+      }
+
+      .link {
+        margin-right: 1rem;
+        color: #dfdfdf;
+      }
+
+      .time {
+        color: #aaa;
+        font-size: 95%;
+      }
+    }
   }
 
   #contact {
@@ -131,7 +187,7 @@
 
     .mail_to {
       margin-bottom: 3rem;
-      margin-top: -1rem;
+      margin-top: 3rem;
     }
 
     .contact-ul {
@@ -166,5 +222,14 @@
         }
       }
     }
+  }
+
+  .footer {
+    border: none;
+    padding: 1.5rem;
+    background-color: #353535;
+    text-align: center;
+    color: #fff;
+    font-size: 1.125rem;
   }
 }
