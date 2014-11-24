@@ -4,7 +4,7 @@ else
   source 'https://rubygems.org'
 end
 
-gem 'rails', '4.1.7'
+gem 'rails', '4.1.8'
 #gem 'sprockets', '2.12.1'
 gem 'sass-rails', '~> 4.0.4'
 gem 'coffee-rails', '~> 4.1.0'
