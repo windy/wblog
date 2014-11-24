@@ -63,18 +63,11 @@ OK, That's all.
 * slim
 * Mongodb
 
-### TODO
 
-* 添加 atwho 功能
-* 重构分类, 支持自由配置分类
+## Ruby 相关开源博客推荐
 
-欢迎 fork 并改进这些功能.
-
-
-## Ruby on Rails 其他开源博客推荐
-
-* writings.io: <https://github.com/chloerei/writings>
-* jekyll: <http://jekyllrb.com/>
-* octopress: <http://octopress.org/>
-* middleman: <https://github.com/middleman/middleman>
-* robbin_site: <https://github.com/robbin/robbin_site>
+* writings.io( Ruby on Rails 4.0.2 ): <https://github.com/chloerei/writings>
+* jekyll( Ruby Gem, Markdown, Static ): <http://jekyllrb.com/>
+* octopress( Github Pages ): <http://octopress.org/>
+* middleman( Ruby Gem, Static ): <https://github.com/middleman/middleman>
+* robbin_site( Padrino ): <https://github.com/robbin/robbin_site>
