@@ -7,9 +7,9 @@ describe Admin::PostsController do
   end
   it "preview should return ok" do
     post :preview
-    response.body.should == ""
+    expect(response.body).to eq("")
     post :preview, content: '123'
-    response.body.should == "<p>123</p>\n"
+    expect(response.body).to eq("<p>123</p>\n")
   end
 
   it "update" do
