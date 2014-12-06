@@ -65,7 +65,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def preview
-    render :text => Post.render_html(params[:content] || "")
+    render plain: Post.render_html(params[:content] || "")
   end
 
   private
