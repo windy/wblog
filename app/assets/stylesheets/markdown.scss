@@ -32,11 +32,19 @@
     white-space: pre;
     word-wrap: normal;
     overflow-x: auto;
+    code {
+      border: none;
+      background-color: transparent;
+      color: #d14;
+    }
   }
 
   code {
     margin-left: 0.25rem;
     margin-right: 0.025rem;
     font-weight: 500;
+    border: none;
+    background-color: transparent;
+    color: #d14;
   }
 }
