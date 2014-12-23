@@ -34,7 +34,7 @@
       , 3000
 
   $scope.visit = (id)->
-    window.location.href = ("/blogs/" + id)
+    "/blogs/" + id
 
   $scope.update_start_with = (start_with)->
     $scope.start_with = start_with
