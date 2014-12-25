@@ -4,6 +4,10 @@ class BlogsController < ApplicationController
   def index
     @newest = Post.desc(:created_at).first
     @recent = Post.desc(:created_at).to_a[1..3]
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def rss
@@ -18,6 +22,10 @@ class BlogsController < ApplicationController
     @prev = Post.where(:created_at.lt => @post.created_at).desc(:created_at).where(:id.ne => @post.id).first
     @next = Post.where(:created_at.gt => @post.created_at).asc(:created_at).where(:id.ne => @post.id).first
     @comments = @post.comments
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
   
   def edit
