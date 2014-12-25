@@ -4,6 +4,10 @@ class BlogsController < ApplicationController
   def index
     @newest = Post.desc(:created_at).first
     @recent = Post.desc(:created_at).to_a[1..3]
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
 
   def rss
