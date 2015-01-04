@@ -106,7 +106,7 @@
     }
   }
 
-  #about {
+  #about, #skill {
     background-color: #000;
     color: #eee;
     padding: 10rem 0;
@@ -114,6 +114,20 @@
       color: #eee;
       text-align: center;
       margin-bottom: 2rem;
+    }
+  }
+
+  #skill {
+    background: image-url('mp.jpg') no-repeat bottom center scroll;
+    background-size: cover;
+    .skills {
+      color: #eee;
+      background-color: rgba(63, 63, 63, 0.6);
+      padding: 2rem 2rem;
+      font-size: 1.125rem;
+      li {
+        margin: 1rem 0;
+      }
     }
   }
 
@@ -137,8 +151,20 @@
       background-color: rgba(63, 63, 63, 0.6);
       list-style: none;
       padding: 2rem 1rem;
-      li {
+      >li {
         margin: 1rem 0;
+      }
+
+      .project-description {
+        margin-bottom: 2rem;
+        font-size: 90%;
+        li {
+          margin: 0.5rem 0;
+          color: #aaa;
+          &:hover {
+            color: #ccc;
+          }
+        }
       }
 
       .name {
@@ -173,7 +199,12 @@
     background: #000;
     background-size: cover;
     padding: 10rem 0;
-    padding-bottom: 20rem;
+    padding-bottom: 2rem;
+    .modified-at {
+      padding-top: 8rem;
+      color: #aaa;
+      font-size: 1rem;
+    }
     h1, h2 {
       color: #eee;
       text-align: center;
