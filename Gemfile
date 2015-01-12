@@ -17,6 +17,7 @@ gem 'font-awesome-sass'
 gem 'jbuilder'
 
 gem 'mongoid'
+gem 'mongoid-tree'
 gem 'mongoid-pagination'
 gem 'redcarpet'
 gem 'rouge'
