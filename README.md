@@ -39,7 +39,7 @@ WBlog
 
 成为 `Ruby on Rails` 下最好用的独立博客建站系统
 
-### 如何使用
+### 本地学习
 
 WBlog 是一个基本的博客系统, 使用它之前, 你需要准备一台 VPS 独立主机, 安装好 Ruby on Rails 与 Mongodb. 我希望你是熟悉 Ruby on Rails 的, 这样方便定制 WBlog, 现在 WBlog 还太小.
 
@@ -53,6 +53,12 @@ rails s
 ```
 
 OK, That's all.
+
+### 发布应用
+
+WBlog 采用了 `mina` 作为自动化发布工具, 使用 `nginx`, `unicorn` 为相关容器.
+
+对应的发布流程在: [WBlog 的发布流程](https://github.com/windy/wblog/wiki)
 
 ### 技术栈
 
