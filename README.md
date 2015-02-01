@@ -62,7 +62,7 @@ WBlog 采用了 `mina` 作为自动化发布工具, 使用 `nginx`, `unicorn` �
 
 ### 技术栈
 
-* Ruby on Rails 4.1.1 / Ruby 2.0
+* Ruby on Rails 4.1.8 / Ruby 2.0
 * AngularJS
 * Foundation 5
 * mina
