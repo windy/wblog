@@ -43,6 +43,7 @@ group :development do
   gem 'guard-rails'
   gem 'guard-rspec', require: false
   gem 'guard-bundler', require: false
+  gem 'rack-cors', :require => 'rack/cors'
 end
 
 group :test do
