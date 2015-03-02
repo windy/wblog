@@ -4,13 +4,13 @@ else
   source 'https://rubygems.org'
 end
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.1.9'
 #gem 'sprockets', '2.12.1'
-gem 'sass-rails', '~> 4.0.4'
+gem 'sass-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
-gem 'foundation-rails', '~> 5.4'
+gem 'foundation-rails', '~> 5.5.1'
 gem 'foundation-icons-sass-rails'
 gem 'font-awesome-sass'
 
