@@ -4,14 +4,14 @@
 }
 
 .ptag {
-  @media only screen and (min-width: 40.063em) {
-    text-align: right;
-  }
   margin-bottom: 0.5rem;
-  color: #666;
+  color: #888;
   font-size: 95%;
   span {
     margin-left: 0.5rem;
+    &:first-child {
+      margin-left: 0;
+    }
   }
   .has-tip {
     border: none;

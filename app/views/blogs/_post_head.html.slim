@@ -1,10 +1,9 @@
 / require: locals: { post : post }
 h2.blog-title #{post.title}
 p.ptag
-  span.has-tip data-options="disable_for_touch:false" data-tooltip="" title="分类"
+  span
     i.fi-list-thumbnails
   span #{post.type}
-p.ptag
-  span.has-tip data-options="disable_for_touch:false" data-tooltip="" title="标签"
+  span
     i.fi-pricetag-multiple
   span #{post.labels_content}
