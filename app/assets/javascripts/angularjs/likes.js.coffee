@@ -4,7 +4,7 @@
   $http.get url
   .success (res)->
     $scope.count = res.count
-  
+
   $scope.like = $cookies.like
 
   if $scope.like
@@ -12,7 +12,7 @@
       url: window.location.pathname + "/likes/#{$scope.like}/is_liked"
       method: 'GET'
     .success (res)->
-      if  res == 'true'
+      if  res == true
         $scope.is_liked = true
       else
         $scope.is_liked = false
