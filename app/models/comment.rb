@@ -9,7 +9,7 @@ class Comment
   belongs_to :post
 
   validates :name, presence: true
-  validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: '地址无效' }
+  validates :email, presence: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: I18n.t('comment_attributes.email') }
   validates :content, presence: true
   validates_presence_of :post_id
 

@@ -1,6 +1,6 @@
 html
   head
-    meta charset="utf-8" 
+    meta charset="utf-8"
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     title Admin Page for #{ENV['SITE_NAME']}
     = stylesheet_link_tag    "application"
@@ -18,15 +18,15 @@ html
       section.top-bar-section
         ul.left
           li
-            = link_to '创建新博客', new_admin_post_path
+            = link_to t('admin.new_post'), new_admin_post_path
           li
-            = link_to '管理博客', admin_posts_path
+            = link_to t('admin.posts'), admin_posts_path
         ul.right
           li
-            = link_to '返回首页', root_path
+            = link_to t('admin.back'), root_path
           - if admin_username
             li
-              = link_to admin_username + ' [ 退出 ]', admin_session_path(1), method: 'DELETE'
+              = link_to admin_username + ' [ ' + t('admin.logout') + ' ]', admin_session_path(1), method: 'DELETE'
     - flash.each do |name, msg|
       - if msg.is_a?(String)
         div class=("alert-box #{name.to_sym == :notice ? "success" : "alert"}") data-alert=""

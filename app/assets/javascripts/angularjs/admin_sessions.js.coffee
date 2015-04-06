@@ -1,6 +1,6 @@
 @app.controller 'AdminSessionsController', [ '$scope', '$http', '$timeout', '$cookies', ($scope, $http, $timeout, $cookies)->
   url = '/admin/sessions'
-  
+
   $scope.login = ->
     $http
       url: url

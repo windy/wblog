@@ -1,5 +1,5 @@
 - content_for(:title) do
-  | #{@type ? @type : '时间线'}
+  | #{@type ? @type : t('title.timeline')}
 .row ng-controller="ArchivesController" ng-cloak=""
   .small-12.large-9.large-centered.columns
     ul.archives-field ng-model="type" ng-init=" type= '#{@type}' "
@@ -23,7 +23,7 @@
           span
             |{{ post.liked_count }}
       .no-more-field
-        p ng-show="no_more_flag" 没有更多内容
+        p ng-show="no_more_flag" #{t('nocontent')}
 
       .load-more
         button.small ng-click="load()" ng-show="!loading_flag" Load More

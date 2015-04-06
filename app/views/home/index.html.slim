@@ -1,7 +1,6 @@
 - content_for(:title) do
-  | 关于我
+  | #{t('title.about')}
 - content_for(:main) do
-  /! 导航
   .about-page ng-app='app' ng-controller='AboutScrollController'
     .top-bar-wrapper.contain-to-grid.fixed ng-class="{ active: ! is_top() }"
       .row

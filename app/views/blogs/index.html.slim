@@ -1,50 +1,46 @@
-- if ENV['INTRODUCE'].present? 
+- if ENV['INTRODUCE'].present?
   - content_for(:meta) do
     meta name="description" content="#{ENV['INTRODUCE'].dup.force_encoding('UTF-8')}"
 - content_for(:title) do
-  | 首页
+  | #{t('title.home')}
 .row
   .small-12.large-8.columns
     - unless @newest
-      h2.blog-title 这里还没有博客
-      p
-        | 这里还没有博客, 请访问
-        = link_to '管理页面', new_admin_post_path
-        | 来创建第一篇博客
+      = render 'common/no_blog_here'
     - else
       = render partial: 'post_head', locals: { post: @newest }
       .content.markdown
         == @newest.sub_content
 
-        = link_to "阅读全文 >>", blog_path(@newest), class: 'read-more'
-        p.published-at 发表于 #{format_date(@newest.created_at)}
+        = link_to t('home.read'), blog_path(@newest), class: 'read-more'
+        p.published-at #{t('home.created_at')} #{format_date(@newest.created_at)}
 
       h4.recent-title RECENT
       ul.recent-content
         - @recent.each do |re|
           li = link_to "#{re.title}",blog_path(re)
 
-  .large-3.columns.large-offset-1.self-introduce.self-introduce-index ng-controller='AboutController'
-    /*请到 common 调整个人设置*/
+  .large-3.columns.large-offset-1.self-introduce.self-introduce-index
+    /*Adjust it in common/welcome*/
     = render 'common/welcome'
-    h4 SUBSCRIBE
-    .row.ng-cloak
+    h4 #{t('subscribes.title')}
+    .row.ng-cloak ng-controller='AboutController'
       .small-12.medium-6.large-12.columns
         ul.subscribe-ul
           - if ENV['MAIL_SERVER'].present?
             li
-              = link_to '邮件订阅 ', '', "ng-click"=>"click('email')"
+              = link_to t('subscribes.email'), '', "ng-click"=>"click('email')"
               .email-subscribe ng-show="type == 'email'"
                 = text_field_tag 'email', nil, placeholder: 'your@email.com', 'ng-model'=>'email'
-                button.small ng-click="subscribe()" ng-disabled="! email_validate()" 订阅
-                span.subscribe-success ng-show="subscribe_success" 订阅成功
+                button.small ng-click="subscribe()" ng-disabled="! email_validate()" #{t('subscribes.submit')}
+                span.subscribe-success ng-show="subscribe_success" #{t('subscribes.submit_success')}
                 span.subscribe-fail ng-show="subscribe_success == false" {{subscribe_fail_msg}}
           li
-            = link_to '微信扫一扫', '', "ng-click"=>"click('weixin')"
+            = link_to t('subscribes.wechat'), '', "ng-click"=>"click('weixin')"
             .weixin-subscribe ng-show="type == 'weixin'"
               = render partial: "qrcode", locals: { str: root_url }
           li
-            = link_to 'RSS订阅', '', "ng-click"=>"click('rss')"
+            = link_to t('subscribes.rss'), '', "ng-click"=>"click('rss')"
             .rss-subscribe ng-show="type == 'rss'"
               = link_to rss_blogs_path do
                 - image_tag('rss.png')

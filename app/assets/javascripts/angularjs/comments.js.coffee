@@ -25,7 +25,7 @@
         $scope.publish_fail_msg = res.message
     .error (data, status)->
       $scope.publish_success = false
-      $scope.publish_fail_msg = '网络错误, 请重试, 错误码为: ' + status
+      $scope.publish_fail_msg = 'Network Error, Retry for a moment, Status Code: ' + status
     .finally ->
       $scope.submitting = false
       $scope.timeout = $timeout ->

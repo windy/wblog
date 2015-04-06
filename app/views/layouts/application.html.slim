@@ -7,7 +7,6 @@ html
     title
       = content_for?(:title) ? yield(:title) + " | #{ENV['SITE_NAME']}" : ENV['SITE_NAME']
     = stylesheet_link_tag    "application", media: 'all'
-    / 增加 favico 图标
     link href="/favicon.png" type='image/png' rel="icon"
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application"
@@ -31,30 +30,30 @@ html
               li
                 = link_to root_path do
                   i.fi-home
-                  | 首页
+                  | #{t('head.home')}
               li
                 = link_to '/tech' do
                   i.fi-social-evernote
-                  | 技术
+                  | #{t('head.tech')}
               li
                 = link_to '/life' do
                   i.fi-torsos-male-female
-                  | 生活
+                  | #{t('head.life')}
               li
                 = link_to '/creator' do
                   i.fi-lightbulb
-                  | 创业
+                  | #{t('head.creator')}
               li
                 label Archive
               li
                 = link_to archives_path do
                   i.fi-align-justify
-                  | 时间线
+                  | #{t('head.timeline')}
               li
                 label About
                 = link_to about_path do
                   i.fi-torso
-                  | 关于我
+                  | #{t('head.about')}
           section.main-section ng-app="app"
             - flash.each do |name, msg|
               - if msg.is_a?(String)

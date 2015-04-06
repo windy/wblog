@@ -1,22 +1,22 @@
-# 必须配置的
+# This section MUST be configured
 SITE_NAME: "WinDy's Blog"
-# 后台登录的用户名与密码, 不填的话无法管理后台
-# 建议使用个人邮箱, 如果同时配置了 SENDCLOUD_USER, 则启用邮件通知, 源代码参考: /app/models/comment.rb
+# Admin Dashboard Management, If ADMIN_USER is blank, No One can login into Dashboard
+# Recommend using your personal Email, if SENDCLOUD_USER is setted, System WILL send you notification email.
+# For more detail, see: /app/models/comment.rb
 ADMIN_USER: 'admin'
 ADMIN_PASSWORD: 'admin'
 
-# Rails secret token, 用 rake secret 生成一个填这里, 不要跟别人的一样
+# Rails secret token, use `rake secret` to generate new one here.
 SECRET_TOKEN: 'e4122773d4324fce978c52cde790d84d14f7194f377aea41b7b8302d1d10150e6076a3b7e5e0c1f24ca330cf0a058482c95ea37908bba1722d0761ba5d4e566a'
 
-# SEO 搜索优化, 不填则不显示
-# 首页介绍
+# META description for SEO
 INTRODUCE: '这是李亚飞的博客, 李亚飞是暂住在深圳的一名 Ruby 程序员, 这里是关于技术, 创业, 生活的思考'
 
-# 可选的
-# google analytics, 如果不需要可以留空
-GOOGLE: 'UA-32883596-1'
+# optional
+# google analytics, blank it if you don't need
+GOOGLE: ''
 
-# 邮件订阅通知与评论邮件通知功能, 留空用户名表示不需要创建博客后发送订阅邮件
+# Email Setting, see more: /config/environments/production.rb
 MAIL_SERVER: ''
 DOMAIN_NAME: ''
 MAIL_USERNAME: ''

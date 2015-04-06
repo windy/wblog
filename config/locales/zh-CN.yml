@@ -1,0 +1,18 @@
+zh-CN:
+  upload_photo: "上传图片"
+  comment: "查看评论"
+  announce_at: "发表在 "
+  visited_count: "浏览数 "
+  nocontent: "没有更多内容"
+  prev: '← 更早博客'
+  next: '更新博客 →'
+  new_post: '新建博客'
+  rss_description:  '如果你想关注我的每一篇文章,推荐进行订阅, 将右面的链接复制到你的阅读器里吧.'
+  head_description: 'WinDy的个人中心 - 记录人生经历 - 技术 生活 And 创业'
+
+  head:
+    home: '首页'
+    tech: '技术'
+    life: '生活'
+    creator: '创业'
+    about_me: '关于我'

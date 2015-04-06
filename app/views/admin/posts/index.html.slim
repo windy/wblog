@@ -1,16 +1,16 @@
 .row.admin-posts-field
   .small-12.columns
-    h3.blog-title 博客管理
+    h3.blog-title #{t('admin.posts') }
     table width="100%"
       thead
         tr
-          th 标题
-          th 概要
-          th 操作
+          th #{t('admin.posts_head.title')}
+          th #{t('admin.posts_head.summary')}
+          th #{t('admin.posts_head.operation')}
       tbody
         - @posts.each do |post|
           tr
-            td 
+            td
               = link_to post.title, blog_path(post)
             td.admin-post-summary-field
               i.fi-calendar
@@ -24,7 +24,6 @@
               i.fi-heart
               span #{ post.liked_count }
             td
-              = link_to '评论', admin_post_comments_path(post.id), class: 'edit-post-link'
-              = link_to '编辑', edit_admin_post_path(post), class: 'edit-post-link'
-              = link_to '删除', admin_post_path(post), method: 'DELETE', 'data-confirm' => '确认删除?'
-
+              = link_to t('comment'), admin_post_comments_path(post.id), class: 'edit-post-link'
+              = link_to t('edit'), edit_admin_post_path(post), class: 'edit-post-link'
+              = link_to t('destroy'), admin_post_path(post), method: 'DELETE', 'data-confirm' => '确认删除?'

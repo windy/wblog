@@ -2,30 +2,30 @@
 = simple_form_for(@post, url: url, html: {novalidate: '' }) do |f|
   .row
     .large-6.columns
-      = f.input :title, label: '标题', "ng-model"=>"title", input_html: { name: 'title' }
+      = f.input :title, label: t('admin.posts_attributes.title'), "ng-model"=>"title", input_html: { name: 'title' }
   .row
     .small-6.large-3.columns
-      = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], label: '类别', "ng-model"=>"type", input_html: { name: 'type' }
+      = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], label: t('admin.posts_attributes.type'), "ng-model"=>"type", input_html: { name: 'type' }
   .row
     .small-12.large-6.columns
-      = label_tag :labels, '标签'
+      = label_tag :labels, t('admin.posts_attributes.labels')
       = text_field_tag :labels, @post.labels_content(true), "ng-model"=>"labels", "ng-initial" => ''
 
   .row
     .small-12.columns
       p
-        | 已有标签:
+        | #{t('admin.posts_attributes.already_labels')}
         span
           - Label.all.each do |label|
             a.tag href="#" ng-click="addTag($event)" #{label.name}
-          
+
   / tabs and upload file field
   dl.tabs
     dd ng-class="{ active: body_active }"
-      a href="" ng-click="changeToBody()" 正文
+      a href="" ng-click="changeToBody()" #{t('admin.posts_attributes.content')}
     dd ng-class="{ active: !body_active }"
-      a href="#" ng-click="changeToPreview()" 预览
-    = link_to '上传图片', "#", :id=>'upload_photo'
+      a href="#" ng-click="changeToPreview()" #{t('admin.posts_attributes.preview')}
+    = link_to t('admin.posts_attributes.upload_photo'), "#", :id=>'upload_photo'
   input[type="file" style="display: none;"]
 
   .content-field ng-show="body_active" ng-model= 'content'
@@ -35,4 +35,4 @@
 
   .row
     .small-12.large-6.columns.posts-button
-      button 提交
+      button #{t('admin.posts_attributes.submit')}
