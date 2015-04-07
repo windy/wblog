@@ -18,7 +18,7 @@
 
   $scope.changeToPreview = ->
     $scope.body_active = false
-    $scope.previewHTML = '加载中...'
+    $scope.previewHTML = 'Loading...'
     $http.post '/admin/posts/preview', { content: $scope.content }
     .success (res)->
       $scope.previewHTML = res

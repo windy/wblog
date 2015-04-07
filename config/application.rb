@@ -13,7 +13,9 @@ module WBlog
   class Application < Rails::Application
 
     # Configure sensitive parameters which will be filtered from the log file.
-    I18n.config.enforce_available_locales = true
+    config.i18n.available_locales = [:en, :'zh-CN']
+    #I18n.config.enforce_available_locales = true
+    config.i18n.default_locale = (ENV['LOCALE'] || 'zh-CN').to_sym
     config.time_zone = 'Beijing'
     config.action_controller.action_on_unpermitted_parameters = :log
 

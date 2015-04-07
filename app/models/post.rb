@@ -15,7 +15,7 @@ class Post
 
   has_many :comments
   has_and_belongs_to_many :labels
-  
+
   has_many :likes
 
   validates :title, :presence=>true, :uniqueness=> true
@@ -36,6 +36,20 @@ class Post
     rd = CodeHTML.new
     md = Redcarpet::Markdown.new(rd, autolink: true, fenced_code_blocks: true)
     md.render(content)
+  end
+
+  def type_en
+    map = {
+      '技术' => 'Tech',
+      '生活' => 'Life',
+      '创业' => 'Creator',
+    }
+
+    if I18n.locale == :en
+      map[type]
+    else
+      type
+    end
   end
 
   def visited

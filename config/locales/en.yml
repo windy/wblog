@@ -1,18 +1,86 @@
 en:
-  upload_photo: "上传图片"
-  comment: "查看评论"
-  announce_at: "发表在 "
-  visited_count: "浏览数 "
-  nocontent: "没有更多内容"
-  prev: '← 更早博客'
-  next: '更新博客 →'
-  new_post: '新建博客'
-  rss_description:  '如果你想关注我的每一篇文章,推荐进行订阅, 将右面的链接复制到你的阅读器里吧.'
-  head_description: 'WinDy的个人中心 - 记录人生经历 - 技术 生活 And 创业'
-  
+  comment: "Comment"
+  edit: 'Edit'
+  destroy: 'Destroy'
+  announce_at: "Published at "
+  visited_count: "Viewed "
+  nocontent: "No More Content Here"
+  prev: '← Prev Post'
+  next: 'Next Post →'
+  qrcodetips: 'Continue reading with mobile phone or share it to Wechat Puppy'
+
+  home:
+    no_blog_here: 'There is no post here'
+    read: 'Read More >>'
+    created_at: 'Posted At'
+
+  subscribes:
+    title: 'SUBSCRIBE'
+    email: 'Email Subscribe'
+    wechat: 'Wechat Scan QR Code'
+    rss: 'RSS Subscribe'
+    submit: 'Submit'
+    submit_success: 'Submit Successfully'
+
+
   head:
-    home: '首页'
-    tech: '技术'
-    life: '生活'
-    creator: '创业'
-    about_me: '关于我'
+    home: 'Home'
+    tech: 'Tech'
+    life: 'Life'
+    creator: 'Startup'
+    timeline: 'Timeline'
+    about_me: 'About'
+
+  title:
+    home: 'Home'
+    timeline: 'Timeline'
+    about: 'About Me'
+
+  comment_attributes:
+    email: 'Format Validation Failed'
+  comment_placeholder:
+    content: 'Write your viewpoint...'
+    name: 'Your Name'
+    email: 'Your Email'
+    submit: 'Submit'
+    submitting: 'Submitting'
+    publish_success: 'Publish Successfully'
+    publish_fail: 'Publish Failed'
+
+  admin:
+    new_post: 'New Post'
+    posts: 'Manage Posts'
+    posts_attributes:
+      title: 'Title'
+      type: 'Type'
+      labels: 'Labels'
+      already_labels: 'Labels Haven: '
+      content: 'Content'
+      preview: 'Preview'
+      upload_photo: 'Upload Photo'
+      submit: 'Submit'
+    posts_head:
+      title: 'Title'
+      summary: 'Summary'
+      operation: 'Operation'
+
+    comments: 'Manage Comment'
+    comments_head:
+      name: 'Name'
+      email: 'Email'
+      content: 'Content'
+      created_at: 'Created at'
+      operation: 'Operation'
+      reply: 'Reply'
+      destroy: 'Destroy'
+
+    back: 'Back to Home'
+    logout: 'Logout'
+    dashboard:
+      head: 'System Information'
+      info: 'Info'
+      data: 'Data'
+      posts_count: 'Posts Count'
+      comments_count: 'Comments Count'
+      visited_count: 'Visited Count'
+      subscribes_count: 'Subscribes Count'

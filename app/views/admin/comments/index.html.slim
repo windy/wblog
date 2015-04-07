@@ -1,27 +1,27 @@
 .row.admin-posts-field
   .small-12.columns
-    h3.blog-title 评论管理
+    h3.blog-title #{t('admin.comments')}
     h4.blog-title
       = link_to @post.title, blog_path(@post), target: '_blank'
     table width="100%"
       thead
         tr
-          th 名字
-          th 邮箱
-          th 内容
-          th 时间
-          th 操作
+          th #{t('admin.comments_head.name')}
+          th #{t('admin.comments_head.email')}
+          th #{t('admin.comments_head.content')}
+          th #{t('admin.comments_head.created_at')}
+          th #{t('admin.comments_head.operation')}
       tbody
         - @comments.each do |comment|
           tr
             td #{comment.name}
-            td 
+            td
               = mail_to comment.email
-            td 
+            td
               p.pre #{comment.content}
             td
               = format_time(comment.created_at)
 
             td
-              = link_to '回复', blog_path(@post), target: '_blank', class: 'edit-post-link'
-              = link_to '删除', admin_post_comment_path(@post, comment), method: 'DELETE', 'data-confirm'=> '确认删除?'
+              = link_to t('admin.comments_head.reply'), blog_path(@post), target: '_blank', class: 'edit-post-link'
+              = link_to t('admin.comments_head.destroy'), admin_post_comment_path(@post, comment), method: 'DELETE', 'data-confirm'=> '确认删除?'
