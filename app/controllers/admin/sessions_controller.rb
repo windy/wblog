@@ -6,13 +6,13 @@ class Admin::SessionsController < ApplicationController
 
   def create
     if ENV['ADMIN_USER'].blank?
-      render :json=> { success: false, message: '系统未配置管理员账户, 无法登录' }
+      render :json=> { success: false, message: t('session.no_configuration') }
     elsif ENV['ADMIN_USER'] != params[:username]
-      render :json=> { success: false, message: '管理员账户错误' }
+      render :json=> { success: false, message: t('session.username_error') }
     elsif ENV['ADMIN_PASSWORD'] != params[:password]
-      render :json=> { success: false, message: '管理员密码错误' }
+      render :json=> { success: false, message: t('session.password_error') }
     else
-      flash[:notice] = '登录成功'
+      flash[:notice] = t('session.login_success')
       session[:login] = true
       render :json=> { success: true }
     end
