@@ -36,6 +36,10 @@ gem 'rest-client'
 gem 'unicorn'
 gem 'newrelic_rpm'
 
+gem 'mina', require: false
+gem 'mina-multistage', require: false
+gem 'mina-unicorn', :require => false
+
 group :development do
   gem 'spring'
   gem 'quiet_assets'
