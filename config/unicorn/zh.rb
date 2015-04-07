@@ -1,12 +1,10 @@
-app_path = "/home/ruby/wblog/current"
+app_path = File.expand_path( File.join(File.dirname(__FILE__), '..', '..'))
 
 worker_processes   1
 preload_app        true
 timeout            180
 listen             '/tmp/unicorn_wblog.sock'
 user               'ruby', 'ruby'
-working_directory  app_path
-pid                "#{app_path}/tmp/pids/unicorn_wblog.pid"
 stderr_path        "log/unicorn.log"
 stdout_path        "log/unicorn.log"
 
@@ -22,4 +20,8 @@ before_fork do |server, worker|
 end
 
 after_fork do |server, worker|
+end
+
+before_exec do |server|
+  ENV["BUNDLE_GEMFILE"] = "#{app_path}/current/Gemfile"
 end
