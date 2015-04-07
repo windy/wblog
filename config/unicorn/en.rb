@@ -24,5 +24,5 @@ after_fork do |server, worker|
 end
 
 before_exec do |server|
-  ENV["BUNDLE_GEMFILE"] = "#{app_path}/current/Gemfile"
+  ENV["BUNDLE_GEMFILE"] = "#{app_path}/Gemfile"
 end
