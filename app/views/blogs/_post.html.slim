@@ -4,7 +4,7 @@
   == post.content_html
 
 p.ptag.published-at
-  | 发表于:
+  | #{t('announce_at')}
   span #{format_date(post.created_at)}
 
 = render 'common/copyright'
@@ -14,14 +14,14 @@ p ng-controller="LikesController" ng-cloak=""
   button.like-button ng-show="! is_liked " ng-click="submit()"
     |{{ count }}
     span Like
-  button.like-button.liked ng-show=" is_liked " ng-click="cancel()" 
+  button.like-button.liked ng-show=" is_liked " ng-click="cancel()"
     |{{ count }}
     span Like
   div ng-controller = "QRCodesController"
     .qrcode
       a href="#" ng-model="qrcode" ng-init="qrcode=false" ng-click="show()"
-        i.fi-link 
-        | 二维码
+        i.fi-link
+        | #{t('qr_code')}
 
     .social-share ng-show='qrcode'
       .qrcode-wrapper

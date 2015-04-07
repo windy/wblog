@@ -3,6 +3,7 @@ en:
   edit: 'Edit'
   destroy: 'Destroy'
   announce_at: "Published at "
+  qr_code: 'QR Code'
   visited_count: "Viewed "
   nocontent: "No More Content Here"
   prev: '← Prev Post'

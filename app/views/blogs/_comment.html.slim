@@ -17,5 +17,5 @@
           |{{ comment.name + "  • " }}
           span.created-at
             |{{ comment.created_at }}
-        p.comment-content
-          | {{ comment.content }}
+        / ignore "white-space: pre" 's effect
+        <p class=comment-content>{{ comment.content }}</p>
