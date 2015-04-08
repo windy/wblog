@@ -43,7 +43,7 @@
           font-size: 1.325rem;
         }
       }
-      
+
       .top-bar-section ul{
         li, li a {
           background: 0 0;
@@ -66,7 +66,7 @@
   }
 
   .intro {
-    //background-color: #7A7A7A;
+    background-color: #7A7A7A;
     background: image-url('intro-bg.jpg') no-repeat bottom center scroll;
     background-size: cover;
     height: 100%;
@@ -107,7 +107,7 @@
   }
 
   #about, #skill {
-    background-color: #000;
+    background-color: #BABABA;
     color: #eee;
     padding: 10rem 0;
     h1, h2 {
