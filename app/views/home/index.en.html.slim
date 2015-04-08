@@ -1,0 +1,168 @@
+- content_for(:title) do
+  | #{t('title.about')}
+- content_for(:main) do
+  .about-page ng-app='app' ng-controller='AboutScrollController'
+    .top-bar-wrapper.contain-to-grid.fixed ng-class="{ active: ! is_top() }"
+      .row
+        .small-12.columns
+          nav.top-bar data-topbar='' role='navigation'
+            ul.title-area
+              li.name
+                h1
+                  a href='/' Back to WinDy's Blog
+            section.top-bar-section
+              ul.right
+                li
+                  a href='#about' du-smooth-scroll='' du-scrollspy='' ABOUT
+                li
+                  a href='#skill' du-smooth-scroll='' du-scrollspy='' SKILL
+                li
+                  a href='#work' du-smooth-scroll='' du-scrollspy='' PROTFOLIO
+                li
+                  a href='#contact' du-smooth-scroll='' du-scrollspy='' CONTACT
+    #intro
+    header.intro
+      .intro-heading
+        .row
+          .small-12.columns
+            h1.heading I'm Li Yafei
+            .sub-heading
+              p
+                | Find a loved job rather than found a good job.
+                br
+                | Technology advance NOT by human's intelligence, but by their laziness.
+            a.circle href='#about' du-smooth-scroll=''
+              i.fa.fa-angle-double-down
+    section#about
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title About Me
+          p I'm Li yafei, located on Shenzhen, China. I'm a Ruby on Rails full-stack Developer.
+          p
+            | I graduate from Jinlin university at 2009, and then I worked for
+            a href='http://sangfor.com' Sangfor Corporation
+            | in the last five years( 2009.6 - 2014.3 ) where I grew up to a senior software engineer from a noob.
+          p
+            | At March 2014, I create a startup company named Cywin( Chinese name: 创业赢) with my partner.
+          p
+            | Cywin.cn is an investment crowdfunding platform for startups and investors which was built by me alone in six month.
+          p
+            | Then it failed because the lack of resource below the line.
+          p
+            | After that, I try to research and attempt remote work, I build a new remote team called 80percent, which help people building a nice website, a mobile app, and etc.
+    section#skill
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title Skill
+          .skills
+            p I love coding rather than using it for earning a living.
+            ul
+              li Ruby on Rails( expert )
+              li Linux / OSX( expert )
+              li Git( expert )
+              li AngularJS( skilled )
+              li Bootstrap / Foundation 5( skilled )
+              li jQuery( skilled )
+              li HTML5
+              li CSS3
+              li Testing Automation
+              li Deploying Automation
+              li PostgreSQL / Mysql / Mongodb
+    section#work
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title Protfolio
+          ul.works
+            li
+              span.time 2014.12 - 2015.3
+              .project
+                span.name Jiaoluo
+                span.brief A MOOC education online system
+                span.link
+                  a href='http://jiaoluo.it'  target='_blank' http://jiaoluo.it
+              ul.project-description
+                li Build it alone for a friend in two month.
+                li Awful cool modern UI.
+                li Primary features: Wechat Scan Login, Alipay payment, Video HTML5, community system.
+                li Based on Ruby on Rails, using Turoblinks & RJS for ajax.
+                li Qiniu cloud storage, Wechat Oauth, Alipay integration.
+            li
+              span.time 2014.12 - 2015.2
+              .project
+                span.name Lina
+                span.brief A RESTful API provider based on Ruby on Rails
+                span.link
+                  a href='http://linarb.org'  target='_blank' http://linarb.org( Chinese only )
+              ul.project-description
+                li An awesome API framework just like Grape.
+                li Lina can help you generate APIDOC, zero-learning costs for Railser.
+                li Lina is power because it is by standing upon the shoulders of Giants.
+                li
+                  | For more information, goto:
+                  a href='http://linarb.org'  target='_blank' http://linarb.org( Chinese only )
+            li
+              span.time 2014.3 - 2014.10
+              .project
+                span.name Cywin
+                span.brief an investment crowdfunding platform for startups and investors
+                span.link
+                  a href='http://cywin.cn'  target='_blank' http://cywin.cn
+              ul.project-description
+                li I build it myself, using stack of Ruby on Rails, AngularJS, Foundation 5.
+                li A lot of feature: login/auth system, notification, state machine, sunspot search, background job, logic code is large 50+ controllers,  120+ testcases.
+                li cost six month
+                li
+                  | The code was open-source at March 2015, you can find it from
+                  a href='https://github.com/windy/cywin' target='_blank' github
+                  | .
+            li
+              span.time 2014.2 - 2014.3
+              .project
+                span.name wblog
+                span.brief the missing independent blog system of Ruby on Rails
+                span.link
+                  a href='https://github.com/windy/wblog' target='_blank' https://github.com/windy/wblog
+              ul.project-description
+                li A modern blog system
+                li Responsive page, like, share, comment system, dashboard.
+            li
+              span.time 2012 - 2013.10
+              .project
+                span.name ATM( Automation Testing Manager ) & ATT( Automation Testing Team framework )
+                span.brief an advancing keyword-driven automation testing framework in software testing.
+                span.link Sangfor
+              ul.project-description
+                li As a leader, I design and implement it with my team.
+                li Task schedule, Agent server, testcase manager, authentic system, svn integration, deployment automation.
+                li Keyword-driven is an advancing solution in software testing.
+    section#contact
+      .row
+        .small-12.large-9.large-centered.columns
+          h1.title Contact
+          p
+            | I'm working for building nice webapp & native app for you. Please contact me if you need help.
+          p
+            | If you are a developer, I also would like to talk with you about technology direct and sth.
+          p
+            | Please feel free to contact me.
+          p.mail_to
+            = mail_to 'lyfi2003@gmail.com'
+          ul.contact-ul
+            li
+              a href='https://github.com/windy' target='_blank'
+                i.fa.fa-github
+                | Github
+            li
+              a href='http://ruby-china.org/lyfi2003' target='_blank'
+                i.fa.fa-heart
+                | RubyChina
+            li
+              a href='https://twitter.com/lyfi2003' target='_blank'
+                i.fa.fa-twitter
+                | Twitter
+          p.modified-at
+            | Updated at 2015.3.28
+    .footer
+      .row
+        .small-12.columns
+          div Copyright © 2012 - 2015 en.yafeilee.me
