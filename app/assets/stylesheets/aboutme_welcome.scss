@@ -107,7 +107,7 @@
   }
 
   #about, #skill {
-    background-color: #BABABA;
+    background-color: #000;
     color: #eee;
     padding: 10rem 0;
     h1, h2 {
@@ -119,6 +119,7 @@
 
   #skill {
     background: image-url('mp.jpg') no-repeat bottom center scroll;
+    background-color: #BABABA;
     background-size: cover;
     .skills {
       color: #eee;
