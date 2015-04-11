@@ -3,6 +3,7 @@ zh-CN:
   edit: '编辑'
   destroy: '删除'
   announce_at: "发表于 "
+  qr_code: '二维码'
   visited_count: "浏览数 "
   nocontent: "没有新的内容"
   prev: '← 上一篇'
