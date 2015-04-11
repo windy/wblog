@@ -4,65 +4,79 @@ WBlog
 [![Code Climate](https://codeclimate.com/github/windy/wblog.png)](https://codeclimate.com/github/windy/wblog)
 [![Test Coverage](https://codeclimate.com/github/windy/wblog/coverage.png)](https://codeclimate.com/github/windy/wblog)
 
-为移动而生的 Ruby on Rails 开源博客. WBlog 基于 MIT 协议, 自由使用.
+The missing open source blog system on Ruby on Rails.
 
-* 用户极为友好的阅读体验
-* 自带干净的评论系统
-* 简洁而不简单的发布博客流程
+WBlog is open source blog which built for mobile first, it's licenced on MIT, use it for free!
 
-访问我的博客以体验: <http://yafeilee.me>
+Characteristic:
 
-后台禁止爬虫, 使用: <http://yafeilee.me/admin> 访问, 用户名密码可配置.
+* Awful reading feeling for reader
+* Inpendent comment system, store data on your own sever
+* With mardown support, you can post powerful and clean articles
+
+A demo came from my English blog: <http://en.yafeilee.me>
+
+Power Admin Dashboard: <http://en.yafeilee.me/admin>, user and password are configurable.
 
 ![screenshot](https://github.com/windy/wblog/raw/master/doc/wblog.gif)
 
 
-### 为什么重写 WBlog
+### Features
 
-老的 WBlog 是两年前构建的, 体验越来越差, 而个人不喜欢托管博客到其他的站点, 又没有合适的 Ruby on Rails 博客系统.
+* Responsive, iPhone, iPad, Notebook, PC, all are supported
+* QR Code attached article, scan and share it
+* Inpendent comment system, managed by yourself
+* Markdown supported, code highlight, especially for programmer, like you
+* Personalize it, commerial it, it depends on you
 
-* 优先以手机用户体验为主
-* 干净的评论系统
-* 良好的博客语法高亮支持
-* markdown, 简洁而不简单的后台
-* 要独立站点
+### Goal
 
-### 特色
+Made it to the best Ruby on Rails Blog system in the world.
 
-* 自适应于所有屏幕终端, 方便微信分享与评论
-* 优先考虑移动用户, 可方便使用二维码扫描与关注
-* 自带评论系统, 干净而方便
-* markdown 支持, 博客语法高亮, 方便技术性博客
-* 开源可商用, 个性化能力超强 ( 与非独立博客相比 )
+### Study it locally
 
-### 期望
+WBlog must run in Linux or Mac, it depends on Mongodb database. You can run it like a Ruby on rails as usual:
 
-成为 `Ruby on Rails` 下最好用的独立博客建站系统
+1. Clone it
 
-### 本地学习
+`git clone git@github.com:windy/wblog.git`
+`cd wblog `
 
-WBlog 是一个基本的博客系统, 使用它之前, 你需要准备一台 VPS 独立主机, 安装好 Ruby on Rails 与 Mongodb. 我希望你是熟悉 Ruby on Rails 的, 这样方便定制 WBlog, 现在 WBlog 还太小.
-
-假定你有环境后, 克隆本代码. 然后与往常的 Rails 项目一样, 输入
+2. Install dependencies & configure
 
 ```shell
 bundle install
 cp config/application.yml.example config/application.yml
 cp config/database.yml.example config/database.yml
-rails s
 ```
+
+Update application.yml & database.yml as you need
+
+3. Start it
+
+```shell
+raise s
+```
+
+If there is error found, please check your database user and password.
 
 OK, That's all.
 
-### 发布应用
+### Deployment
 
-WBlog 采用了 `mina` 作为自动化发布工具, 使用 `nginx`, `unicorn` 为相关容器.
+WBlog uses `mina` as automation deployment tool, uses `unicorn` as the Rack container.
 
-对应的发布流程在: [WBlog 的发布流程](https://github.com/windy/wblog/wiki)
+WBlog recommends `nginx` as reverse proxy server
 
-### 技术栈
+It will be very fast.
 
-* Ruby on Rails 4.1.8 / Ruby 2.0
+Ruby on Rails project deployment is another big topic, I would NOT talk it here.
+
+You can see WBlog wiki for more reading: [WBlog 的发布流程(Chinese only now)](https://github.com/windy/wblog/wiki)
+
+### Stack
+
+* Ruby on Rails 4.1.9 / Ruby 2
 * AngularJS
 * Foundation 5
 * mina
@@ -70,10 +84,10 @@ WBlog 采用了 `mina` 作为自动化发布工具, 使用 `nginx`, `unicorn` �
 * Mongodb
 
 
-## Ruby 相关开源博客推荐
+## Related open source blog systems
 
-* writings.io( Ruby on Rails 4.0.2 ): <https://github.com/chloerei/writings>
-* jekyll( Ruby Gem, Markdown, Static ): <http://jekyllrb.com/>
+* writings.io( Ruby on Rails 4.0.2 ): a multi users blog system <https://github.com/chloerei/writings>
+* jekyll( Ruby Gem, Markdown): Static blog system <http://jekyllrb.com/>
 * octopress( Github Pages ): <http://octopress.org/>
-* middleman( Ruby Gem, Static ): <https://github.com/middleman/middleman>
+* middleman( Ruby Gem ): Another static blog system <https://github.com/middleman/middleman>
 * robbin_site( Padrino ): <https://github.com/robbin/robbin_site>
