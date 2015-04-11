@@ -130,6 +130,8 @@ GEM
       rake
     mina-multistage (0.1.1)
       mina (>= 0.2.1)
+    mina-sidekiq (0.3.1)
+      mina
     mina-unicorn (0.0.4)
     mini_magick (4.1.0)
     mini_portile (0.6.2)
@@ -320,6 +322,7 @@ DEPENDENCIES
   jquery-rails
   mina
   mina-multistage
+  mina-sidekiq
   mina-unicorn
   mini_magick
   mongoid
