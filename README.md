@@ -8,6 +8,8 @@ The missing open source blog system on Ruby on Rails.
 
 WBlog is open source blog which built for mobile first, it's licenced on MIT, use it for free!
 
+[中文说明文档](/README.zh-CN.md)
+
 Characteristic:
 
 * Awful reading feeling for reader
