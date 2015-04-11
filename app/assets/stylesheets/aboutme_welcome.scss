@@ -82,6 +82,13 @@
         color: #fff;
       }
 
+      .version {
+        color: #3FBFFF;
+        &:hover {
+          color: #BFEAFF;
+        }
+      }
+
       .sub-heading {
         margin-top: 2rem;
         p {
