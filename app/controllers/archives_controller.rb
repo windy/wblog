@@ -28,7 +28,7 @@ class ArchivesController < ApplicationController
 
     respond_to do |format|
       format.json do
-        render :json => { 
+        render :json => {
           posts: @posts.collect { |post| build_summary(post) },
           start_with: start_with
         }
@@ -49,7 +49,7 @@ class ArchivesController < ApplicationController
   def build_summary(post)
     {
       title: post.title,
-      type: post.type,
+      type: post.type_en,
       created_at: format_date(post.created_at),
       id: post.id.to_s,
       liked_count: post.liked_count,
