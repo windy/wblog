@@ -13,6 +13,10 @@ SECRET_TOKEN: 'e4122773d4324fce978c52cde790d84d14f7194f377aea41b7b8302d1d10150e6
 #locale: en or zh-CN, zh-CN is default value
 LOCALE: 'zh-CN'
 
+# sidekiq redis namespace, if you configure two blog in on VPS, you should change it.
+# default is wblog
+REDIS_NAMESPACE: 'wblog'
+
 # META description for SEO
 INTRODUCE: '这是李亚飞的博客, 李亚飞是暂住在深圳的一名 Ruby 程序员, 这里是关于技术, 创业, 生活的思考'
 
