@@ -29,15 +29,15 @@ Power Admin Dashboard: <http://en.yafeilee.me/admin>, user and password are conf
 * QR Code attached article, scan and share it
 * Inpendent comment system, managed by yourself
 * Markdown supported, code highlight, especially for programmer, like you
-* Personalize it, commerial it, it depends on you
+* Personalize it, commercialize it, it all depends on you
 
 ### Goal
 
-Made it to the best Ruby on Rails Blog system in the world.
+Make it to the best Ruby on Rails Blog system in the world.
 
 ### Study it locally
 
-WBlog must run in Linux or Mac, it depends on Mongodb database. You can run it like a Ruby on Rails project as usual:
+WBlog MUST run in Linux or Mac, it depends on Mongodb database. You can run it like a Ruby on Rails project as usual:
 
 1. Clone it
 
@@ -45,7 +45,7 @@ WBlog must run in Linux or Mac, it depends on Mongodb database. You can run it l
   `cd wblog `
 
 2. Install dependencies & configure
-  
+
   ```shell
   bundle install
   cp config/application.yml.example config/application.yml
@@ -55,12 +55,17 @@ WBlog must run in Linux or Mac, it depends on Mongodb database. You can run it l
   Update application.yml & database.yml as you need
 
 3. Start it
-  
+
   ```shell
   rails s
   ```
 
-If there is any error found, please check your database's user and password.
+  If there is any error found, please check your database's user and password.
+
+4. Post the first article
+
+  visit: http://127.0.0.1:3000/admin, input your username and password that is just configurated in application.yml.
+  then, post a new article.
 
 OK, That's all.
 
