@@ -37,30 +37,30 @@ Made it to the best Ruby on Rails Blog system in the world.
 
 ### Study it locally
 
-WBlog must run in Linux or Mac, it depends on Mongodb database. You can run it like a Ruby on rails as usual:
+WBlog must run in Linux or Mac, it depends on Mongodb database. You can run it like a Ruby on Rails project as usual:
 
 1. Clone it
 
-`git clone git@github.com:windy/wblog.git`
-`cd wblog `
+  `git clone git@github.com:windy/wblog.git`
+  `cd wblog `
 
 2. Install dependencies & configure
+  
+  ```shell
+  bundle install
+  cp config/application.yml.example config/application.yml
+  cp config/database.yml.example config/database.yml
+  ```
 
-```shell
-bundle install
-cp config/application.yml.example config/application.yml
-cp config/database.yml.example config/database.yml
-```
-
-Update application.yml & database.yml as you need
+  Update application.yml & database.yml as you need
 
 3. Start it
+  
+  ```shell
+  rails s
+  ```
 
-```shell
-raise s
-```
-
-If there is error found, please check your database user and password.
+If there is any error found, please check your database's user and password.
 
 OK, That's all.
 
@@ -68,7 +68,7 @@ OK, That's all.
 
 WBlog uses `mina` as automation deployment tool, uses `unicorn` as the Rack container.
 
-WBlog recommends `nginx` as reverse proxy server
+WBlog recommends `nginx` as reverse proxy server.
 
 It will be very fast.
 
