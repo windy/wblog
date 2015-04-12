@@ -14,6 +14,7 @@ en:
     no_blog_here: 'There is no post here'
     read: 'Read More >>'
     created_at: 'Posted At'
+    recent: 'RECENT'
 
   subscribes:
     title: 'SUBSCRIBE'

@@ -14,6 +14,7 @@ zh-CN:
     no_blog_here: '这里没有博客'
     read: '阅读全文 >>'
     created_at: '发表于 '
+    recent: '近期博客'
 
   subscribes:
     title: '订阅我'
