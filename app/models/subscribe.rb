@@ -9,6 +9,10 @@ class Subscribe
     Subscribe.all.where(enable: true).map(&:email)
   end
 
+  def self.unsubscribe_list
+    Subscribe.all.where(enable: false).map(&:email)
+  end
+
   def self.unsubscribe?(email)
     Subscribe.where(email: email, enable: false).first.present?
   end

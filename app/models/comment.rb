@@ -14,7 +14,7 @@ class Comment
   validates_presence_of :post_id
 
   def reply_emails
-    Comment.where(post_id: self.post_id).collect(&:email).uniq - [ self.email ]
+    Comment.where(post_id: self.post_id).collect(&:email).uniq - [ self.email ] - Subscribe.unsubscribe_list
   end
 
   after_create do
