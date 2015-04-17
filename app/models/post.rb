@@ -73,7 +73,7 @@ class Post
 
   def labels_content( need_blank=false )
     content = self.labels.collect { |label| label.name }.join(", ")
-    content = '无' if content.blank? and !need_blank
+    content = I18n.t('none') if content.blank? and !need_blank
     content
   end
 
