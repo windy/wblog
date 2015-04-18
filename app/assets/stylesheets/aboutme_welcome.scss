@@ -23,6 +23,9 @@
 
 
 .about-page {
+  a {
+    word-wrap: break-word;
+  }
   @media only screen and (min-width: 40.063em) {
     .top-bar-wrapper {
       background: 0 0;
