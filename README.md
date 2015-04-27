@@ -47,12 +47,18 @@ WBlog MUST run in Linux or Mac, it depends on Mongodb database. You can run it l
 2. Install dependencies & configure
 
   ```shell
-  bundle install
-  cp config/application.yml.example config/application.yml
-  cp config/database.yml.example config/database.yml
+  # Install mongodb ( see how to install it on your platform )
+  # on Mac, you can install it like this:
+  brew install mongodb 
   ```
 
-  Update application.yml & database.yml as you need
+  ```shell
+  bundle install
+  cp config/application.yml.example config/application.yml
+  cp config/mongoid.yml.example config/mongoid.yml
+  ```
+
+  Update application.yml & mongoid.yml as you need
 
 3. Start it
 
