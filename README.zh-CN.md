@@ -43,16 +43,29 @@ WBlog
 
 WBlog 是一个基本的博客系统, 使用它之前, 你需要准备一台 VPS 独立主机, 安装好 Ruby on Rails 与 Mongodb. 我希望你是熟悉 Ruby on Rails 的, 这样方便定制 WBlog, 现在 WBlog 还太小.
 
-假定你有环境后, 克隆本代码. 然后与往常的 Rails 项目一样, 输入
+假定你有环境后, 克隆本代码. 然后与往常的 Rails 项目一样, 先安装 mongodb
 
-```shell
-bundle install
-cp config/application.yml.example config/application.yml
-cp config/database.yml.example config/database.yml
-rails s
-```
+  ```shell
+  # Install mongodb ( see how to install it on your platform )
+  # on Mac, you can install it like this:
+  brew install mongodb 
+  ```
 
-OK, That's all.
+配置 WBlog:
+
+  ```shell
+  bundle install
+  cp config/application.yml.example config/application.yml
+  cp config/mongoid.yml.example config/mongoid.yml
+  ```
+
+  根据你个人情况, 更新对应的 application.yml & mongoid.yml.
+
+就这样, 可以尝试启动了:
+
+  ```shell
+  rails s
+  ```
 
 ### 发布应用
 
