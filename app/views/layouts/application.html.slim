@@ -6,8 +6,8 @@ html
       = yield(:meta)
     title
       = content_for?(:title) ? yield(:title) + " | #{ENV['SITE_NAME']}" : ENV['SITE_NAME']
-    = stylesheet_link_tag    "application", media: 'all'
-    link href="/favicon.png" type='image/png' rel="icon"
+    = stylesheet_link_tag "application", media: 'all'
+    = favicon_link_tag 'favicon.png', type: 'image/png'
     = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application"
     = csrf_meta_tags
