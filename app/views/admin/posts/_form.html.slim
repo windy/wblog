@@ -5,7 +5,7 @@
       = f.input :title, label: t('admin.posts_attributes.title'), "ng-model"=>"title", input_html: { name: 'title' }
   .row
     .small-6.large-3.columns
-      = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], label: t('admin.posts_attributes.type'), "ng-model"=>"type", input_html: { name: 'type' }
+      = f.input :type, :as=>:select, :collection=> Post.types, label: t('admin.posts_attributes.type'), "ng-model"=>"type", input_html: { name: 'type' }
   .row
     .small-12.large-6.columns
       = label_tag :labels, t('admin.posts_attributes.labels')

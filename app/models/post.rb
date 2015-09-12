@@ -5,6 +5,12 @@ class Post
   TECH = "技术"
   LIFE = "生活"
   CREATOR = "创业"
+  POST_MAP = {
+    '技术' => 'Tech',
+    '生活' => 'Life',
+    '创业' => 'Creator',
+  }
+
   include Mongoid::Document
   include Mongoid::Timestamps
   include Mongoid::Pagination
@@ -38,18 +44,17 @@ class Post
     md.render(content)
   end
 
-  def type_en
-    map = {
-      '技术' => 'Tech',
-      '生活' => 'Life',
-      '创业' => 'Creator',
-    }
-
+  def self.types
+    types = [TECH, LIFE, CREATOR]
     if I18n.locale == :en
-      map[type]
+      types.map {|type| POST_MAP[type]}
     else
-      type
+      types
     end
+  end
+
+  def type_en
+    I18n.locale == :en ? POST_MAP[type] : type
   end
 
   def visited
