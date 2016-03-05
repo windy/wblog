@@ -13,8 +13,8 @@ WBlog is open source blog which built for mobile first, it's licenced on MIT, us
 Characteristic:
 
 * Awful reading feeling for reader
-* Inpendent comment system, store data on your own sever
-* With mardown support, you can post powerful and clean articles
+* Independent comment system, store data on your own sever
+* With mardown supported, you can post both powerful and clean formatted article(s)
 
 A demo came from my English blog: <http://en.yafeilee.me>
 
@@ -47,6 +47,7 @@ WBlog MUST run in Linux or Mac, it depends on Mongodb database. You can run it l
 1. Clone it
 
   `git clone git@github.com:windy/wblog.git`
+  
   `cd wblog `
 
 2. Install dependencies & configure
@@ -90,11 +91,11 @@ It will be very fast.
 
 Ruby on Rails project deployment is another big topic, I would NOT talk it here.
 
-You can see WBlog wiki for more reading: [WBlog 的发布流程(Chinese only now)](https://github.com/windy/wblog/wiki)
+You can read WBlog wiki for more information: [WBlog 的发布流程(Chinese only now)](https://github.com/windy/wblog/wiki)
 
 ### Stack
 
-* Ruby on Rails 4.1.9 / Ruby 2
+* Ruby on Rails 4.2.x / Ruby 2.x
 * AngularJS
 * Foundation 5
 * mina
