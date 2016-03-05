@@ -1,5 +1,5 @@
 development:
-  sessions:
+  clients:
     default:
       database: w_blog_development
       hosts:
@@ -7,7 +7,7 @@ development:
   options:
 
 production:
-  sessions:
+  clients:
     default:
       database: w_blog_production
       hosts:
@@ -15,7 +15,7 @@ production:
   options:
 
 test:
-  sessions:
+  clients:
     default:
       database: w_blog_test
       hosts:

@@ -1,14 +1,13 @@
 if ENV['RUBYTAOBAO']
-  source 'http://ruby.taobao.org'
+  source 'https://ruby.taobao.org'
 else
   source 'https://rubygems.org'
 end
 
-gem 'rails', '4.1.9'
-#gem 'sprockets', '2.12.1'
+gem 'rails', '4.2.5'
 gem 'sass-rails'
 gem 'coffee-rails', '~> 4.1.0'
-gem 'uglifier', '>= 1.3.0'
+gem 'uglifier', '>= 2.7.2'
 gem 'jquery-rails'
 gem 'foundation-rails', '~> 5.5.1'
 gem 'foundation-icons-sass-rails'
@@ -32,6 +31,7 @@ gem 'figaro'
 gem 'rqrcode-with-patches', require: 'rqrcode'
 gem 'chunky_png'
 gem 'sidekiq'
+gem 'redis-namespace'
 gem 'rest-client'
 gem 'unicorn'
 gem 'newrelic_rpm'

@@ -20,7 +20,11 @@ RSpec.configure do |config|
   config.after :each do
     DatabaseCleaner.clean
   end
-  
+
   config.mock_with :rspec
   config.infer_base_class_for_anonymous_controllers = false
+end
+
+RSpec::Sidekiq.configure do |config|
+  config.warn_when_jobs_not_processed_by_sidekiq = false
 end

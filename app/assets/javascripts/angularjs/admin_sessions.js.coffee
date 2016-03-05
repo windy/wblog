@@ -10,7 +10,7 @@
         password: $scope.password
     .success (res)->
       if res.success
-        urlback = $cookies.urlback || 'admin'
+        urlback = $cookies.urlback || '/admin'
         window.location = urlback
       else
         $scope.password = ''
