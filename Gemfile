@@ -4,7 +4,7 @@ else
   source 'https://rubygems.org'
 end
 
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.5.2'
 gem 'sass-rails'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 2.7.2'
