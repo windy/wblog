@@ -22,6 +22,11 @@ Power Admin Dashboard: <http://en.yafeilee.me/admin>, user and password are conf
 
 ![screenshot](https://github.com/windy/wblog/raw/master/doc/wblog.gif)
 
+### System dependencies
+
+* Ruby ( >= 2.0 )
+* Mongodb ( >= 2.7 )
+* Nginx ( >= 1.4 )
 
 ### Features
 
