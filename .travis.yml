@@ -1,7 +1,7 @@
 # http://about.travis-ci.org/docs/user/build-configuration/
 language: ruby
 
-bundler_args: '--without production'
+#bundler_args: '--without production'
 
 script: CODECLIMATE_REPO_TOKEN=7d6b988f58234bf1560305412d10d9530902beebdbe2fb938b6a934f1d352578 bundle exec rake
 
@@ -9,7 +9,7 @@ before_install:
   - "cat /etc/timezone"
   - "grep -i processor /proc/cpuinfo | wc -l"
   - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
-  - "gem install bundler --pre"
+  - "gem install bundler"
   - "bundle -v"
 
 before_script:
