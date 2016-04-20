@@ -17,7 +17,7 @@ html
       .off-canvas-wrapper
         .off-canvas-wrapper-inner data-off-canvas-wrapper=''
           .off-canvas.position-left id="offCanvas" data-off-canvas=''
-            ul.vertical.menu.mobile-ofc
+            ul.vertical.menu
               li
                 label Menu
               li
@@ -49,16 +49,16 @@ html
               .top-bar-right
                 ul.dropdown.menu data-dropdown-menu=''
                   li
-                    a href='#' 首页
+                    = link_to t('head.home'), root_path
                   li
-                    a href='#' 时间线
+                    = link_to t('head.timeline'), archives_path
                   li
-                    a href='#' 关于
+                    = link_to t('head.about'), about_path
             - flash.each do |name, msg|
               - if msg.is_a?(String)
-                div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""
+                div class=("callout #{name.to_sym == :notice ? "success" : "alert"}") data-closable=""
                   = content_tag :div, msg
-                  a.close href="#"  &times;
+                  button.close-button type='button' data-close='' &times;
             = render 'common/welcome_new_year'
             = yield
             = render "layouts/footer"

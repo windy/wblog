@@ -5,6 +5,7 @@ class Admin::SessionsController < ApplicationController
   end
 
   def create
+    #TODO
     if ENV['ADMIN_USER'].blank?
       render :json=> { success: false, message: t('admin.session.no_configuration') }
     elsif ENV['ADMIN_USER'] != params[:username]

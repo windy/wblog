@@ -4,24 +4,24 @@ html
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     title Admin Page for #{ENV['SITE_NAME']}
     = stylesheet_link_tag    "application"
-    = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application"
     = csrf_meta_tags
   body
-    nav.top-bar data-topbar=""
-      ul.title-area
-        li.name
-          h1
+    .title-bar data-responsive-toggle="example-menu" data-hide-for="medium"
+      button class="menu-icon" type="button" data-toggle=''
+      .title-bar-title Menu
+
+    .top-bar#dashboard-topbar
+      .top-bar-left
+        ul.menu
+          li
             = link_to "Dashboard For #{ENV['SITE_NAME']}", admin_root_path
-        li.toggle-topbar.menu-icon
-          a href="#" Menu
-      section.top-bar-section
-        ul.left
           li
             = link_to t('admin.new_post'), new_admin_post_path
           li
             = link_to t('admin.posts'), admin_posts_path
-        ul.right
+      .top-bar-right
+        ul.menu
           li
             = link_to t('admin.back'), root_path
           - if admin_username
@@ -29,9 +29,9 @@ html
               = link_to admin_username + ' [ ' + t('admin.logout') + ' ]', admin_session_path(1), method: 'DELETE'
     - flash.each do |name, msg|
       - if msg.is_a?(String)
-        div class=("alert-box #{name.to_sym == :notice ? "success" : "alert"}") data-alert=""
+        div class=("callout #{name.to_sym == :notice ? "success" : "alert"}") data-closable=""
           = content_tag :div, msg
-          a.close href="#"  &times;
+          button.close-button type='button' data-close='' &times;
     .admin-main-field ng-app="app"
       = yield
     = render "layouts/footer"
