@@ -14,13 +14,13 @@ gem 'font-awesome-sass'
 gem 'angularjs-rails'
 
 gem 'jbuilder'
+gem 'pg'
 
 gem 'redcarpet'
 gem 'rouge'
 gem 'slim-rails'
 gem 'simple_form'
 gem 'mini_magick'
-gem 'carrierwave-mongoid'
 gem 'html_truncator'
 gem 'nokogiri'
 gem 'figaro'
@@ -62,5 +62,5 @@ group :test, :development do
   gem "rspec-rails", ">= 2.8.1"
   gem 'pry-rails'
   gem 'pry-nav'
-  gem 'factory_girl_rails'
+  #gem 'factory_girl_rails'
 end

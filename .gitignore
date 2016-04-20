@@ -13,3 +13,4 @@
 /config/mongoid.yml
 /public/assets/*
 *.old
+*.bak

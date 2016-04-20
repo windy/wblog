@@ -1,18 +1,12 @@
 require File.expand_path('../boot', __FILE__)
 
-# Pick the frameworks you want:
-require "active_model/railtie"
-require "action_controller/railtie"
-require "action_mailer/railtie"
-require "action_view/railtie"
-require "sprockets/railtie"
-require "rails/test_unit/railtie"
+require 'rails/all'
+
 Bundler.require(:default, Rails.env)
 
 module WBlog
   class Application < Rails::Application
 
-    # Configure sensitive parameters which will be filtered from the log file.
     config.i18n.available_locales = [:en, :'zh-CN']
     #I18n.config.enforce_available_locales = true
     config.i18n.default_locale = (ENV['LOCALE'] || 'zh-CN').to_sym

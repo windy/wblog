@@ -1,8 +1,4 @@
-class Subscribe
-  include Mongoid::Document
-  field :email, type: String
-  field :enable, type: Mongoid::Boolean, default: true
-
+class Subscribe < ApplicationRecord
   validates :email, presence: true, uniqueness: true, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i, message: '地址无效' }
 
   def self.subscribe_list

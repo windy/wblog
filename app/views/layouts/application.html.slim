@@ -8,41 +8,22 @@ html
       = content_for?(:title) ? yield(:title) + " | #{ENV['SITE_NAME']}" : ENV['SITE_NAME']
     = stylesheet_link_tag "application", media: 'all'
     = favicon_link_tag 'favicon.png', type: 'image/png'
-    = javascript_include_tag "vendor/modernizr"
     = javascript_include_tag "application"
     = csrf_meta_tags
   body
     - if content_for?(:main)
       = yield(:main)
     - else
-      .off-canvas-wrap data-offcanvas=''
-        .inner-wrap
-          nav.tab-bar
-            section.left-small
-              a.left-off-canvas-toggle.menu-icon href="#"
-                span
-            h1.title.middle-text
-              = link_to ENV['SITE_NAME'], root_path
-          aslide.left-off-canvas-menu
-            ul.off-canvas-list
+      .off-canvas-wrapper
+        .off-canvas-wrapper-inner data-off-canvas-wrapper=''
+          .off-canvas.position-left id="offCanvas" data-off-canvas=''
+            ul.vertical.menu.mobile-ofc
               li
                 label Menu
               li
                 = link_to root_path do
                   i.fi-home
                   | #{t('head.home')}
-              li
-                = link_to '/tech' do
-                  i.fi-social-evernote
-                  | #{t('head.tech')}
-              li
-                = link_to '/life' do
-                  i.fi-torsos-male-female
-                  | #{t('head.life')}
-              li
-                = link_to '/creator' do
-                  i.fi-lightbulb
-                  | #{t('head.creator')}
               li
                 label Archive
               li
@@ -54,7 +35,25 @@ html
                 = link_to about_path do
                   i.fi-torso
                   | #{t('head.about')}
-          section.main-section ng-app="app"
+          .off-canvas-content data-off-canvas-content=''
+            .title-bar.hide-for-medium.my-topbar
+              .title-bar-left
+                button.menu-icon type='button' data-open='offCanvas'
+                span.title-bar-title
+                  = link_to ENV['SITE_NAME'], root_path
+            .top-bar.show-for-medium.my-topbar
+              .top-bar-left
+                ul.dropdown.menu data-dropdown-menu=''
+                  li
+                    = link_to ENV['SITE_NAME'], root_path, class: 'title'
+              .top-bar-right
+                ul.dropdown.menu data-dropdown-menu=''
+                  li
+                    a href='#' 首页
+                  li
+                    a href='#' 时间线
+                  li
+                    a href='#' 关于
             - flash.each do |name, msg|
               - if msg.is_a?(String)
                 div class=("alert-box #{name == :notice ? "success" : "alert"}") data-alert=""
@@ -63,6 +62,5 @@ html
             = render 'common/welcome_new_year'
             = yield
             = render "layouts/footer"
-          a.exit-off-canvas
 
     = render 'layouts/google_analytics'

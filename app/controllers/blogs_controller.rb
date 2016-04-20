@@ -2,8 +2,8 @@
 class BlogsController < ApplicationController
 
   def index
-    @newest = Post.desc(:created_at).first
-    @recent = Post.desc(:created_at).to_a[1..3]
+    @newest = Post.order(created_at: :desc).first
+    @recent = Post.order(created_at: :desc).to_a[1..3]
     respond_to do |format|
       format.html
       format.json
@@ -27,7 +27,7 @@ class BlogsController < ApplicationController
       format.json
     end
   end
-  
+
   def edit
     @post = Post.find( params[:id] )
     redirect_to edit_admin_post_path(@post)
