@@ -25,7 +25,7 @@ WBlog::Application.routes.draw do
   get '/qrcodes' => 'qrcodes#show'
 
   namespace :admin do
-    resources :posts do
+    resources :posts, except: [:show] do
       collection do
         post :preview
       end

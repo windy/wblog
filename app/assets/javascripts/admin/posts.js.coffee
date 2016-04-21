@@ -7,12 +7,32 @@ $(document).ready ->
   $('a#upload_photo').click ->
     $('input[type=file]').show().focus().click().hide()
     false
-  
+
+  $('#tabs').on 'change.zf.tabs', ()->
+    if $('#preview:visible').length > 0
+      $('#preview').text('Loading...')
+      $.ajax
+        url: '/admin/posts/preview'
+        type: 'POST'
+        data:
+          content: $('#content-input').val()
+        success: (data)->
+          $('#preview').html(data)
+
+  $('a.tag').click (event)->
+    event.preventDefault()
+    new_labels = $(this).text()
+    if $('#labels').val() == ''
+      labels = new_labels
+    else
+      labels = $('#labels').val() + ", #{new_labels}"
+    $('#labels').val(labels)
+
   opt =
     type: 'POST'
     url: "/photos"
     success: (data,status,xhr)->
-      txtBox = $("#post_content")
+      txtBox = $("#content-input")
       caret_pos = txtBox.caret('pos')
       src_merged = "\n" + data + "\n"
       source = txtBox.val()
@@ -21,6 +41,5 @@ $(document).ready ->
       txtBox.caret('pos',caret_pos + src_merged.length)
       txtBox.scope().content = txtBox.val()
       txtBox.focus()
-  
 
   $('input[type=file]').fileUpload opt

@@ -19,9 +19,10 @@ class BlogsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post.visited
-    @prev = Post.where(:created_at.lt => @post.created_at).desc(:created_at).where(:id.ne => @post.id).first
-    @next = Post.where(:created_at.gt => @post.created_at).asc(:created_at).where(:id.ne => @post.id).first
+    @prev = Post.where('created_at < ?', @post.created_at).order(created_at: :desc).first
+    @prev = Post.where('created_at > ?', @post.created_at).order(created_at: :asc).first
     @comments = @post.comments
+    @likes_count = @post.likes.count
     respond_to do |format|
       format.html
       format.json

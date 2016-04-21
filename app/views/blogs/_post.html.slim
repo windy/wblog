@@ -8,21 +8,15 @@ p.ptag.published-at
   span #{format_date(post.created_at)}
 
 = render 'common/copyright'
-
 hr.blog-over
-p ng-controller="LikesController" ng-cloak=""
-  button.like-button ng-show="! is_liked " ng-click="submit()"
-    |{{ count }}
-    span Like
-  button.like-button.liked ng-show=" is_liked " ng-click="cancel()"
-    |{{ count }}
-    span Like
-  div ng-controller = "QRCodesController"
-    .qrcode
-      a href="#" ng-model="qrcode" ng-init="qrcode=false" ng-click="show()"
-        i.fi-link
-        | #{t('qr_code')}
+p
+  button.button.like-button type='button'
+    | #{@likes_count} Like
+  .qrcode
+    a#qrcode-link href="#"
+      i.fi-link
+      | #{t('qr_code')}
 
-    .social-share ng-show='qrcode'
-      .qrcode-wrapper
-        = render partial: "qrcode", locals: { str: blog_url(post) }
+  .social-share
+    .qrcode-wrapper
+      = render partial: "qrcode", locals: { str: blog_url(post) }

@@ -2,14 +2,11 @@
 = simple_form_for(@post, url: url, html: {novalidate: '' }) do |f|
   .row
     .large-6.columns
-      = f.input :title, label: t('admin.posts_attributes.title'), "ng-model"=>"title", input_html: { name: 'title' }
-  .row
-    .small-6.large-3.columns
-      = f.input :type, :as=>:select, :collection=> [ Post::TECH, Post::LIFE, Post::CREATOR ], label: t('admin.posts_attributes.type'), "ng-model"=>"type", input_html: { name: 'type' }
+      = f.input :title, label: t('admin.posts_attributes.title'), input_html: { name: 'title' }
   .row
     .small-12.large-6.columns
       = label_tag :labels, t('admin.posts_attributes.labels')
-      = text_field_tag :labels, @post.labels_content(true), "ng-model"=>"labels", "ng-initial" => ''
+      = text_field_tag :labels, @post.labels_content(true)
 
   .row
     .small-12.columns
@@ -17,22 +14,23 @@
         | #{t('admin.posts_attributes.already_labels')}
         span
           - Label.all.each do |label|
-            a.tag href="#" ng-click="addTag($event)" #{label.name}
+            a.tag href="#" #{label.name}
 
   / tabs and upload file field
-  dl.tabs
-    dd ng-class="{ active: body_active }"
-      a href="" ng-click="changeToBody()" #{t('admin.posts_attributes.content')}
-    dd ng-class="{ active: !body_active }"
-      a href="#" ng-click="changeToPreview()" #{t('admin.posts_attributes.preview')}
+  ul.tabs#tabs data-tabs=''
+    li.tabs-title.is-active
+      a href="#content" #{t('admin.posts_attributes.content')}
+    li.tabs-title
+      a href="#preview" #{t('admin.posts_attributes.preview')}
     = link_to t('admin.posts_attributes.upload_photo'), "#", :id=>'upload_photo'
   input[type="file" style="display: none;"]
 
-  .content-field ng-show="body_active" ng-model= 'content'
-    = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', "ng-model"=>'content', 'ng-initial'=>'' }
+  .tabs-content data-tabs-content='tabs'
+    .tabs-panel.content-field.is-active#content
+      = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', id: 'content-input' }
 
-  .preview.markdown ng-hide="body_active" ng-bind-html=" trustAsPreviewHTML() "
+    .tabs-panel.preview.markdown#preview
 
   .row
     .small-12.large-6.columns.posts-button
-      button #{t('admin.posts_attributes.submit')}
+      button.button type='submit' #{t('admin.posts_attributes.submit')}

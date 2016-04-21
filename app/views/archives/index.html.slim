@@ -1,30 +1,21 @@
 - content_for(:title) do
-  | #{@type ? @type : t('title.timeline')}
-.row ng-controller="ArchivesController" ng-cloak=""
+  | #{t('title.timeline')}
+.row
   .small-12.large-9.large-centered.columns
-    ul.archives-field ng-model="type" ng-init=" type= '#{@type}' "
-      li ng-repeat=" post in posts "
-        a.blog-title ng-href="{{ visit(post.id) }}"
-          |{{ post.title }}
-        p.tags-field
-          i.fi-calendar
-          span
-            |{{ post.created_at }}
-          i.fi-list-thumbnails
-          span
-            |{{ post.type }}
-          i.fi-pricetag-multiple
-          span
-            |{{ post.labels }}
-          i.fi-torsos
-          span
-            |{{ post.visited_count }}
-          i.fi-heart
-          span
-            |{{ post.liked_count }}
-      .no-more-field
-        p ng-show="no_more_flag" #{t('nocontent')}
-
-      .load-more
-        button.small ng-click="load()" ng-show="!loading_flag" Load More
-        button.small ng-show="loading_flag" Loading
+    ul.archives-field
+      - @posts.each do |post|
+        li
+          = link_to post.title, blog_path(post), class: 'blog-title'
+          p.tags-field
+            i.fi-calendar
+            span
+              = format_date(post.created_at)
+            i.fi-pricetag-multiple
+            span
+              = post.labels_content
+            i.fi-torsos
+            span
+              = post.visited_count
+            i.fi-heart
+            span
+              = post.liked_count

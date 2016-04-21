@@ -10,7 +10,7 @@ html
     = favicon_link_tag 'favicon.png', type: 'image/png'
     = javascript_include_tag "application"
     = csrf_meta_tags
-  body
+  body data-whatinput="mouse"
     - if content_for?(:main)
       = yield(:main)
     - else

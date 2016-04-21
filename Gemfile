@@ -12,6 +12,8 @@ gem 'foundation-rails', '~> 6.2.1'
 gem 'foundation-icons-sass-rails'
 gem 'font-awesome-sass'
 gem 'angularjs-rails'
+gem 'carrierwave'
+gem 'kaminari', git: 'git@github.com:amatsuda/kaminari.git'
 
 gem 'jbuilder'
 gem 'pg'
@@ -47,6 +49,8 @@ group :development do
   gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
+  gem 'byebug'
 
   gem 'rack-cors', :require => 'rack/cors'
 end
