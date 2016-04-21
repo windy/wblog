@@ -11,9 +11,9 @@ gem 'jquery-rails'
 gem 'foundation-rails', '~> 6.2.1'
 gem 'foundation-icons-sass-rails'
 gem 'font-awesome-sass'
-gem 'angularjs-rails'
 gem 'carrierwave'
 gem 'kaminari', git: 'git@github.com:amatsuda/kaminari.git'
+gem 'turbolinks', '~> 5.x'
 
 gem 'jbuilder'
 gem 'pg'
@@ -33,7 +33,7 @@ gem 'redis-namespace'
 gem 'rest-client'
 gem 'newrelic_rpm'
 
-gem 'unicorn'
+gem 'puma'
 
 gem 'mina', require: false
 gem 'mina-multistage', require: false

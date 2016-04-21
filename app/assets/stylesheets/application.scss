@@ -9,9 +9,14 @@
 @import 'blogs';
 @import 'head';
 @import 'qrcodes';
-@import 'angularjs';
 @import 'comments';
 @import 'highlight';
 @import 'footer';
 @import 'like_and_weixin';
 @import 'admin/*';
+
+.turbolinks-progress-bar {
+  height: 2px;
+  background-color: red;
+}
+

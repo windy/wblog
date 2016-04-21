@@ -1,9 +1,10 @@
 //= require jquery
 //= require jquery_ujs
+//= require turbolinks
 //= require foundation
-//= require angularjs
 //= require 'jquery.html5-fileupload'
 //= require_tree .
 
-
-$(function(){ $(document).foundation(); });
+$(document).on('turbolinks:load', function(){
+  $(document).foundation();
+});

@@ -3,7 +3,7 @@
 # You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
 #
 
-$(document).ready ->
+$(document).on 'turbolinks:load', ->
   $('a#upload_photo').click ->
     $('input[type=file]').show().focus().click().hide()
     false
