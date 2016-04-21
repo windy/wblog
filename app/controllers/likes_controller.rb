@@ -6,15 +6,6 @@ class LikesController < ApplicationController
     render :json=> { success: true, count: post.liked_count }
   end
 
-  def is_liked
-    post = Post.find( params[:blog_id] )
-    if post.likes.where(id: params[:id]).first
-      render text: true
-    else
-      render text: false
-    end
-  end
-
   def create
     post = Post.find( params[:blog_id] )
     like = post.likes.build

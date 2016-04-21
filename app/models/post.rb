@@ -52,4 +52,8 @@ class Post < ActiveRecord::Base
   def liked_count
     self.likes.size
   end
+
+  def liked_by?(like_id)
+    !! self.likes.where(id: like_id).first
+  end
 end

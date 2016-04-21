@@ -8,13 +8,6 @@
 */
 
 
-/*
-本插件操作 textarea 或者 input 内的插入符
-只实现了获得插入符在文本框中的位置，我设置
-插入符的位置.
-*/
-
-
 (function() {
   (function(factory) {
     if (typeof define === 'function' && define.amd) {
@@ -85,7 +78,7 @@
                            /         \
              <   I really [[HATE] IE []]>
                                       \_endRange end-point.
-            
+
             " > -1" mean the start end-point will be the same or right to the end end-point
                      * simplelly, all in the end.
             */
@@ -99,7 +92,7 @@
                     I really[ [HATE] IE   ]>
                           <-[
                   I reall[y  [HATE] IE   ]>
-              
+
                 will return how many unit have moved.
               */
 

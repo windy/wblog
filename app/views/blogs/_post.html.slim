@@ -10,8 +10,9 @@ p.ptag.published-at
 = render 'common/copyright'
 hr.blog-over
 p
-  button.button.like-button type='button'
-    | #{@likes_count} Like
+  button.button.like-button class="#{'liked' if post.liked_by?(cookies[:like])}" type='button' data-url=blog_likes_path(post)
+    span.count #{@likes_count}
+    span Like
   .qrcode
     a#qrcode-link href="#"
       i.fi-link
