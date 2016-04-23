@@ -6,5 +6,4 @@
         | #{"  • "}
         span.created-at
           | #{format_time(comment.created_at) }
-      / ignore "white-space: pre" 's effect
-      <p class=comment-content>#{comment.content}</p>
+      = render partial: 'comments/comment_pre', locals: { comment: comment }

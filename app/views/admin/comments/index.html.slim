@@ -18,7 +18,7 @@
             td
               = mail_to comment.email
             td
-              p.pre #{comment.content}
+              = simple_format(comment.content)
             td
               = format_time(comment.created_at)
 

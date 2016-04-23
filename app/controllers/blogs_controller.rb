@@ -20,7 +20,7 @@ class BlogsController < ApplicationController
     @post = Post.find(params[:id])
     @post.visited
     @prev = Post.where('created_at < ?', @post.created_at).order(created_at: :desc).first
-    @prev = Post.where('created_at > ?', @post.created_at).order(created_at: :asc).first
+    @next = Post.where('created_at > ?', @post.created_at).order(created_at: :asc).first
     @comments = @post.comments.order(created_at: :desc)
     @likes_count = @post.likes.count
     respond_to do |format|
