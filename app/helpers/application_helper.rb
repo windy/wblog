@@ -1,5 +1,3 @@
 module ApplicationHelper
-  def format_date(time)
-    time.strftime('%Y-%m-%d')
-  end
+  # some format function is defined in app/controllers/application_controller.rb
 end

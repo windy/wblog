@@ -1,0 +1,2 @@
+$('#alert-container .text').text(' <%= @comment.errors.full_messages.join(' ') %>' );
+$('#alert-container').removeClass('success').addClass('alert').show();

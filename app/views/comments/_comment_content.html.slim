@@ -1,0 +1,10 @@
+.comment-diag
+  - comments.each do |comment|
+    .comment-wrapper
+      p.name
+        | #{comment.name}
+        | #{"  • "}
+        span.created-at
+          | #{format_time(comment.created_at) }
+      / ignore "white-space: pre" 's effect
+      <p class=comment-content>#{comment.content}</p>

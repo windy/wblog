@@ -44,7 +44,7 @@ zh-CN:
   comment_placeholder:
     content: '发表你的评论...'
     name: '名字'
-    email: '邮箱'
+    email: '邮箱, your@example.com'
     submit: '提交'
     submitting: '提交中'
     publish_success: '发表成功'

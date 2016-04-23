@@ -8,19 +8,22 @@ class CommentsController < ApplicationController
   end
 
   def create
+    cookies[:name] = comment_params[:name]
+    cookies[:email] = comment_params[:email]
     @post = Post.find( params[:blog_id] )
-    comment = @post.comments.build(comment_params)
+    @comment = @post.comments.build(comment_params)
 
-    if comment.save
-      render :json=> { success: true, data: build_json(comment) }
+    if @comment.save
+      @comments = @post.comments.order(created_at: :desc)
+      render :create_ok
     else
-      render :json=> { success: false, message: comment.errors.full_messages.join(", ") }
+      render :create_fail
     end
   end
 
   private
   def comment_params
-    params.permit(:content, :name, :email)
+    params.require(:comment).permit(:content, :name, :email)
   end
 
   def build_json(comment)

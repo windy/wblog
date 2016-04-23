@@ -206,6 +206,9 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-i18n (5.0.0.beta3)
+      i18n (~> 0.7)
+      railties (~> 5.0.0.beta1)
     railties (5.0.0.beta3)
       actionpack (= 5.0.0.beta3)
       activesupport (= 5.0.0.beta3)
@@ -354,6 +357,7 @@ DEPENDENCIES
   quiet_assets
   rack-cors
   rails (>= 5.0.0.beta3, < 5.1)
+  rails-i18n (~> 5.0.0.beta3)
   redcarpet
   redis-namespace
   rest-client

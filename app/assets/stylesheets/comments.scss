@@ -1,3 +1,7 @@
+#alert-container {
+  display: none;
+}
+
 .comment-field {
   background-color: #333333;
   padding-top: 3rem;
@@ -79,7 +83,7 @@
   &:hover {
     background-color: #444444;
   }
-  
+
   .name {
     color: #DDDDDD;
   }
@@ -90,5 +94,5 @@
     white-space: pre-wrap;
     word-break: break-all;
   }
-  
+
 }

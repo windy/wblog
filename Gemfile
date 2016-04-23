@@ -16,6 +16,8 @@ gem 'kaminari', git: 'git@github.com:amatsuda/kaminari.git'
 gem 'turbolinks', '~> 5.x'
 gem 'js_cookie_rails'
 
+gem 'rails-i18n', '~> 5.0.0.beta3'
+
 gem 'jbuilder'
 gem 'pg'
 
