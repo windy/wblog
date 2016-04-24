@@ -1,15 +1,15 @@
 - content_for(:title) do
   | #{t('title.about')}
 - content_for(:main) do
-  .about-page ng-app='app' ng-controller='AboutScrollController'
-    .top-bar-wrapper.contain-to-grid.fixed ng-class="{ active: ! is_top() }"
+  .about-page
+    .top-bar-wrapper.contain-to-grid.fixed
       .row
         .small-12.columns
-          nav.top-bar data-topbar='' role='navigation'
-            ul.title-area
-              li.name
-                h1
-                  a href='/' Back to WinDy's Blog
+          nav#about-top-bar.top-bar
+            .top-bar-left
+              ul.menu
+                li
+                  a.name href='/' Back to WinDy Blog
             section.top-bar-section
               ul.right
                 li
@@ -166,4 +166,4 @@
     .footer
       .row
         .small-12.columns
-          div Copyright © 2012 - 2015 en.yafeilee.me
+          div Copyright © 2012 - 2016 en.yafeilee.me
