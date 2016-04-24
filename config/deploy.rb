@@ -49,7 +49,9 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
-      invoke :'puma:restart'
+      # Insure puma is start when restart it
+      invoke :'puma:start'
+      invoke :'puma:phased_restart'
       invoke :'sidekiq:restart'
     end
 
