@@ -7,8 +7,12 @@
     margin-bottom: 2rem;
   }
 
-  #post_content {
+  #content-input {
     min-height: 20rem;
+  }
+
+  .content-field {
+    padding: 0;
   }
 
   .preview {
@@ -25,7 +29,7 @@
 
   #upload_photo {
     float: right;
-    margin-top: 2rem;
+    margin-top: 1.875rem;
   }
 
   tr {

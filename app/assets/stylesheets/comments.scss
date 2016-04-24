@@ -1,3 +1,7 @@
+#alert-container {
+  display: none;
+}
+
 .comment-field {
   background-color: #333333;
   padding-top: 3rem;
@@ -43,14 +47,17 @@
     color: #b3b3b3;
   }
   .comment-content {
-    padding-bottom: 2.275rem;
+    padding-bottom: 1rem;
     padding-left: 0.275rem;
     border-bottom: 1px dashed #8a8a8a;
     margin-bottom: 0;
-    white-space: pre;
+
+    p {
+      margin-bottom: 0.325rem;
+    }
   }
   .name {
-    padding-top: 0.5rem;
+    padding-top: 1rem;
     padding-left: 0.275rem;
   }
 }
@@ -75,11 +82,11 @@
 }
 
 .comment-wrapper {
-  margin-bottom: 0.5rem;
+
   &:hover {
     background-color: #444444;
   }
-  
+
   .name {
     color: #DDDDDD;
   }
@@ -87,8 +94,7 @@
   .comment-content {
     word-wrap: break-word;
     color: #DDDDDD;
-    white-space: pre-wrap;
     word-break: break-all;
   }
-  
+
 }

@@ -1,5 +1,4 @@
 WBlog::Application.routes.draw do
-  root :to => 'blogs#index'
 
   resources :blogs, :only=>[:index, :show, :edit] do
     collection do
@@ -24,19 +23,20 @@ WBlog::Application.routes.draw do
   # photos
   resources :photos, only: [:create]
   get '/qrcodes' => 'qrcodes#show'
-  
+
   namespace :admin do
-    resources :posts do
+    resources :posts, except: [:show] do
       collection do
         post :preview
       end
       resources :comments
     end
     resources :sessions, :only=>[:new, :create, :destroy]
-    root to: 'dashboard#index'
+    root 'dashboard#index'
   end
 
   get '/about' => 'home#index'
   get '/mobile' => 'home#mobile'
-  get '/:type' => 'archives#index', constraints: { type: /tech|life|creator/ }
+
+  root 'blogs#index'
 end

@@ -1,14 +1,15 @@
 - content_for(:meta) do
-  meta name="description" content="#{@post.meta_content}"
+  meta name="description" content=@post.meta_content
   meta name="keywords" content=@post.labels_content
 
 - content_for(:title) do
   | #{@post.title}
 .row.blog-wrapper
   .small-12.large-9.large-centered.columns
-    = render partial: "post", :locals=> { :post=> @post }
+    = render partial: "post", :locals=> { post: @post }
 .comment-field
   = render partial: 'comment', locals: { comments: @comments, post: @post }
+  p
   .row
     .small-12.large-9.large-centered.columns
       - if @prev

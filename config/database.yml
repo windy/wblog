@@ -1,0 +1,20 @@
+development:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: wblog_development
+  pool:     5
+
+test:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: wblog_test
+  pool:     5
+
+production:
+  adapter:  postgresql
+  host:     localhost
+  encoding: unicode
+  database: wblog_production
+  pool:     5

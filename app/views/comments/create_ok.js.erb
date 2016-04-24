@@ -1,0 +1,4 @@
+$('#comment_content').val('');
+$('#alert-container .text').text(' <%= t('comment_placeholder.publish_success') %>' );
+$('#alert-container').removeClass('alert').addClass('success').show();
+$('.comment-diag').replaceWith('<%= j render partial: 'comment_content', locals: { comments: @comments }%>');

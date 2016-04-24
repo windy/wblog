@@ -23,6 +23,14 @@
 
 
 .about-page {
+  .fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+    left: 0;
+  }
+
   a {
     word-wrap: break-word;
   }
@@ -42,15 +50,19 @@
       .top-bar {
         background: 0 0;
         margin: 1.5rem 0;
-        .name h1 {
+        .name {
           font-size: 1.325rem;
         }
       }
 
-      .top-bar-section ul{
+      .top-bar ul{
+        & {
+          background: 0 0;
+        }
         li, li a {
           background: 0 0;
           font-size: 1rem;
+          color: #fefefe;
         }
 
         li a:hover {

@@ -10,16 +10,6 @@ class Admin::PostsController < ApplicationController
     @post = Post.find( params[:id] )
   end
 
-  def show
-    post = Post.find( params[:id] )
-    render :json=> {
-      title: post.title,
-      type: post.type,
-      labels: post.labels_content(true),
-      content: post.content
-    }
-  end
-
   def destroy
     @post = Post.find( params[:id] )
     if @post.destroy
@@ -32,7 +22,7 @@ class Admin::PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.desc(:created_at)
+    @posts = Post.order(created_at: :desc).page(params[:page])
   end
 
   def create
@@ -71,7 +61,7 @@ class Admin::PostsController < ApplicationController
   private
   def initialize_or_create_labels(labels)
     @post.labels = []
-    labels.split(",").each do |name|
+    labels.split(",").map { |i| i.strip }.uniq.each do |name|
       label = Label.find_or_initialize_by(name: name.strip)
       label.save!
       @post.labels << label

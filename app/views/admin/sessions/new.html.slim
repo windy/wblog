@@ -1,16 +1,12 @@
 .row ng-controller="AdminSessionsController"
   .small-12.large-8.columns
     h3.blog-title #{t('admin.session.title')}
-    form ng-submit="login()"
+    = form_tag admin_sessions_path
       .row
         .small-12.large-8.columns
           = label_tag 'username', t('admin.session.username')
-          = text_field_tag 'username', nil, placeholder: t('admin.session.username_placeholder'), "ng-model"=>"username"
+          = text_field_tag 'username', params[:username], placeholder: t('admin.session.username_placeholder')
           = label_tag 'username', t('admin.session.password')
-          = password_field_tag 'password', nil, placeholder: t('admin.session.password_placeholder'), "ng-model"=>"password"
+          = password_field_tag 'password', params[:password], placeholder: t('admin.session.password_placeholder')
 
-          p
-            .alert-box.warning ng-show=" error_msg "
-              |{{ error_msg }}
-
-      button #{t('admin.session.login_button')}
+      button.button type='submit' #{t('admin.session.login_button')}

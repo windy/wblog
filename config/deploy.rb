@@ -5,17 +5,19 @@ require 'mina/multistage'
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rvm'    # for rvm support. (http://rvm.io)
-require 'mina/unicorn'
+require 'mina/rvm'
+require 'mina/puma'
 require 'mina_sidekiq/tasks'
 
 # Manually create these paths in shared/ (eg: shared/config/database.yml) in your server.
 # They will be linked in the 'deploy:link_shared_paths' step.
-set :shared_paths, ['config/mongoid.yml', 'config/application.yml', 'log', 'tmp', 'public/uploads', 'public/personal' ]
+set :shared_paths, ['config/database.yml', 'config/application.yml', 'log', 'tmp', 'public/uploads', 'public/personal' ]
+
+# rvm path
+set :rvm_path, '/usr/local/rvm/scripts/rvm'
 
 task :environment do
-  queue! %[source /usr/local/rvm/scripts/rvm]
-  queue! %[rvm use 2.0.0]
+  invoke :'rvm:use[2.2.3]'
 end
 
 task :setup => :environment do
@@ -24,7 +26,7 @@ task :setup => :environment do
     queue! %[chmod g+rx,u+rwx "#{deploy_to}/shared/#{dir}"]
   end
 
-  ['config/mongoid.yml', 'config/application.yml'].each do |file|
+  ['config/database.yml', 'config/application.yml'].each do |file|
     queue! %[touch "#{deploy_to}/shared/#{file}"]
     queue  %[echo "-----> Be sure to edit 'shared/#{file}'."]
   end
@@ -47,8 +49,12 @@ task :deploy => :environment do
     invoke :'rails:assets_precompile'
 
     to :launch do
-      invoke :'unicorn:restart'
+      # Insure puma is start when restart it
+      invoke :'puma:start'
+      invoke :'puma:phased_restart'
       invoke :'sidekiq:restart'
     end
+
+    invoke :'deploy:cleanup'
   end
 end

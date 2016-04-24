@@ -1,25 +1,25 @@
 - content_for(:title) do
   | #{t('title.about')}
 - content_for(:main) do
-  .about-page ng-app='app' ng-controller='AboutScrollController'
-    .top-bar-wrapper.contain-to-grid.fixed ng-class="{ active: ! is_top() }"
+  .about-page
+    .top-bar-wrapper.contain-to-grid.fixed
       .row
         .small-12.columns
-          nav.top-bar data-topbar='' role='navigation'
-            ul.title-area
-              li.name
-                h1
-                  a href='/' 回到博客
-            section.top-bar-section
-              ul.right
+          nav#about-top-bar.top-bar
+            .top-bar-left
+              ul.menu
                 li
-                  a href='#about' du-smooth-scroll='' du-scrollspy='' 关于
+                  a.name href='/' 回到博客
+            .top-bar-right
+              ul.menu
                 li
-                  a href='#skill' du-smooth-scroll='' du-scrollspy='' 技能
+                  a href='#about' 关于
                 li
-                  a href='#work' du-smooth-scroll='' du-scrollspy='' 作品
+                  a href='#skill' 技能
                 li
-                  a href='#contact' du-smooth-scroll='' du-scrollspy='' 联系
+                  a href='#work' 作品
+                li
+                  a href='#contact' 联系
     #intro
     header.intro
       .intro-heading
@@ -32,7 +32,7 @@
                 | 懒, 是人类进步的动力
                 br
                 | 所谓技术, 就是让你的生活越来越懒
-            a.circle href='#about' du-smooth-scroll=''
+            a.circle href='#about'
               i.fa.fa-angle-double-down
     section#about
       .row

@@ -60,6 +60,10 @@
   padding-left: 0rem;
 }
 
+#qrcode-home {
+  padding: 1rem 2rem 1rem 0;
+}
+
 .qrcode {
   display: inline-block;
   float: right;
@@ -79,6 +83,10 @@
   p {
     clear: both;
   }
+}
+
+.social-share {
+  display: none;
 }
 
 .subscribe-ul {

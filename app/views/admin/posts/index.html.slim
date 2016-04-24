@@ -15,8 +15,6 @@
             td.admin-post-summary-field
               i.fi-calendar
               span #{format_time(post.created_at)}
-              i.fi-list
-              span #{ post.type_en }
               i.fi-pricetag-multiple
               span #{ post.labels_content }
               i.fi-torsos
@@ -27,3 +25,4 @@
               = link_to t('comment'), admin_post_comments_path(post.id), class: 'edit-post-link'
               = link_to t('edit'), edit_admin_post_path(post), class: 'edit-post-link'
               = link_to t('destroy'), admin_post_path(post), method: 'DELETE', 'data-confirm' => '确认删除?'
+    == paginate @posts

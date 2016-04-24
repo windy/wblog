@@ -1,13 +1,11 @@
 //= require jquery
 //= require jquery_ujs
-//= require foundation/foundation
-//= require foundation/foundation.alert
-//= require foundation/foundation.topbar
-//= require foundation/foundation.offcanvas
-//= require foundation/foundation.magellan
-//= require angularjs
+//= require turbolinks
+//= require foundation
+//= require js.cookie
 //= require 'jquery.html5-fileupload'
 //= require_tree .
 
-
-$(function(){ $(document).foundation(); });
+$(document).on('turbolinks:load', function(){
+  $(document).foundation();
+});

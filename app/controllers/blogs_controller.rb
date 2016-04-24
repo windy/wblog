@@ -2,8 +2,8 @@
 class BlogsController < ApplicationController
 
   def index
-    @newest = Post.desc(:created_at).first
-    @recent = Post.desc(:created_at).to_a[1..3]
+    @newest = Post.order(created_at: :desc).first
+    @recent = Post.order(created_at: :desc).to_a[1..3]
     respond_to do |format|
       format.html
       format.json
@@ -19,15 +19,16 @@ class BlogsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @post.visited
-    @prev = Post.where(:created_at.lt => @post.created_at).desc(:created_at).where(:id.ne => @post.id).first
-    @next = Post.where(:created_at.gt => @post.created_at).asc(:created_at).where(:id.ne => @post.id).first
-    @comments = @post.comments
+    @prev = Post.where('created_at < ?', @post.created_at).order(created_at: :desc).first
+    @next = Post.where('created_at > ?', @post.created_at).order(created_at: :asc).first
+    @comments = @post.comments.order(created_at: :desc)
+    @likes_count = @post.likes.count
     respond_to do |format|
       format.html
       format.json
     end
   end
-  
+
   def edit
     @post = Post.find( params[:id] )
     redirect_to edit_admin_post_path(@post)

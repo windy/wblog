@@ -6,15 +6,18 @@ class Admin::SessionsController < ApplicationController
 
   def create
     if ENV['ADMIN_USER'].blank?
-      render :json=> { success: false, message: t('admin.session.no_configuration') }
+      flash.now[:alert] = t('admin.session.no_configuration')
+      render :new
     elsif ENV['ADMIN_USER'] != params[:username]
-      render :json=> { success: false, message: t('admin.session.username_error') }
+      flash.now[:alert] = t('admin.session.username_error')
+      render :new
     elsif ENV['ADMIN_PASSWORD'] != params[:password]
-      render :json=> { success: false, message: t('admin.session.password_error') }
+      flash.now[:alert] = t('admin.session.password_error')
+      render :new
     else
       flash[:notice] = t('admin.session.login_success')
       session[:login] = true
-      render :json=> { success: true }
+      redirect_to admin_root_path
     end
   end
 

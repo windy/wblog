@@ -1,3 +1,10 @@
 .dash-title {
   padding-top: 2rem;
 }
+
+#dashboard-topbar {
+  background-color: $light-gray;
+  ul {
+    background-color: $light-gray;
+  }
+}

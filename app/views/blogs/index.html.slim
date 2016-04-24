@@ -27,20 +27,11 @@
     .row.ng-cloak ng-controller='AboutController'
       .small-12.medium-6.large-12.columns
         ul.subscribe-ul
-          - if ENV['MAIL_SERVER'].present?
-            li
-              = link_to t('subscribes.email'), '', "ng-click"=>"click('email')"
-              .email-subscribe ng-show="type == 'email'"
-                = text_field_tag 'email', nil, placeholder: 'your@email.com', 'ng-model'=>'email'
-                button.small ng-click="subscribe()" ng-disabled="! email_validate()" #{t('subscribes.submit')}
-                span.subscribe-success ng-show="subscribe_success" #{t('subscribes.submit_success')}
-                span.subscribe-fail ng-show="subscribe_success == false" {{subscribe_fail_msg}}
           li
-            = link_to t('subscribes.wechat'), '', "ng-click"=>"click('weixin')"
-            .weixin-subscribe ng-show="type == 'weixin'"
-              = render partial: "qrcode", locals: { str: root_url }
+            a data-toggle="qrcode-home" #{t('subscribes.wechat') }
+            #qrcode-home.weixin-subscribe.hide data-toggler='hide' data-url=root_url
           li
-            = link_to t('subscribes.rss'), '', "ng-click"=>"click('rss')"
-            .rss-subscribe ng-show="type == 'rss'"
+            a data-toggle="rss-home" #{t('subscribes.rss') }
+            #rss-home.rss-subscribe.hide data-toggler='hide'
               = link_to rss_blogs_path do
                 - image_tag('rss.png')
