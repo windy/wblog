@@ -152,9 +152,11 @@ GEM
       rake
     mina-multistage (1.0.2)
       mina (>= 0.2.1)
+    mina-puma (0.3.0)
+      mina
+      puma (>= 2.13)
     mina-sidekiq (0.3.1)
       mina
-    mina-unicorn (0.4.0)
     mini_magick (4.5.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -345,8 +347,8 @@ DEPENDENCIES
   listen (~> 3.0.5)
   mina
   mina-multistage
+  mina-puma
   mina-sidekiq
-  mina-unicorn
   mini_magick
   newrelic_rpm
   nokogiri
