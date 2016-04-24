@@ -1,5 +1,5 @@
 set :domain, 'yafeilee.me'
 set :deploy_to, '/home/ruby/wblog_en'
 set :repository, 'git@github.com:windy/wblog.git'
-set :branch, 'new_design'
+set :branch, 'master'
 set :user, 'ruby'
