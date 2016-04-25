@@ -12,7 +12,7 @@ gem 'foundation-rails', '~> 6.2.1'
 gem 'foundation-icons-sass-rails'
 gem 'font-awesome-sass'
 gem 'carrierwave'
-gem 'kaminari', git: 'git@github.com:amatsuda/kaminari.git'
+gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'turbolinks', '~> 5.x'
 gem 'js_cookie_rails'
 
