@@ -11,6 +11,7 @@
 
 /config/application.yml
 /config/mongoid.yml
+/config/database.yml
 /public/assets/*
 *.old
 *.bak
