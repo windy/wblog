@@ -37,6 +37,6 @@ class @GoogleAnalytics
   @analyticsId: ->
     '<%= ENV['GOOGLE'] %>'
 
-<%- if ENV['GOOGLE'] %>
+<% if ENV['GOOGLE'] %>
   GoogleAnalytics.load()
 <% end %>
