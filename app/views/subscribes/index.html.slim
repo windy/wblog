@@ -1,9 +1,9 @@
 .row
   .large-9.large-centered.columns
-  h2 退订服务
-  hr
-  form action='' ng-controller='SubscribesController'
-    .row
-      .small-12.large-6.columns
-        = text_field_tag :email, nil, placeholder: 'your@email.com', 'ng-model' => 'email'
-    button ng-click="cancel()" 退订
+    h2 订阅成功, 我们将提供:
+
+    ul
+      li 第一时间新博客邮件通知
+      li 有相关评论 @ 你的时候邮件通知
+
+    p 你可以随时取消订阅

@@ -1,0 +1,9 @@
+.row
+  .large-9.large-centered.columns
+    h2 退订服务
+    hr
+    = simple_form_for @subscribe, url: unsubscribes_path do |f|
+      .row
+        .small-12.large-6.columns
+          = f.input :email, placeholder: 'your@email.com'
+      = f.submit

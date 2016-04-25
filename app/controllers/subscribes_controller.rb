@@ -3,24 +3,23 @@ class SubscribesController < ApplicationController
   def index
   end
 
-  def create
-    subscribe = Subscribe.find_or_initialize_by(email: params[:email])
-    subscribe.enable = true
+  def new
+    @subscribe = Subscribe.new
+  end
 
-    if subscribe.save
-      render :json => { success: true }
+  def create
+    @subscribe = Subscribe.find_or_initialize_by(email: subscribe_params[:email])
+    @subscribe.enable = true
+
+    if @subscribe.save
+      redirect_to subscribes_path, notice: '订阅成功'
     else
-      render :json => { success: false, message: subscribe.errors.full_messages.join(", ")}
+      render :new
     end
   end
 
-  def cancel
-    subscribe = Subscribe.find_or_initialize_by(email: params[:email])
-    subscribe.enable = false
-    subscribe.save
-
-    flash[:notice] = "退订成功: #{params[:email]}"
-    render :json => { success: true }
+  def subscribe_params
+    params.require(:subscribe).permit(:email)
   end
 
 end
