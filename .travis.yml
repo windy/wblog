@@ -11,6 +11,8 @@ before_install:
   - "echo 'gem: --no-ri --no-rdoc' > ~/.gemrc"
   - "gem install bundler"
   - "bundle -v"
+
+before_script:
   - "cp -f config/database.yml.example config/database.yml"
   - "cp -f config/application.yml.example config/application.yml"
   - "bundle exec rake db:drop db:create db:schema:load --trace 2>&1"
