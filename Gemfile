@@ -67,7 +67,8 @@ end
 
 group :test, :development do
   gem "rspec-rails", ">= 2.8.1"
+  gem 'rails-controller-testing'
   gem 'pry-rails'
   gem 'pry-nav'
-  #gem 'factory_girl_rails'
+  gem 'factory_girl_rails'
 end

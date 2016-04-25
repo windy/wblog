@@ -3,7 +3,7 @@ require 'spec_helper'
 describe LikesController do
 
   it "get index" do
-    a = Post.create!(title: 'one', content: '1'*31, type: Post::TECH )
+    a = Post.create!(title: 'one', content: '1'*31)
     get 'index', blog_id: a.id
     expect(JSON.parse(response.body)['count']).to eq(0)
     a.likes << Like.new
@@ -13,13 +13,13 @@ describe LikesController do
   end
 
   it "post create" do
-    a = Post.create!(title: 'one', content: '1'*31, type: Post::TECH )
+    a = Post.create!(title: 'one', content: '1'*31)
     post 'create', blog_id: a.id
     expect(a.likes.size).to eq(1)
   end
 
   it "DELETE destroy" do
-    a = Post.create!(title: 'one', content: '1'*31, type: Post::TECH )
+    a = Post.create!(title: 'one', content: '1'*31)
     like = Like.new
     a.likes << like
     a.save!

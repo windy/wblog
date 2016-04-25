@@ -9,7 +9,7 @@ describe BlogsController do
       first = Post.first
       first.update(title: 'first')
 
-      second = Post.desc(:created_at)[1]
+      second = Post.order(created_at: :desc)[1]
       get :index
       expect(assigns(:newest)).to eq(first)
       expect(assigns(:recent)[0]).to eq(second)
@@ -28,13 +28,13 @@ describe BlogsController do
       comment2.save!
 
       get :show, id: post.id
-      expect(assigns(:comments)[0]).to eq(comment1)
-      expect(assigns(:comments)[1]).to eq(comment2)
+      expect(assigns(:comments)[0]).to eq(comment2)
+      expect(assigns(:comments)[1]).to eq(comment1)
     end
 
     it "#prev, #next" do
       posts = create_list(:post_list, 3)
-      posts = Post.order_by(created_at: 'asc')
+      posts = Post.order(created_at: :asc)
       selected = posts[1]
       s_prev = posts[0]
       s_next = posts[2]

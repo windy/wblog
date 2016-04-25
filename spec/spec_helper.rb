@@ -23,6 +23,12 @@ RSpec.configure do |config|
 
   config.mock_with :rspec
   config.infer_base_class_for_anonymous_controllers = false
+
+  [:controller, :view, :request].each do |type|
+    config.include ::Rails::Controller::Testing::TestProcess, :type => type
+    config.include ::Rails::Controller::Testing::TemplateAssertions, :type => type
+    config.include ::Rails::Controller::Testing::Integration, :type => type
+  end
 end
 
 RSpec::Sidekiq.configure do |config|
