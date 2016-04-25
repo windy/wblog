@@ -15,16 +15,17 @@
         = link_to t('home.read'), blog_path(@newest), class: 'read-more'
         p.published-at #{t('home.created_at')} #{format_date(@newest.created_at)}
 
-      h4.recent-title #{t('home.recent')}
-      ul.recent-content
-        - @recent.each do |re|
-          li = link_to "#{re.title}",blog_path(re)
+      - if @recent.present?
+        h4.recent-title #{t('home.recent')}
+        ul.recent-content
+          - @recent.each do |re|
+            li = link_to re.title,blog_path(re)
 
   .large-3.columns.large-offset-1.self-introduce.self-introduce-index
     /*Adjust it in common/welcome*/
     = render 'common/welcome'
     h4 #{t('subscribes.title')}
-    .row.ng-cloak ng-controller='AboutController'
+    .row
       .small-12.medium-6.large-12.columns
         ul.subscribe-ul
           li
