@@ -7,10 +7,10 @@ class Comment < ApplicationRecord
   validates :content, presence: true
 
   def reply_emails
-    Comment.where(post_id: self.post_id).collect(&:email).uniq - [ self.email ] - Subscribe.unsubscribe_list
+    Comment.where(post_id: self.post_id).collect(&:email).uniq - [ self.email ] - Subscribe.unsubscribe_list - [ ENV['ADMIN_USER'] ]
   end
 
-  after_create do
+  after_commit on: :create do
     if ENV['MAIL_SERVER'].present? && ENV['ADMIN_USER'].present? && ENV['ADMIN_USER'] =~ /@/
       Rails.logger.info 'comment created, comment worker start'
       NewCommentWorker.perform_async(self.id.to_s, ENV['ADMIN_USER'])

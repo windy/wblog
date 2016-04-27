@@ -24,7 +24,7 @@ WBlog::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  config.middleware.insert_before 0, "Rack::Cors" do
+  config.middleware.insert_before 0, Rack::Cors do
     allow do
       origins '*'
       resource '*', :headers => :any, :methods => [:get, :post, :options]

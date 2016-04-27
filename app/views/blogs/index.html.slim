@@ -28,6 +28,9 @@
     .row
       .small-12.medium-6.large-12.columns
         ul.subscribe-ul
+          - if ENV['ADMIN_USER'].present? && ENV['ADMIN_USER'].include?('@')
+            li
+              = link_to t('subscribes.email'), new_subscribe_path
           li
             a data-toggle="qrcode-home" #{t('subscribes.wechat') }
             #qrcode-home.weixin-subscribe.hide data-toggler='hide' data-url=root_url

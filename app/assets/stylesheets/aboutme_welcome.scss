@@ -37,7 +37,14 @@
   a {
     word-wrap: break-word;
   }
-  @media only screen and (min-width: 40.063em) {
+  //@media only screen and (min-width: 40.063em) {
+  @media screen and (max-width: 39.9375em) {
+    .top-bar-wrapper {
+      .top-bar, .top-bar-left, .top-bar-right {
+        width: auto !important;
+      }
+    }
+  }
     .top-bar-wrapper {
       background: 0 0;
       transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -77,7 +84,7 @@
         }
       }
     }
-  }
+  //}
 
   p {
     font-size: 1.275rem;

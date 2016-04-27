@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   validates :title, :presence=>true, :uniqueness=> true
   validates :content, :presence=>true, :length => { :minimum=> 30 }
 
-  after_create do
+  after_commit on: :create do
     if ENV['MAIL_SERVER'].present?
       NewPostWorker.perform_async(self.id.to_s)
     end

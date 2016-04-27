@@ -79,7 +79,7 @@ GEM
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
     connection_pool (2.2.0)
-    database_cleaner (1.5.2)
+    database_cleaner (1.5.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
     domain_name (0.5.20160310)
@@ -142,7 +142,7 @@ GEM
     js_cookie_rails (1.0.1)
       railties (>= 3.1)
     json (1.8.3)
-    listen (3.0.6)
+    listen (3.1.1)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9.7)
     loofah (2.0.3)
@@ -354,7 +354,7 @@ DEPENDENCIES
   jquery-rails
   js_cookie_rails
   kaminari!
-  listen (~> 3.0.5)
+  listen (~> 3.x)
   mina
   mina-multistage
   mina-puma
