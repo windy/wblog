@@ -34,7 +34,7 @@
 }
 
 .published-at {
-  @media only screen and (min-width: 40.063em) {
+  @media screen and (min-width: 40.063em) {
     text-align: right;
   }
   margin-top: 1rem;
@@ -48,7 +48,9 @@
 }
 
 .recent-content {
-  padding-bottom: 3rem;
+  @media screen and (min-width: 64em) {
+    padding-bottom: 3rem;
+  }
   li {
     list-style: disc;
   }

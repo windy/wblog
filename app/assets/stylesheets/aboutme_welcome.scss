@@ -1,5 +1,7 @@
 .self-introduce {
-  margin-top: 1.875rem;
+  @media screen and (min-width: 64em) {
+    margin-top: 1.875rem;
+  }
 
   h1, h2, h3, h4, h5, h6 {
   }
