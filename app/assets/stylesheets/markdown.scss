@@ -1,25 +1,21 @@
 .markdown {
 
-  //color: rgba(0,0,0,1);
-
   word-wrap: break-word;
   overflow: hidden;
 
-  @media only screen and (min-width: 40.063em) {
+  @media screen and (min-width: 40.063em) {
     h1, h2, h3, h4, h5, h6 {
-      font-size: 1.5rem;
+      font-size: 1.875rem;
     }
   }
 
-  @media only screen and (max-width: 40em) {
+  @media screen and (max-width: 40em) {
     h1, h2, h3, h4, h5, h6 {
       font-size: 1.2875rem;
     }
   }
 
   h1, h2, h3, h4, h5, h6 {
-    border-bottom: 1px solid #DDDDDD;
-    margin-bottom: 1rem;
   }
 
   pre {
@@ -42,8 +38,6 @@
   }
 
   code {
-    //margin-left: 0.25rem;
-    //margin-right: 0.025rem;
     font-weight: 500;
     border: none;
     background-color: transparent;
