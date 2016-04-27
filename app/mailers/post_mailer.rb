@@ -3,7 +3,7 @@ class PostMailer < ActionMailer::Base
 
   default from: "no-reply@#{domain}"
 
-  def new(post_id, to)
+  def born(post_id, to)
     @post = Post.find(post_id)
     mail to: to, subject: '客官, 新博客来了'
   end

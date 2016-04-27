@@ -3,7 +3,7 @@ class CommentMailer < ActionMailer::Base
 
   default from: "no-reply@#{domain}"
 
-  def new(comment_id, to)
+  def born(comment_id, to)
     @comment = Comment.find(comment_id)
     mail to: to, subject: '博主, 你的博客有新的评论'
   end
