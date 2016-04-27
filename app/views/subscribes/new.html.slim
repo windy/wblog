@@ -4,4 +4,4 @@
 
     = simple_form_for @subscribe do |f|
       = f.input :email
-      = f.button :submit
+      = f.button :submit, value: '订阅', data: { 'disable-with'=> '订阅中...' }

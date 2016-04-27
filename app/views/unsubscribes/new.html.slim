@@ -6,4 +6,4 @@
       .row
         .small-12.large-6.columns
           = f.input :email, placeholder: 'your@email.com'
-      = f.submit
+      = f.button :submit, value: '退订', data: { 'disable-with'=> '退订中...' }

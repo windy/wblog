@@ -11,7 +11,7 @@ class Comment < ApplicationRecord
   end
 
   after_commit on: :create do
-    if ENV['MAIL_SERVER'].present? && ENV['ADMIN_USER'].present? && ENV['ADMIN_USER'] =~ /@/
+    if ENV['MAIL_SERVER'].present? && ENV['ADMIN_USER'].present? && ENV['ADMIN_USER'] =~ /@/ && ENV['ADMIN_USER'] != self.email
       Rails.logger.info 'comment created, comment worker start'
       NewCommentWorker.perform_async(self.id.to_s, ENV['ADMIN_USER'])
     end
