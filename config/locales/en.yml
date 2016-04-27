@@ -77,6 +77,16 @@ en:
       reply: 'Reply'
       destroy: 'Destroy'
 
+    subscribes: 'Manage Subscribes'
+    subscribes_head:
+      email: 'Email'
+      enable: 'Enable Flag'
+      created_at: 'Created at'
+      operation: 'Operation'
+      op:
+        enable: 'Enable'
+        disable: 'Disable'
+
     back: 'Back to Home'
     logout: 'Logout'
     dashboard:

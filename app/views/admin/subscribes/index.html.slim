@@ -1,0 +1,25 @@
+.row.admin-subscribes-field
+  .small-12.columns
+    h3.blog-title #{t('admin.subscribes') }
+    table width="100%"
+      thead
+        tr
+          th #{t('admin.subscribes_head.email')}
+          th #{t('admin.subscribes_head.enable')}
+          th #{t('admin.subscribes_head.created_at')}
+          th #{t('admin.subscribes_head.operation')}
+      tbody
+        - @subscribes.each do |subscribe|
+          tr
+            td
+              = mail_to subscribe.email
+            td
+              = subscribe.enable
+            td
+              = format_time(subscribe.created_at)
+            td
+              - if subscribe.enable
+                = link_to t('admin.subscribes_head.op.disable'), disable_admin_subscribe_path(subscribe), method: 'POST', data: { confirm: 'Confirm?' }
+              - else
+                = link_to t('admin.subscribes_head.op.enable'), enable_admin_subscribe_path(subscribe), method: 'POST', data: { confirm: 'Confirm?' }
+    == paginate @subscribes

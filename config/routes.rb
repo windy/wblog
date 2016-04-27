@@ -29,6 +29,12 @@ WBlog::Application.routes.draw do
       resources :comments
     end
     resources :sessions, :only=>[:new, :create, :destroy]
+    resources :subscribes, only: [:index] do
+      member do
+        post :enable
+        post :disable
+      end
+    end
     root 'dashboard#index'
   end
 

@@ -77,6 +77,16 @@ zh-CN:
       reply: '回复'
       destroy: '删除'
 
+    subscribes: '订阅管理'
+    subscribes_head:
+      email: '邮箱'
+      enable: '是否启用'
+      created_at: '创建时间'
+      operation: '操作'
+      op:
+        enable: '启用'
+        disable: '禁用'
+
     back: '返回首页'
     logout: '退出'
     dashboard:
