@@ -53,8 +53,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
-  gem 'byebug'
-
   gem 'rack-cors', :require => 'rack/cors'
 end
 
@@ -68,7 +66,6 @@ end
 group :test, :development do
   gem "rspec-rails", ">= 2.8.1"
   gem 'rails-controller-testing'
-  gem 'pry-rails'
-  gem 'pry-nav'
+  gem 'byebug'
   gem 'factory_girl_rails'
 end
