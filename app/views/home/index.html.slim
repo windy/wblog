@@ -11,13 +11,19 @@
         .top-bar-right
           ul.menu
             li
-              a href='#about' 关于
-            li
-              a href='#skill' 技能
-            li
-              a href='#work' 作品
-            li
-              a href='#contact' 联系
+              .responsive-button data-responsive-toggle="responsive-menu" data-hide-for="medium"
+                button class="menu-icon" type="button" data-toggle=''
+        #responsive-menu
+          .top-bar-right
+            ul.menu
+              li
+                a href='#about' 关于
+              li
+                a href='#skill' 技能
+              li
+                a href='#work' 作品
+              li
+                a href='#contact' 联系
     #intro
     header.intro
       .intro-heading

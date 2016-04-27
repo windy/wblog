@@ -3,13 +3,17 @@
 - content_for(:main) do
   .about-page
     .top-bar-wrapper.contain-to-grid.fixed
-      .row
-        .small-12.columns
-          nav#about-top-bar.top-bar
-            .top-bar-left
-              ul.menu
-                li
-                  a.name href='/' Back to WinDy Blog
+      nav#about-top-bar.top-bar
+        .top-bar-left
+          ul.menu
+            li
+              a.name href='/' Back to WinDy Blog
+        .top-bar-right
+          ul.menu
+            li
+              .responsive-button data-responsive-toggle="responsive-menu" data-hide-for="medium"
+                button class="menu-icon" type="button" data-toggle=''
+        #responsive-menu
             .top-bar-right
               ul.menu
                 li
