@@ -61,8 +61,8 @@ WBlog::Application.configure do
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
   # config.assets.precompile += %w( )
 
-  config.action_cable.url = 'wss://example.com/cable'
-  config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
+  #config.action_cable.url = 'wss://example.com/cable'
+  config.action_cable.allowed_request_origins = [ ENV['DOMAIN_NAME'] ]
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
