@@ -62,7 +62,7 @@ WBlog::Application.configure do
   # config.assets.precompile += %w( )
 
   #config.action_cable.url = 'wss://example.com/cable'
-  config.action_cable.allowed_request_origins = [ ENV['DOMAIN_NAME'] ]
+  config.action_cable.allowed_request_origins = [ "http://#{ENV['DOMAIN_NAME']}", "https://#{ENV['DOMAIN_NAME']}"]
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
