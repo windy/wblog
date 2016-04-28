@@ -23,15 +23,7 @@ Another demo using my blog: <http://yafeilee.me>
 
 Power Admin Dashboard: <http://en.yafeilee.me/admin>, user and password are configurable.
 
-![screenshot home](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/home.png)
-![screenshot home small](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/home-small.png)
-![screenshot home hover](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/home-small-hover.png)
-![screenshot post](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/post.png)
-![screenshot post hover](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/post-hover.png)
-![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-login.png)
-![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-dashboard.png)
-![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-post.png)
-![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-posts.png)
+Some [screenshots](#screenshots)
 
 ### System dependencies
 
@@ -134,3 +126,26 @@ You can read WBlog wiki for more information: [WBlog 的发布流程(Chinese onl
 ## License
 
 MIT.
+
+### Screenshots
+
+Home Page:
+![screenshot home](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/home.png)
+
+Home Page for mobile:
+![screenshot home small](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/home-small.png)
+Home Page Hover Status for mobile:
+![screenshot home hover](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/home-small-hover.png)
+Blog Show Page:
+![screenshot post](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/post.png)
+Blog Show Page Hover Status:
+![screenshot post hover](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/post-hover.png)
+Admin Login Page:
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-login.png)
+Admin Dashboard Page:
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-dashboard.png)
+Admin New Blog Page:
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-post.png)
+Admin Blogs Manage Page:
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-posts.png)
+
