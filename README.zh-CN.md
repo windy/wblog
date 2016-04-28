@@ -93,21 +93,37 @@ WBlog 采用了 `mina` 作为自动化发布工具, 使用 `nginx`, `puma` 为�
 ### Screenshots
 
 首页:
-![screenshot home](https://github.com/windy/wblog/raw/master/doc/wblog_s/home.png)
-小屏首页:
-![screenshot home small](https://github.com/windy/wblog/raw/master/doc/wblog_s/home-small.png)
-展开的小屏首页:
-![screenshot home hover](https://github.com/windy/wblog/raw/master/doc/wblog_s/home-small-hover.png)
-博客详情页:
-![screenshot post](https://github.com/windy/wblog/raw/master/doc/wblog_s/post.png)
-展开的博客详情页:
-![screenshot post hover](https://github.com/windy/wblog/raw/master/doc/wblog_s/post-hover.png)
-管理员登录页:
-![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s/admin-login.png)
-管理页面板:
-![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s/admin-dashboard.png)
-发布新博客页:
-![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s/admin-post.png)
-博客管理页:
-![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s/admin-posts.png)
 
+![screenshot home](https://github.com/windy/wblog/raw/master/doc/wblog_s/home.png)
+
+小屏首页:
+
+![screenshot home small](https://github.com/windy/wblog/raw/master/doc/wblog_s/home-small.png)
+
+展开的小屏首页:
+
+![screenshot home hover](https://github.com/windy/wblog/raw/master/doc/wblog_s/home-small-hover.png)
+
+博客详情页:
+
+![screenshot post](https://github.com/windy/wblog/raw/master/doc/wblog_s/post.png)
+
+展开的博客详情页:
+
+![screenshot post hover](https://github.com/windy/wblog/raw/master/doc/wblog_s/post-hover.png)
+
+管理员登录页:
+
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s/admin-login.png)
+
+管理页面板:
+
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s/admin-dashboard.png)
+
+发布新博客页:
+
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s/admin-post.png)
+
+博客管理页:
+
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s/admin-posts.png)
