@@ -4,7 +4,11 @@ WBlog::Application.routes.draw do
     collection do
       get :rss
     end
-    resources :comments, only: [:index, :create]
+    resources :comments, only: [:index, :create] do
+      collection do
+        get :refresh
+      end
+    end
     resources :likes, only: [:index, :create, :destroy] do
       member do
         get :is_liked
@@ -42,4 +46,6 @@ WBlog::Application.routes.draw do
   get '/mobile' => 'home#mobile'
 
   root 'blogs#index'
+
+  mount ActionCable.server => '/cable'
 end

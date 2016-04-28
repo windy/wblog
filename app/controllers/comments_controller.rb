@@ -15,10 +15,16 @@ class CommentsController < ApplicationController
 
     if @comment.save
       @comments = @post.comments.order(created_at: :desc)
+      ActionCable.server.broadcast "comment_post_#{@comment.post.id}", { not: cookies[:cable_id] }
       render :create_ok
     else
       render :create_fail
     end
+  end
+
+  def refresh
+    @post = Post.find(params[:blog_id])
+    @comments = @post.comments.order(created_at: :desc)
   end
 
   private
