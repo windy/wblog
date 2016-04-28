@@ -12,27 +12,38 @@ WBlog is open source blog which built for mobile first, it's licenced on MIT, us
 
 Characteristic:
 
-* Awful reading feeling for reader
-* Independent comment system, store data on your own sever
-* With mardown supported, you can post both powerful and clean formatted article(s)
+* Modern clean reading feelings
+* Markdown support, give nice formatted articles
+* Mobile first, responsive page for iPhone, iPad, iMac.
+* Independent comment system, subscribe system, picture manage system
 
 A demo came from my English blog: <http://en.yafeilee.me>
 
+Another demo using my blog: <http://yafeilee.me>
+
 Power Admin Dashboard: <http://en.yafeilee.me/admin>, user and password are configurable.
 
-![screenshot](https://github.com/windy/wblog/raw/master/doc/wblog.gif)
+![screenshot home](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/home.png)
+![screenshot home small](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/home-small.png)
+![screenshot home hover](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/home-small-hover.png)
+![screenshot post](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/post.png)
+![screenshot post hover](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/post-hover.png)
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-login.png)
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-dashboard.png)
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-post.png)
+![screenshot admin](https://github.com/windy/wblog/raw/master/doc/wblog_s_en/admin-posts.png)
 
 ### System dependencies
 
-* Ruby ( >= 2.0 )
-* Mongodb ( >= 2.7 )
+* Ruby ( = 2.2.3 )
+* Postgresql ( >= 9.x )
 * Nginx ( >= 1.4 )
 
 ### Features
 
 * Responsive, iPhone, iPad, Notebook, PC, all are supported
-* QR Code attached article, scan and share it
-* Inpendent comment system, managed by yourself
+* QR Code, Like button make your article easily sharing with your friends
+* Inpendent comment system, subscribe system, that all belong to you
 * Markdown supported, code highlight, especially for programmer, like you
 * Personalize it, commercialize it, it all depends on you
 
@@ -40,31 +51,37 @@ Power Admin Dashboard: <http://en.yafeilee.me/admin>, user and password are conf
 
 Make it to the best Ruby on Rails Blog system in the world.
 
-### Study it locally
+### Running in development mode
 
-WBlog MUST run in Linux or Mac, it depends on Mongodb database. You can run it like a Ruby on Rails project as usual:
+WBlog MUST run in Linux or OSX. I assume you are using OS X 10.
+
+You can run it like a Ruby on Rails project as usual:
+
+0. Check dependencies
+
+  ```shell
+  ruby -v
+  # 2.2.3
+  postgres  --version
+  # 9.x.x
+  ```
 
 1. Clone it
 
   `git clone git@github.com:windy/wblog.git`
-  
-  `cd wblog `
+
+  `cd wblog`
 
 2. Install dependencies & configure
 
   ```shell
-  # Install mongodb ( see how to install it on your platform )
-  # on Mac, you can install it like this:
-  brew install mongodb 
-  ```
-
-  ```shell
+  gem install bundler
   bundle install
   cp config/application.yml.example config/application.yml
-  cp config/mongoid.yml.example config/mongoid.yml
+  cp config/database.yml.example config/database.yml
   ```
 
-  Update application.yml & mongoid.yml as you need
+  Update `application.yml` & `database.yml` 's content as you need
 
 3. Start it
 
@@ -72,11 +89,13 @@ WBlog MUST run in Linux or Mac, it depends on Mongodb database. You can run it l
   rails s
   ```
 
+  Open browser with `http://localhost:3000`
+
   If there is any error found, please check your database's user and password.
 
-4. Post the first article
+4. Post the first blog
 
-  visit: http://127.0.0.1:3000/admin, input your username and password that is just configurated in application.yml.
+  visit: http://localhost:3000/admin, input your username and password configurated in `application.yml`.
   then, post a new article.
 
 OK, That's all.
@@ -89,18 +108,19 @@ WBlog recommends `nginx` as reverse proxy server.
 
 It will be very fast.
 
-Ruby on Rails project deployment is another big topic, I would NOT talk it here.
+Ruby on Rails project deployment is another topic, I would NOT talk it here.
 
 You can read WBlog wiki for more information: [WBlog 的发布流程(Chinese only now)](https://github.com/windy/wblog/wiki)
 
 ### Stack
 
-* Ruby on Rails 4.2.x / Ruby 2.x
-* AngularJS
-* Foundation 5
+* Ruby on Rails 5.0.0.beta3
+* Ruby 2.2.3
+* Turbolinks / SJR
+* Foundation 6
 * mina
 * slim
-* Mongodb
+* Postgresql
 
 
 ## Related open source blog systems
@@ -110,3 +130,7 @@ You can read WBlog wiki for more information: [WBlog 的发布流程(Chinese onl
 * octopress( Github Pages ): <http://octopress.org/>
 * middleman( Ruby Gem ): Another static blog system <https://github.com/middleman/middleman>
 * robbin_site( Padrino ): <https://github.com/robbin/robbin_site>
+
+## License
+
+MIT.

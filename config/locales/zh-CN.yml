@@ -101,7 +101,7 @@ zh-CN:
       title: '登录后台'
       username: '用户名'
       username_placeholder: '管理员账号'
-      password: 'Password'
+      password: '密码'
       password_placeholder: '管理员密码'
       login_button: '登录'
       login_success: '登录成功'
