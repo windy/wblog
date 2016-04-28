@@ -1,6 +1,6 @@
 production:
   adapter: redis
-  url: redis://localhost:6379/wblog_cable
+  url: redis://localhost:6379/actioncable_<%= ENV["REDIS_NAMESPACE"] %>
 
 development:
   adapter: async
