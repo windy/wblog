@@ -17,6 +17,7 @@ class BlogsController < ApplicationController
   end
 
   def show
+    cookies[:cable_id] = SecureRandom.uuid
     @post = Post.find(params[:id])
     @post.visited
     @prev = Post.where('created_at < ?', @post.created_at).order(created_at: :desc).first

@@ -4,7 +4,7 @@
 
 - content_for(:title) do
   | #{@post.title}
-.row.blog-wrapper
+.row.blog-wrapper#blog-show-page data-url=refresh_blog_comments_path(@post) data-post_id=@post.id
   .small-12.large-9.large-centered.columns
     = render partial: "post", :locals=> { post: @post }
 .comment-field
