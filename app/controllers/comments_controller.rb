@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   layout false
-  helper_method :format_time
+
   def index
     @post = Post.find( params[:blog_id] )
     res = @post.comments.desc(:created_at).collect { |comment| build_json(comment) }
@@ -8,6 +8,10 @@ class CommentsController < ApplicationController
   end
 
   def create
+    unless request.xhr?
+      logger.warning 'attack action detected'
+      redirect_to root_path
+    end
     cookies[:name] = comment_params[:name]
     cookies[:email] = comment_params[:email]
     @post = Post.find( params[:blog_id] )

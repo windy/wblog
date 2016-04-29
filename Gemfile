@@ -29,8 +29,6 @@ gem 'mini_magick'
 gem 'html_truncator'
 gem 'nokogiri'
 gem 'figaro'
-gem 'rqrcode-with-patches', require: 'rqrcode'
-gem 'chunky_png'
 gem 'sidekiq'
 gem 'redis-namespace'
 gem 'rest-client'
@@ -39,6 +37,7 @@ gem 'newrelic_rpm'
 gem 'puma'
 
 gem 'mina', require: false
+
 gem 'mina-multistage', require: false
 gem 'mina-sidekiq', require: false
 gem 'mina-puma', require: false
