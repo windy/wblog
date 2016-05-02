@@ -39,7 +39,6 @@ $(document).on 'turbolinks:load', ->
       before_text = source.slice(0, caret_pos)
       txtBox.val(before_text + src_merged + source.slice(caret_pos+1, source.count))
       txtBox.caret('pos',caret_pos + src_merged.length)
-      txtBox.scope().content = txtBox.val()
       txtBox.focus()
 
   $('input[type=file]').fileUpload opt
