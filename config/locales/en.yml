@@ -11,6 +11,11 @@ en:
   none: 'None'
   qrcodetips: 'Continue reading with mobile phone or share it to Wechat Puppy'
 
+  views:
+    pagination:
+      previous: 'Prev'
+      next: 'Next'
+
   home:
     no_blog_here: 'There is no post here'
     read: 'Read More >>'
