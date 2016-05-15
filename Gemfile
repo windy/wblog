@@ -41,6 +41,7 @@ gem 'mina', require: false
 gem 'mina-multistage', require: false
 gem 'mina-sidekiq', require: false
 gem 'mina-puma', require: false
+gem 'mina-logs', require: false
 
 group :development do
   gem 'quiet_assets'
