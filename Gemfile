@@ -44,7 +44,6 @@ gem 'mina-puma', require: false
 gem 'mina-logs', require: false
 
 group :development do
-  gem 'quiet_assets'
   gem 'guard'
   gem 'guard-rails'
   gem 'guard-rspec', require: false
