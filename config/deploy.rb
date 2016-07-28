@@ -15,7 +15,7 @@ require 'mina/logs'
 set :shared_paths, ['config/database.yml', 'config/application.yml', 'log', 'tmp', 'public/uploads', 'public/personal' ]
 
 task :environment do
-  invoke :'rvm:use[2.2.3]'
+  invoke :'rvm:use[2.3.1]'
 end
 
 task :setup => :environment do

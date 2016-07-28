@@ -52,6 +52,11 @@ GEM
     babel-transpiler (0.7.0)
       babel-source (>= 4.0, < 6)
       execjs (~> 2.0)
+    browser (2.2.0)
+    browser_warrior (0.5.0)
+      browser
+      rails (~> 5.0)
+      sass-rails (~> 5.0)
     builder (3.2.2)
     byebug (9.0.5)
     capybara (2.7.1)
@@ -329,6 +334,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  browser_warrior
   byebug
   capybara
   carrierwave
