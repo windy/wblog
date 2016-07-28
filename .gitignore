@@ -16,3 +16,4 @@
 *.old
 *.bak
 .byebug_history
+.ruby-version
