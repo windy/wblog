@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.1'
 
-gem 'rails', '>= 5.0.0.beta3', '< 5.1'
+gem 'rails', '>= 5.0.0', '< 5.1'
 gem 'sass-rails', '~> 5.0'
 gem 'coffee-rails', '~> 4.1.0'
 gem 'uglifier', '>= 2.7.2'
@@ -16,7 +16,7 @@ gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'turbolinks', '~> 5.x'
 gem 'js_cookie_rails'
 
-gem 'rails-i18n', '~> 5.0.0.beta3'
+gem 'rails-i18n', '~> 5.0.0'
 
 gem 'jbuilder'
 gem 'pg'
