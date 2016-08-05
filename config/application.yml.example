@@ -29,6 +29,9 @@ SITE_YEAR: '© 2012 - 2016'
 # google analytics, blank it if you don't need
 GOOGLE: ''
 
+# CDN ( optional )
+CDN: ''
+
 # Email Setting, see more: /config/environments/production.rb
 MAIL_SERVER: ''
 DOMAIN_NAME: ''
