@@ -42,7 +42,7 @@ WBlog
 
 WBlog 是一个标准的 Ruby on Rails 应用. 开发环境依赖于:
 
-* Ruby ( = 2.2.3 )
+* Ruby ( = 2.3.1 )
 * Postgresql ( >= 9.x )
 
 配置 WBlog:

@@ -27,7 +27,7 @@ Some [screenshots](#screenshots)
 
 ### System dependencies
 
-* Ruby ( = 2.2.3 )
+* Ruby ( = 2.3.1 )
 * Postgresql ( >= 9.x )
 * Nginx ( >= 1.4 )
 
