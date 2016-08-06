@@ -1,5 +1,6 @@
-require 'spec_helper'
-describe Subscribe do
+require 'rails_helper'
+
+RSpec.describe Subscribe, type: :model do
   it "validates should be ok" do
     expect(create(:subscribe)).to be_truthy
   end

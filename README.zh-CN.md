@@ -75,7 +75,7 @@ WBlog 采用了 `mina` 作为自动化发布工具, 使用 `nginx`, `puma` 为�
 ### 技术栈
 
 * Ruby on Rails 5.0.0
-* Ruby 2.2.3
+* Ruby 2.3.1
 * Foundation 6
 * mina
 * slim

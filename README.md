@@ -53,7 +53,7 @@ You can run it like a Ruby on Rails project as usual:
 
   ```shell
   ruby -v
-  # 2.2.3
+  # 2.3.1
   postgres  --version
   # 9.x.x
   ```
@@ -106,8 +106,8 @@ You can read WBlog wiki for more information: [WBlog 的发布流程(Chinese onl
 
 ### Stack
 
-* Ruby on Rails 5.0.0.beta3
-* Ruby 2.2.3
+* Ruby on Rails 5.0.0
+* Ruby 2.3.1
 * Turbolinks / SJR
 * Foundation 6
 * mina

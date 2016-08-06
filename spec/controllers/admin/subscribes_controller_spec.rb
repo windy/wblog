@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 RSpec.describe Admin::SubscribesController, :type => :controller do
 
@@ -16,7 +16,7 @@ RSpec.describe Admin::SubscribesController, :type => :controller do
   describe "POST enable" do
     it "returns http success" do
       subscribe = create(:subscribe)
-      post :enable, id: subscribe.id
+      post :enable, params: { id: subscribe.id }
       expect(subscribe.reload.enable).to eq(true)
     end
   end
@@ -24,7 +24,7 @@ RSpec.describe Admin::SubscribesController, :type => :controller do
   describe "POST disable" do
     it "returns http success" do
       subscribe = create(:subscribe, enable: true)
-      post :disable, id: subscribe.id
+      post :disable, params: { id: subscribe.id }
       expect(subscribe.reload.enable).to eq(false)
     end
   end

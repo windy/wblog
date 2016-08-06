@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe ArchivesController do
+RSpec.describe ArchivesController, type: :controller do
 
   it "get index" do
     create_list(:post_list, 3)

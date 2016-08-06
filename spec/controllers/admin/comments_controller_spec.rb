@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Admin::CommentsController do
+RSpec.describe Admin::CommentsController, type: :controller do
 end

@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Like do
+RSpec.describe Like, type: :model  do
   it "add like" do
     a = Post.create!(title: 'one', content: '1'*31)
     like = Like.new

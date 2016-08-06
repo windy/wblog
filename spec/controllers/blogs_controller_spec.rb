@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe BlogsController do
+RSpec.describe BlogsController, type: :controller do
 
   describe 'get INDEX' do
     it 'index should get by order desc' do
@@ -27,7 +27,7 @@ describe BlogsController do
       comment2.post = post
       comment2.save!
 
-      get :show, id: post.id
+      get :show, params: { id: post.id }
       expect(assigns(:comments)[0]).to eq(comment2)
       expect(assigns(:comments)[1]).to eq(comment1)
     end
@@ -38,26 +38,26 @@ describe BlogsController do
       selected = posts[1]
       s_prev = posts[0]
       s_next = posts[2]
-      get :show, id: selected.id
+      get :show, params: { id: selected.id }
       expect(assigns(:prev)).to eq(s_prev)
       expect(assigns(:next)).to eq(s_next)
 
       # 下界
       selected = posts[0]
-      get :show, id: selected.id
+      get :show, params: { id: selected.id }
       expect(assigns(:prev)).to be_nil
       expect(assigns(:next)).to eq(posts[1])
 
       # 测试上界
       selected = posts[2]
-      get :show, id: selected.id
+      get :show, params: { id: selected.id }
       expect(assigns(:prev)).to eq(posts[1])
       expect(assigns(:next)).to be_nil
 
       # 测试未来时间
       create(:post, created_at: Time.now + 100)
       selected = posts[1]
-      get :show, id: selected.id
+      get :show, params: { id: selected.id }
       expect(assigns(:prev)).to eq(posts[0])
       expect(assigns(:next)).to eq(posts[2])
     end

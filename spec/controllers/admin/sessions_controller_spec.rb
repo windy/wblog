@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Admin::SessionsController do
+RSpec.describe Admin::SessionsController, type: :controller do
 
   before do
     session[:login] = true

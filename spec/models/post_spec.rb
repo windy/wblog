@@ -1,6 +1,6 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe Post do
+RSpec.describe Post, type: :model do
   it "validates should be ok" do
     expect(create(:post)).to be_truthy
   end

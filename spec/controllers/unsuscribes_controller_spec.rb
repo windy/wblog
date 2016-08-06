@@ -1,11 +1,11 @@
-require 'spec_helper'
+require 'rails_helper'
 
-describe UnsubscribesController do
+RSpec.describe UnsubscribesController, type: :controller do
 
   describe "POST 'create'" do
     it "unsuscribe ok" do
       subscribe = create(:subscribe, enable: true)
-      post 'create', { subscribe: { email: subscribe.email } }
+      post 'create', params: { subscribe: { email: subscribe.email } }
       expect(subscribe.reload.enable).to be(false)
     end
   end
