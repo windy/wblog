@@ -8,7 +8,7 @@ html
       = content_for?(:title) ? yield(:title) + " | #{ENV['SITE_NAME']}" : ENV['SITE_NAME']
     = stylesheet_link_tag "application", 'data-turbolinks-track' => "reload"
     = favicon_link_tag 'favicon.png', type: 'image/png'
-    = javascript_include_tag "application", 'data-turbolinks-track' => "reload", 'async' => Rails.env.production?
+    = javascript_include_tag "application", 'data-turbolinks-track' => "reload", 'defer' => true
     = csrf_meta_tags
     = action_cable_meta_tag
   body data-whatinput="mouse"
