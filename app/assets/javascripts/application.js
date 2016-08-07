@@ -8,6 +8,4 @@
 //= require cable
 //= require_tree .
 
-$(document).on('turbolinks:load', function(){
-  $(document).foundation();
-});
+$(document).foundation();
