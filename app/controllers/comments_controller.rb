@@ -9,8 +9,9 @@ class CommentsController < ApplicationController
 
   def create
     unless request.xhr?
-      logger.warn "attack action detected: #{params}"
+      logger.warn "attack action detected: #{params.to_h}"
       redirect_to root_path
+      return
     end
     cookies[:name] = comment_params[:name]
     cookies[:email] = comment_params[:email]
