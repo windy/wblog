@@ -11,11 +11,7 @@ WBlog::Application.routes.draw do
         get :refresh
       end
     end
-    resources :likes, only: [:index, :create, :destroy] do
-      member do
-        get :is_liked
-      end
-    end
+    resources :likes, only: [:index, :create, :destroy]
   end
 
 
