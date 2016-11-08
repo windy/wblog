@@ -1,7 +1,5 @@
 WBlog::Application.routes.draw do
 
-  get 'hello/test'
-
   resources :blogs, :only=>[:index, :show, :edit] do
     collection do
       get :rss
