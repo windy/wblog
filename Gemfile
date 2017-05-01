@@ -36,12 +36,12 @@ gem 'newrelic_rpm'
 
 gem 'puma'
 
-gem 'mina', require: false
+gem 'mina', '~> 1.0.6', require: false
+gem 'mina-puma', '~> 1.0.1', require: false
+gem 'mina-multistage', '~> 1.0.3', require: false
+gem 'mina-sidekiq', '~> 1.0.1', require: false
+gem 'mina-logs', '~> 1.0.1', require: false
 
-gem 'mina-multistage', require: false
-gem 'mina-sidekiq', require: false
-gem 'mina-puma', require: false
-gem 'mina-logs', require: false
 gem 'browser_warrior'
 
 group :development do

@@ -372,11 +372,11 @@ DEPENDENCIES
   js_cookie_rails
   kaminari!
   listen (~> 3.x)
-  mina
-  mina-logs
-  mina-multistage
-  mina-puma
-  mina-sidekiq
+  mina (~> 1.0.6)
+  mina-logs (~> 1.0.1)
+  mina-multistage (~> 1.0.3)
+  mina-puma (~> 1.0.1)
+  mina-sidekiq (~> 1.0.1)
   mini_magick
   newrelic_rpm
   nokogiri
