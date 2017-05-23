@@ -94,7 +94,7 @@ OK, That's all.
 
 ### Deployment
 
-WBlog uses `mina` as automation deployment tool, uses `unicorn` as the Rack container.
+WBlog uses `mina` as automation deployment tool, uses `puma` as the Rack container.
 
 WBlog recommends `nginx` as reverse proxy server.
 
@@ -112,6 +112,7 @@ You can read WBlog wiki for more information: [WBlog 的发布流程(Chinese onl
 * Foundation 6
 * mina
 * slim
+* puma
 * Postgresql
 
 
