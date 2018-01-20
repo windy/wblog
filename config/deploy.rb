@@ -4,22 +4,23 @@ set :default_stage, 'zh'
 require 'mina/bundler'
 require 'mina/rails'
 require 'mina/git'
-require 'mina/rvm'
+require 'mina/rbenv'
 require 'mina/puma'
 require "mina_sidekiq/tasks"
 require 'mina/logs'
 require 'mina/multistage'
 
-set :shared_dirs, fetch(:shared_dirs, []).push('log', 'public/uploads', 'public/personal')
+set :shared_dirs, fetch(:shared_dirs, []).push('log', 'public/uploads', 'node_modules', 'public/personal')
 set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/application.yml')
 
+set :puma_config, ->{ "#{fetch(:current_path)}/config/puma.rb" }
 set :sidekiq_pid, ->{ "#{fetch(:shared_path)}/tmp/pids/sidekiq.pid" }
 
-task :environment do
-  invoke :'rvm:use', '2.3.1'
+task :remote_environment do
+  invoke :'rbenv:load'
 end
 
-task :setup => :environment do
+task :setup do
   command %[mkdir -p "#{fetch(:shared_path)}/tmp/sockets"]
   command %[chmod g+rx,u+rwx "#{fetch(:shared_path)}/tmp/sockets"]
 
@@ -32,6 +33,9 @@ task :setup => :environment do
   command %[mkdir -p "#{fetch(:shared_path)}/public/uploads"]
   command %[chmod g+rx,u+rwx "#{fetch(:shared_path)}/public/uploads"]
 
+  command %[mkdir -p "#{fetch(:shared_path)}/node_modules"]
+  command %[chmod g+rx,u+rwx "#{fetch(:shared_path)}/node_modules"]
+
   command %[mkdir -p "#{fetch(:shared_path)}/config"]
   command %[chmod g+rx,u+rwx "#{fetch(:shared_path)}/config"]
 
@@ -43,7 +47,7 @@ task :setup => :environment do
 end
 
 desc "Deploys the current version to the server."
-task :deploy => :environment do
+task :deploy do
   command %[echo "-----> Server: #{fetch(:domain)}"]
   command %[echo "-----> Path: #{fetch(:deploy_to)}"]
   command %[echo "-----> Branch: #{fetch(:branch)}"]
@@ -58,15 +62,15 @@ task :deploy => :environment do
     invoke :'deploy:cleanup'
 
     on :launch do
-      invoke :'rvm:use', '2.3.1'
+      invoke :'rbenv:load'
       invoke :'puma:hard_restart'
       invoke :'sidekiq:restart'
     end
   end
 end
 
-desc "Deploys the current version to the server."
-task :first_deploy => :environment do
+desc "Prepare the first deploy on server."
+task :first_deploy do
   command %[echo "-----> Server: #{fetch(:domain)}"]
   command %[echo "-----> Path: #{fetch(:deploy_to)}"]
   command %[echo "-----> Branch: #{fetch(:branch)}"]
@@ -75,11 +79,13 @@ task :first_deploy => :environment do
     invoke :'git:clone'
     invoke :'deploy:link_shared_paths'
     invoke :'bundle:install'
+    invoke :'rails:assets_precompile'
     invoke :'deploy:cleanup'
 
     on :launch do
-      invoke :'rvm:use', '2.3.1'
+      invoke :'rbenv:load'
       invoke :'rails:db_create'
+      invoke :'rails:db_migrate'
     end
   end
 end
