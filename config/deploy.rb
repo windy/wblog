@@ -13,7 +13,6 @@ require 'mina/multistage'
 set :shared_dirs, fetch(:shared_dirs, []).push('log', 'public/uploads', 'node_modules', 'public/personal')
 set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/application.yml')
 
-set :puma_config, ->{ "#{fetch(:current_path)}/config/puma.rb" }
 set :sidekiq_pid, ->{ "#{fetch(:shared_path)}/tmp/pids/sidekiq.pid" }
 
 task :remote_environment do
