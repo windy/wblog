@@ -19,7 +19,7 @@ gem 'js_cookie_rails'
 gem 'rails-i18n', '~> 5.0.0'
 
 gem 'jbuilder'
-gem 'pg'
+gem 'pg', '~> 0.18'
 
 gem 'redcarpet'
 gem 'rouge'
