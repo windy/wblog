@@ -27,15 +27,4 @@
     h4 #{t('subscribes.title')}
     .row
       .small-12.medium-6.large-12.columns
-        ul.subscribe-ul
-          - if ENV['ADMIN_USER'].present? && ENV['ADMIN_USER'].include?('@')
-            li
-              = link_to t('subscribes.email'), new_subscribe_path
-          li
-            a data-toggle="qrcode-home" #{t('subscribes.wechat') }
-            #qrcode-home.weixin-subscribe.hide data-toggler='hide' data-url=root_url
-          li
-            a data-toggle="rss-home" #{t('subscribes.rss') }
-            #rss-home.rss-subscribe.hide data-toggler='hide'
-              = link_to rss_blogs_path do
-                - image_tag('rss.png')
+        = image_tag 'wechat_qrcode.jpg', class: 'wechat_qrcode'
