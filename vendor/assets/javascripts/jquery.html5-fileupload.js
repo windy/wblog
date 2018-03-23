@@ -1,9 +1,9 @@
 /*
  *  jQuery HTML5 File Upload
- *  
+ *
  *  Author: timdream at gmail.com
  *  Web: http://timc.idv.tw/html5-file-upload/
- *  
+ *
  *  Ajax File Upload that use real xhr,
  *  built with getAsBinary, sendAsBinary, FormData, FileReader, ArrayBuffer, BlobBuilder and etc.
  *  works in Firefox 3, Chrome 5, Safari 5 and higher
@@ -45,17 +45,17 @@
  *           File size and type limit will be enforced.
  *      allowDataInBase64:
  *           Alternatively, you may wish to resize the image anyway and send the data
- *           in base64. The data will be 133% larger and you will need to process it further with 
+ *           in base64. The data will be 133% larger and you will need to process it further with
  *           server-side script.
  *           This setting might work with browsers which could read file but cannot send it in original
  *           binary (no known browser are designed this way though)
  *      forceResize:
- *           Set to true will cause the image being re-sampled even if the resized image 
+ *           Set to true will cause the image being re-sampled even if the resized image
  *           has the same demension as the original one.
  *      imageType:
  *           Acceptable values are: 'jpeg', 'png', or 'auto'.
  *
- *  TBD: 
+ *  TBD:
  *   ability to change settings after binding (you can unbind and bind again as a workaround)
  *   multipole file handling
  *   form intergation
@@ -64,7 +64,7 @@
 
 (function($) {
 	// Don't do logging if window.log function does not exist.
-	var log = window.log || $.noop;
+	var log = window.console.log || $.noop;
 
 	// jQuery.ajax config
 	var config = {
@@ -72,9 +72,9 @@
 			window.alert(textDescription);
 		}
 	};
-	
+
 	// Feature detection
-	
+
 	// Read as binary string: FileReader API || Gecko-specific function (Fx3)
 	var canReadAsBinaryString = (window.FileReader || window.File.prototype.getAsBinary);
 	// Read file using FormData interface
@@ -85,7 +85,7 @@
 	var canResizeImageToBase64 = !!(document.createElement('canvas').toDataURL);
 	var canResizeImageToBinaryString = canResizeImageToBase64 && window.atob;
 	var canResizeImageToFile = !!(document.createElement('canvas').mozGetAsFile);
- 	
+
 	// Send file in multipart/form-data with binary xhr (Gecko-specific function)
 	// || xhr.send(blob) that sends blob made with ArrayBuffer.
 	var canSendBinaryString = (
@@ -107,13 +107,13 @@
 			|| (canResizeImageToFile && canSendFormData)
 		)
 	);
-	var isSupportedInBase64 = canReadAsBase64;	
+	var isSupportedInBase64 = canReadAsBase64;
 	var isImageSupportedInBase64 = canReadAsBase64 && canResizeImageToBase64;
 
 	var dataURLtoBase64 = function (dataurl) {
 		return dataurl.substring(dataurl.indexOf(',')+1, dataurl.length);
 	}
-	
+
 	// Step 1: check file info and attempt to read the file
 	// paramaters: Ajax settings, File object
 	var handleFile = function (settings, file) {
@@ -130,7 +130,7 @@
 			log('WARN: Fall back to upload original un-resized image.');
 			settings.resizeImage = false;
 		}
-		
+
 		if (settings.resizeImage) {
 			settings.imageMaxWidth = settings.imageMaxWidth || Infinity;
 			settings.imageMaxHeight = settings.imageMaxHeight || Infinity;
@@ -145,7 +145,7 @@
 					return;
 				}
 			}
-			
+
 			if (settings.fileMaxSize && file.size > settings.fileMaxSize) {
 				log('ERROR: File exceeds size limit.');
 				settings.fileError.call(this, info, 'FILE_EXCEEDS_SIZE_LIMIT', 'File exceeds size limit.');
@@ -288,7 +288,7 @@
 				img.width,
 				img.height,
 				0,
-				0, 
+				0,
 				d.w,
 				d.h
 			);
@@ -296,12 +296,12 @@
 				if (info.type === 'image/jpeg') settings.imageType = 'jpeg';
 				else settings.imageType = 'png';
 			}
-			
+
 			var ninfo = {
 				type: 'image/' + settings.imageType,
 				name: info.name.substr(0, info.name.indexOf('.')) + '.resized.' + settings.imageType
 			};
-			
+
 			if (canResizeImageToFile && canSendFormData) {
 				// Gecko 2 (Fx4) non-standard function
 				var nfile = canvas.mozGetAsFile(
@@ -360,7 +360,7 @@
 			//settings.data = formdata;
 		} else if (canSendBinaryString && type === 'bin') {
 			log('INFO: Concat our own multipart/form-data data string.');
-						
+
 			// A placeholder MIME type
 			if (!info.type) info.type = 'application/octet-stream';
 
@@ -368,10 +368,10 @@
 				log('INFO: Filename contains non-ASCII code, do UTF8-binary string conversion.');
 				info.name_bin = unescape(encodeURIComponent(info.name));
 			}
-			
+
 			//filtered out non-ASCII chars in filenames
 			// info.name = info.name.replace(/[^\x20-\x7E]/g, '_');
-			
+
 			// multipart/form-data boundary
 			var bd = 'xhrupload-' + parseInt(Math.random()*(2 << 16));
 			settings.contentType = 'multipart/form-data; boundary=' + bd;
@@ -381,7 +381,7 @@
 			+ 'Content-Type: ' + info.type + '\n\n'
 			+ data + '\n\n'
 			+ '--' + bd + '--';
-			
+
 			if (window.XMLHttpRequest.prototype.sendAsBinary) {
 				// Use xhr.sendAsBinary that takes binary string
 				log('INFO: Pass binary string to xhr.');
@@ -400,7 +400,7 @@
 				var bb = new BlobBuilder();
 				bb.append(buf);
 				var blob = bb.getBlob();
-				
+
 				settings.processData = false;
 				settings.__beforeSend = settings.beforeSend;
 				settings.beforeSend = function (xhr, s) {
@@ -408,10 +408,10 @@
 					if (s.__beforeSend) return s.__beforeSend.call(this, xhr, s);
 				};
 			}
-			
+
 		} else if (settings.allowDataInBase64 && type === 'base64') {
 			log('INFO: Concat our own multipart/form-data data string; send the file in base64 because binary xhr is not supported.');
-			
+
 			// A placeholder MIME type
 			if (!info.type) info.type = 'application/octet-stream';
 
@@ -446,7 +446,7 @@
 		}
 		$.ajax(settings);
 	};
-	
+
 	$.fn.fileUpload = function(settings) {
 		this.each(function(i, el) {
 			if ($(el).is('input[type=file]')) {
@@ -461,7 +461,7 @@
 							log('WARN: Multiple file upload not implemented yet, only first file will be uploaded.');
 						}
 						handleFile($.extend({}, config, settings), this.files[0]);
-						
+
 						if (this.form.length === 1) {
 							this.form.reset();
 						} else {
@@ -471,7 +471,7 @@
 					}
 				);
 			}
-			
+
 			if ($(el).is('form')) {
 				log('ERROR: <form> not implemented yet.');
 			} else {
@@ -504,10 +504,10 @@
 
 		return this;
 	};
-	
+
 	$.fileUploadSupported = isSupported;
 	$.imageUploadSupported = isImageSupported;
 	$.fileUploadAsBase64Supported = isSupportedInBase64;
 	$.imageUploadAsBase64Supported = isImageSupportedInBase64;
-	
+
 })(jQuery);
