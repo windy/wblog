@@ -1,18 +1,20 @@
 WBlog
 =======
 [![Build Status](https://travis-ci.org/windy/wblog.svg?branch=master)](https://travis-ci.org/windy/wblog)
-[![Code Climate](https://codeclimate.com/github/windy/wblog.png)](https://codeclimate.com/github/windy/wblog)
-[![Test Coverage](https://codeclimate.com/github/windy/wblog/coverage.png)](https://codeclimate.com/github/windy/wblog)
+[![Maintainability](https://api.codeclimate.com/v1/badges/545d8372a9dda70b77fe/maintainability)](https://codeclimate.com/github/windy/wblog/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/545d8372a9dda70b77fe/test_coverage)](https://codeclimate.com/github/windy/wblog/test_coverage)
 
 为移动而生的 Ruby on Rails 开源博客. WBlog 基于 MIT 协议, 自由使用.
+
+现已全面支持 Ruby on Rails 5.2 版本!!!
 
 * 用户极为友好的阅读体验
 * 自带干净的评论系统
 * 简洁而不简单的发布博客流程
 
-访问我的博客以体验: <http://yafeilee.me>
+访问我的博客以体验: <http://yafeilee.com>
 
-后台禁止爬虫, 使用: <http://yafeilee.me/admin> 访问, 用户名密码可配置.
+后台禁止爬虫, 使用: <http://yafeilee.com/admin> 访问, 用户名密码可配置.
 
 截图如下: <#screenshots>
 
@@ -74,7 +76,7 @@ WBlog 采用了 `mina` 作为自动化发布工具, 使用 `nginx`, `puma` 为�
 
 ### 技术栈
 
-* Ruby on Rails 5.0.0
+* Ruby on Rails 5.2.0
 * Ruby 2.3.1
 * Foundation 6
 * mina

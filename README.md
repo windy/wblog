@@ -1,12 +1,14 @@
 WBlog
 =======
 [![Build Status](https://travis-ci.org/windy/wblog.svg?branch=master)](https://travis-ci.org/windy/wblog)
-[![Code Climate](https://codeclimate.com/github/windy/wblog.png)](https://codeclimate.com/github/windy/wblog)
-[![Test Coverage](https://codeclimate.com/github/windy/wblog/coverage.png)](https://codeclimate.com/github/windy/wblog)
+[![Maintainability](https://api.codeclimate.com/v1/badges/545d8372a9dda70b77fe/maintainability)](https://codeclimate.com/github/windy/wblog/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/545d8372a9dda70b77fe/test_coverage)](https://codeclimate.com/github/windy/wblog/test_coverage)
 
 The missing open source blog system on Ruby on Rails.
 
 WBlog is open source blog which built for mobile first, it's licenced on MIT, use it for free!
+
+New: WBlog is using Ruby on Rails 5.2 now.
 
 [中文说明文档](/README.zh-CN.md)
 
@@ -106,9 +108,9 @@ You can read WBlog wiki for more information: [WBlog 的发布流程(Chinese onl
 
 ### Stack
 
-* Ruby on Rails 5.0.0
+* Ruby on Rails 5.2.0
 * Ruby 2.3.1
-* Turbolinks / SJR
+* Turbolinks 5 / SJR
 * Foundation 6
 * mina
 * slim
