@@ -2,21 +2,21 @@ source 'https://rubygems.org'
 
 ruby '2.3.1'
 
-gem 'rails', '>= 5.1.0', '< 5.2'
+gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
-gem 'coffee-rails'
+gem 'coffee-rails', '~> 4.2'
 gem 'uglifier', '>= 2.7.2'
 
 gem 'jquery-rails'
 gem 'foundation-rails', '~> 6.2.1'
 gem 'foundation-icons-sass-rails'
-gem 'font-awesome-sass'
+gem 'font-awesome-sass', '4.7.0'
 gem 'carrierwave'
-gem 'kaminari', github: 'amatsuda/kaminari'
+gem 'kaminari'
 gem 'turbolinks', '~> 5.x'
 gem 'js_cookie_rails'
 
-gem 'rails-i18n', '~> 5.0.0'
+gem 'rails-i18n', '~> 5.1'
 
 gem 'jbuilder'
 gem 'pg', '~> 0.18'
@@ -24,7 +24,7 @@ gem 'pg', '~> 0.18'
 gem 'redcarpet'
 gem 'rouge'
 gem 'slim-rails'
-gem 'simple_form', github: 'christiannelson/simple_form', branch: 'rails-5.1'
+gem 'simple_form', '~> 4.0.0'
 gem 'mini_magick'
 gem 'html_truncator'
 gem 'nokogiri'
@@ -32,9 +32,9 @@ gem 'figaro'
 gem 'sidekiq'
 gem 'redis-namespace'
 gem 'rest-client'
-gem 'newrelic_rpm'
 
 gem 'puma'
+gem 'bootsnap', '>= 1.3.0', require: false
 
 gem 'mina', '~> 1.0.6', require: false
 gem 'mina-puma', '~> 1.0.1', require: false
