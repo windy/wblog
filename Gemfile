@@ -66,6 +66,6 @@ end
 group :test, :development do
   gem "rspec-rails", ">= 2.8.1"
   gem 'byebug'
-  gem 'factory_girl_rails'
+  gem 'factory_bot_rails'
   gem 'rails-controller-testing'
 end

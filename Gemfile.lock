@@ -89,10 +89,10 @@ GEM
       unf (>= 0.0.5, < 1.0.0)
     erubi (1.7.1)
     execjs (2.7.0)
-    factory_girl (4.9.0)
+    factory_bot (4.8.2)
       activesupport (>= 3.0.0)
-    factory_girl_rails (4.9.0)
-      factory_girl (~> 4.9.0)
+    factory_bot_rails (4.8.2)
+      factory_bot (~> 4.8.2)
       railties (>= 3.0.0)
     ffi (1.9.23)
     figaro (1.1.1)
@@ -359,7 +359,7 @@ DEPENDENCIES
   codeclimate-test-reporter
   coffee-rails (~> 4.2)
   database_cleaner
-  factory_girl_rails
+  factory_bot_rails
   figaro
   font-awesome-sass (= 4.7.0)
   foundation-icons-sass-rails
