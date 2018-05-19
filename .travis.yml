@@ -1,9 +1,8 @@
 # http://about.travis-ci.org/docs/user/build-configuration/
+env:
+  global:
+    - CC_TEST_REPORTER_ID=787a2f89b15c637323c7340d65ec17e898ac44480706b4b4122ea040c2a88f1d
 language: ruby
-
-#bundler_args: '--without production'
-
-script: CODECLIMATE_REPO_TOKEN=7d6b988f58234bf1560305412d10d9530902beebdbe2fb938b6a934f1d352578 bundle exec rake
 
 before_install:
   - "cat /etc/timezone"
@@ -13,12 +12,20 @@ before_install:
   - "bundle -v"
 
 before_script:
+  - "curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter"
+  - "chmod +x ./cc-test-reporter"
+  - "./cc-test-reporter before-build"
   - "cp -f config/database.yml.example config/database.yml"
   - "cp -f config/application.yml.example config/application.yml"
   - "bundle exec rake db:drop db:create db:schema:load --trace 2>&1"
 
+script: bundle exec rspec
+
+after_script:
+  - "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
+
 services:
-    - postgresql
+  - postgresql
 
 rvm:
   - 2.3.1
