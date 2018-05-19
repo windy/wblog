@@ -5,6 +5,9 @@
 //= require foundation
 //= require js.cookie
 //= require 'jquery.html5-fileupload'
+//= require jquery.atwho
+//= require ddscrollspy
+//= require qrcode
 //= require cable
 //= require_tree .
 
