@@ -61,6 +61,8 @@ group :test do
   gem 'database_cleaner'
   gem 'rspec-sidekiq'
   gem "codeclimate-test-reporter", group: :test, require: nil
+  gem 'simplecov'
+  gem 'simplecov-console'
 end
 
 group :test, :development do

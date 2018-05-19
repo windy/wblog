@@ -8,6 +8,7 @@
 *.swp
 
 /public/uploads/*
+/coverage
 
 /config/application.yml
 /config/mongoid.yml

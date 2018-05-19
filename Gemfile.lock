@@ -44,6 +44,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
+    ansi (1.5.0)
     arel (9.0.0)
     babel-source (5.8.35)
     babel-transpiler (0.7.0)
@@ -130,6 +131,7 @@ GEM
       guard (~> 2.1)
       guard-compat (~> 1.1)
       rspec (>= 2.99.0, < 4.0)
+    hirb (0.7.3)
     html_truncator (0.4.2)
       nokogiri (~> 1.5)
     http-cookie (1.0.3)
@@ -303,6 +305,10 @@ GEM
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
+    simplecov-console (0.4.2)
+      ansi
+      hirb
+      simplecov
     simplecov-html (0.10.2)
     slim (3.0.9)
       temple (>= 0.7.6, < 0.9)
@@ -396,6 +402,8 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sidekiq
   simple_form (~> 4.0.0)
+  simplecov
+  simplecov-console
   slim-rails
   spring
   spring-watcher-listen (~> 2.0.0)
