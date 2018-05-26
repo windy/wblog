@@ -3,9 +3,13 @@
 .row
   .small-12.large-9.large-centered.columns
     ul.archives-field
+      .search-wrapper
+        = form_with url: archives_path, method: 'GET' do |f|
+          = f.search_field :q, value: @q, placeholder: t('archive.search'), autofocus: @q.blank?
       - @posts.each do |post|
         li
-          = link_to post.title, blog_path(post), class: 'blog-title'
+          = link_to blog_path(post), class: 'blog-title' do
+            == search_highlight(post.title, @q)
           p.tags-field
             i.fi-calendar
             span
@@ -19,4 +23,7 @@
             i.fi-heart
             span
               = post.liked_count
-    = paginate @posts
+      - if @q.present?
+        .search-result-wrapper
+          p.text-muted 共 #{@q_size || 0} 条结果
+    = paginate @posts, q: @q

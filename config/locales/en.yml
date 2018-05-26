@@ -55,6 +55,9 @@ en:
     publish_success: 'Publish Successfully'
     publish_fail: 'Publish Failed'
 
+  archive:
+    search: 'Search'
+
   admin:
     new_post: 'New Post'
     posts: 'Manage Posts'

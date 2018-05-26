@@ -11,12 +11,22 @@
     margin-right: 1rem;
   }
 
+  .search-result-wrapper p {
+    font-size: 0.785rem;
+    color: #999;
+  }
+
   .blog-title {
     color: #111111;
     &:hover {
       color: red;
     }
     border: none;
+
+    em {
+      color: red;
+      font-style: normal;
+    }
   }
 
   li {

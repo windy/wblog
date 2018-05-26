@@ -55,6 +55,9 @@ zh-CN:
     publish_success: '发表成功'
     publish_fail: '发表失败'
 
+  archive:
+    search: '搜索博客标题'
+
   admin:
     new_post: '新建博客'
     posts: '博客管理'

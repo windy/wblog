@@ -55,6 +55,10 @@ html
                     = link_to t('head.timeline'), archives_path
                   li
                     = link_to t('head.about'), about_path
+                  li
+                    = link_to archives_path do
+                      span
+                        i.fi-magnifying-glass
             - flash.each do |name, msg|
               - if msg.is_a?(String)
                 div class=("callout #{name.to_sym == :notice ? "success" : "alert"}") data-closable=""
