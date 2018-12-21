@@ -110,7 +110,7 @@
       text-align: center;
 
       .heading, .sub-heading {
-        color: #fff;
+        color: #eee;
       }
 
       .version {
@@ -128,7 +128,7 @@
       }
 
       .circle {
-        color: #fff;
+        color: #eee;
         width: 4rem;
         height: 4rem;
         font-size: 3rem;
@@ -140,6 +140,24 @@
         &:hover {
           opacity: 0.7;
         }
+      }
+    }
+  }
+
+  #about {
+    .wrapper {
+      .time {
+        color: #aaa;
+        margin-bottom: 0.5rem;
+        margin-top: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+        line-height: 2;
+      }
+
+      ul > li {
+        margin: 0.5rem 0;
       }
     }
   }
@@ -299,7 +317,7 @@
     padding: 1.5rem;
     background-color: #353535;
     text-align: center;
-    color: #fff;
+    color: #eee;
     font-size: 1.125rem;
   }
 }
