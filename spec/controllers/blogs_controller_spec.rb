@@ -28,8 +28,8 @@ RSpec.describe BlogsController, type: :controller do
       comment2.save!
 
       get :show, params: { id: post.id }
-      expect(assigns(:comments)[0]).to eq(comment2)
-      expect(assigns(:comments)[1]).to eq(comment1)
+      expect(assigns(:comments)[0]).to eq(comment1)
+      expect(assigns(:comments)[1]).to eq(comment2)
     end
 
     it "#prev, #next" do

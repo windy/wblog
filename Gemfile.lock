@@ -196,6 +196,7 @@ GEM
     minitest (5.11.3)
     msgpack (1.2.4)
     multi_json (1.13.1)
+    mysql2 (0.4.10)
     nenv (0.3.0)
     netrc (0.11.0)
     nio4r (2.3.1)
@@ -387,6 +388,7 @@ DEPENDENCIES
   mina-puma (~> 1.0.1)
   mina-sidekiq (~> 1.0.1)
   mini_magick
+  mysql2 (~> 0.4.8)
   nokogiri
   pg (~> 0.18)
   puma
@@ -415,4 +417,4 @@ RUBY VERSION
    ruby 2.3.1p112
 
 BUNDLED WITH
-   1.16.3
+   1.16.6

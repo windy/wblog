@@ -32,6 +32,7 @@ gem 'figaro'
 gem 'sidekiq'
 gem 'redis-namespace'
 gem 'rest-client'
+gem 'mysql2', '~> 0.4.8'
 
 gem 'puma'
 gem 'bootsnap', '>= 1.3.0', require: false
