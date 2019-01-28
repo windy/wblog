@@ -14,11 +14,14 @@ module WBlog
     config.i18n.available_locales = [:en, :'zh-CN']
     config.i18n.default_locale = (ENV['LOCALE'] || 'zh-CN').to_sym
     config.time_zone = 'Beijing'
+    config.encoding = "utf-8"
 
     config.action_controller.action_on_unpermitted_parameters = :log
 
     # generators
-    config.generators.assets = false
+    config.generators.assets = true
+    config.serve_static_assets = true
+    # config.public_file_server.enabled = true
     config.generators.helper = false
     config.generators do |g|
       g.test_framework :rspec, view_specs: false

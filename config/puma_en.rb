@@ -21,5 +21,6 @@ if ENV['RAILS_ENV'] == 'production'
     ActiveRecord::Base.connection_pool.disconnect!
   end
 else
+  bind 'tcp://0.0.0.0:3000'
   plugin :tmp_restart
 end
