@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.5.3'
 
 gem 'rails', '~> 5.2.0'
 gem 'sass-rails', '~> 5.0'
@@ -36,11 +36,11 @@ gem 'rest-client'
 gem 'puma'
 gem 'bootsnap', '>= 1.3.0', require: false
 
-gem 'mina', '~> 1.0.6', require: false
-gem 'mina-puma', '~> 1.0.1', require: false
+gem 'mina', '~> 1.2.2', require: false
+gem 'mina-ng-puma', '~> 1.2.0', require: false
 gem 'mina-multistage', '~> 1.0.3', require: false
-gem 'mina-sidekiq', '~> 1.0.1', require: false
-gem 'mina-logs', '~> 1.0.1', require: false
+gem 'mina-sidekiq', '~> 1.0.3', require: false
+gem 'mina-logs', '~> 1.1.0', require: false
 
 gem 'browser_warrior'
 

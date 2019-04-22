@@ -10,9 +10,10 @@ require "mina_sidekiq/tasks"
 require 'mina/logs'
 require 'mina/multistage'
 
-set :shared_dirs, fetch(:shared_dirs, []).push('log', 'public/uploads', 'node_modules', 'public/personal')
+set :shared_dirs, fetch(:shared_dirs, []).push('log', 'public/uploads', 'node_modules', 'storage', 'public/personal')
 set :shared_files, fetch(:shared_files, []).push('config/database.yml', 'config/application.yml')
 
+set :puma_config, ->{ "#{fetch(:current_path)}/config/puma.rb" }
 set :sidekiq_pid, ->{ "#{fetch(:shared_path)}/tmp/pids/sidekiq.pid" }
 
 task :remote_environment do
@@ -34,6 +35,9 @@ task :setup do
 
   command %[mkdir -p "#{fetch(:shared_path)}/node_modules"]
   command %[chmod g+rx,u+rwx "#{fetch(:shared_path)}/node_modules"]
+
+  command %[mkdir -p "#{fetch(:shared_path)}/storage"]
+  command %[chmod g+rx,u+rwx "#{fetch(:shared_path)}/storage"]
 
   command %[mkdir -p "#{fetch(:shared_path)}/config"]
   command %[chmod g+rx,u+rwx "#{fetch(:shared_path)}/config"]
@@ -62,7 +66,7 @@ task :deploy do
 
     on :launch do
       invoke :'rbenv:load'
-      invoke :'puma:hard_restart'
+      invoke :'puma:phased_restart'
       invoke :'sidekiq:restart'
     end
   end
