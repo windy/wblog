@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :subscribe do
-    email "tester@mail.com"
-    enable false
+    email { "tester@mail.com" }
+    enable { false }
   end
 end
