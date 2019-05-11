@@ -5,7 +5,7 @@
     ul.archives-field
       .search-wrapper
         = form_with url: archives_path, method: 'GET' do |f|
-          = f.search_field :q, value: @q, placeholder: t('archive.search'), autofocus: @q.blank?
+          = f.search_field :q, value: @q, placeholder: t('archive.search')
       - @posts.each do |post|
         li
           = link_to blog_path(post), class: 'blog-title' do
