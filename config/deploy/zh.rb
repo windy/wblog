@@ -1,4 +1,4 @@
-set :domain, 'yafeilee.me'
+set :domain, 'yafeilee.com'
 set :deploy_to, '/data/www/wblog'
 set :repository, 'git@github.com:windy/wblog.git'
 set :branch, 'master'
