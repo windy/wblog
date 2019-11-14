@@ -1,3 +1,4 @@
+STDOUT.sync = true
 set :stages, %w(en zh)
 set :default_stage, 'zh'
 
