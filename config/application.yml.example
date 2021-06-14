@@ -1,0 +1,12 @@
+# Use `rake secret` to generate one key
+SECRET_KEY_BASE: ''
+
+# domain name used by action cable
+DOMAIN: ''
+PROTOCOL: http
+
+# sidekiq db
+SIDEKIQ_DB: '1'
+
+# google anlytics
+GA: ''

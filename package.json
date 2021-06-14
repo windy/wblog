@@ -1,0 +1,27 @@
+{
+  "name": "wblog",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@rails/actioncable": "^6.0.0",
+    "@rails/activestorage": "^6.0.0",
+    "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.4.0",
+    "admin-lte": "^3.0.0-beta.1",
+    "bootstrap": "^4.3.1",
+    "daterangepicker": "^3.0.5",
+    "expose-loader": "^1.0.0",
+    "jquery": "^3.3.1",
+    "moment-timezone": "^0.5.33",
+    "popper.js": "^1.14.7",
+    "rails-erb-loader": "^5.5.2",
+    "tempusdominus-core": "^5.19.0",
+    "turbolinks": "^5.2.0",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.2"
+  }
+}
