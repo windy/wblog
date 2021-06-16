@@ -1,3 +1,22 @@
 @import 'bootstrap_custom';
 
-@import 'home';
+@import 'aboutme_welcome';
+@import 'archives';
+@import 'markdown';
+@import 'blogs';
+@import 'head';
+@import 'qrcodes';
+@import 'comments';
+@import 'highlight';
+@import 'footer';
+@import 'like_and_weixin';
+@import 'about';
+
+.turbolinks-progress-bar {
+  height: 2px;
+  background-color: red;
+}
+
+img {
+  display: block;
+}

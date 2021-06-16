@@ -1,0 +1,23 @@
+= render partial: 'post_head', locals: { post: post }
+
+.content.markdown
+  == post.content_html
+
+p.ptag.published-at
+  | #{t('announce_at')}
+  span #{format_date(post.created_at)}
+
+= render 'common/copyright'
+hr.blog-over
+p
+  button.like-button class="#{'liked' if post.liked_by?(cookies[:like])}" type='button' data-url=blog_likes_path(post)
+    span.count #{@likes_count}
+    span Like
+  .qrcode
+    a#qrcode-link href="#"
+      i.fi-link
+      | #{t('qr_code')}
+
+  .social-share
+    .qrcode-wrapper
+      = render partial: "qrcode", locals: { str: blog_url(post) }

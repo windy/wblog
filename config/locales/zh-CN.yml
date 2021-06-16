@@ -1,0 +1,118 @@
+zh-CN:
+  comment: "评论"
+  edit: '编辑'
+  destroy: '删除'
+  announce_at: "发表于 "
+  qr_code: '二维码'
+  visited_count: "浏览数 "
+  nocontent: "没有新的内容"
+  prev: '← 上一篇'
+  next: '下一篇 →'
+  none: '无'
+  qrcodetips: '扫一扫继续阅读或者帮我分享至朋友圈'
+
+  views:
+    pagination:
+      previous: '上一页'
+      next: '下一页'
+
+  home:
+    no_blog_here: '这里没有博客'
+    read: '阅读全文 >>'
+    created_at: '发表于 '
+    recent: '近期博客'
+
+  subscribes:
+    title: '订阅我'
+    email: '邮件订阅'
+    wechat: '微信扫一扫'
+    rss: 'RSS 订阅'
+    submit: '提交'
+    submit_success: '订阅成功'
+
+
+  head:
+    home: '首页'
+    tech: '技术'
+    life: '生活'
+    creator: '创业'
+    timeline: '时间线'
+    about: '关于我'
+
+  title:
+    home: '首页'
+    timeline: '时间线'
+    about: '关于我'
+
+  comment_attributes:
+    email: '邮件地址错误'
+  comment_placeholder:
+    content: '发表你的评论...'
+    name: '名字'
+    email: '邮箱, your@example.com'
+    submit: '提交'
+    submitting: '提交中'
+    publish_success: '发表成功'
+    publish_fail: '发表失败'
+
+  archive:
+    search: '搜索博客标题'
+
+  admin:
+    new_post: '新建博客'
+    posts: '博客管理'
+    posts_attributes:
+      title: '标题'
+      type: '分类'
+      labels: '标签'
+      already_labels: '已有标签: '
+      content: '正文'
+      preview: '预览'
+      upload_photo: '上传图片'
+      submit: '提交'
+    posts_head:
+      title: '标题'
+      summary: '概要'
+      operation: '操作'
+
+    comments: '评论管理'
+    comments_head:
+      name: '名字'
+      email: '邮箱'
+      content: '内容'
+      created_at: '创建时间'
+      operation: '操作'
+      reply: '回复'
+      destroy: '删除'
+
+    subscribes: '订阅管理'
+    subscribes_head:
+      email: '邮箱'
+      enable: '是否启用'
+      created_at: '创建时间'
+      operation: '操作'
+      op:
+        enable: '启用'
+        disable: '禁用'
+
+    back: '返回首页'
+    logout: '退出'
+    dashboard:
+      head: '系统信息'
+      info: '信息'
+      data: '数据'
+      posts_count: '文章数'
+      comments_count: '评论数'
+      visited_count: '浏览数'
+      subscribes_count: '订阅数'
+    session:
+      title: '登录后台'
+      username: '用户名'
+      username_placeholder: '管理员账号'
+      password: '密码'
+      password_placeholder: '管理员密码'
+      login_button: '登录'
+      login_success: '登录成功'
+      no_configuration: '系统未配置管理员, 无法登录'
+      username_error: '用户名错误'
+      password_error: '密码错误'

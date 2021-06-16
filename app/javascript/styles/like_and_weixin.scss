@@ -1,0 +1,27 @@
+.like-button {
+  color:  #eaa296;
+  background-color: transparent;
+  border: 1px solid #e79385;
+  border-radius: 10rem;
+  padding: 0.5rem 1rem;
+
+  &:hover {
+    color: #e07662;
+    border-color: #e27d6b;
+  }
+  &:focus {
+    outline-style: none;
+  }
+  span {
+    margin-left: 0.23rem;
+  }
+
+}
+
+.like-button.liked {
+  background-color: #EAA296;
+  color: #FFF;
+  &:focus {
+    outline-style: none;
+  }
+}

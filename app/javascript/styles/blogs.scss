@@ -1,0 +1,105 @@
+.home-index-page, .blogs-show-page {
+  .blog-title {
+    margin-top: 1rem;
+    line-height: 1.5;
+  }
+
+  .ptag {
+    margin-bottom: 0.5rem;
+    color: #888;
+    font-size: 95%;
+    span {
+      margin-left: 0.5rem;
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+    .has-tip {
+      border: none;
+    }
+  }
+
+  .content {
+    padding-top: 1rem;
+  }
+
+  .read-more {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    color: #333;
+
+    &:hover {
+      color: #111;
+      border-color: #999;
+      text-decoration: none;
+    }
+  }
+
+  .published-at {
+    @media screen and (min-width: 40.063em) {
+      text-align: right;
+    }
+    margin-top: 1rem;
+    color: #999;
+    float: right;
+  }
+
+  .blog-over {
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+    border-bottom: 1px solid #DCDCDC;
+  }
+
+  .recent-title {
+    margin-top: 3rem;
+    font-weight: 400;
+  }
+
+  .recent-content {
+    @media screen and (min-width: 64em) {
+      padding-bottom: 3rem;
+    }
+    padding-left: 1.2rem;
+    li {
+      list-style: disc;
+    }
+    li a {
+      margin-left: -0.215rem;
+    }
+  }
+
+  #qrcode-home {
+    padding: 1rem 2rem 1rem 0;
+  }
+
+  .qrcode {
+    display: inline-block;
+    float: right;
+    margin-top: -4.215rem;
+    i {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .qrcode-wrapper {
+    float: right;
+    margin-top: -2rem;
+    text-align: right;
+    table {
+      float: right;
+    }
+    p {
+      clear: both;
+    }
+  }
+
+  .social-share {
+    display: none;
+  }
+  .wechat_qrcode {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+}

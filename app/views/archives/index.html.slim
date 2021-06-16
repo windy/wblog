@@ -1,0 +1,31 @@
+- content_for(:title) do
+  | #{t('title.timeline')}
+.container
+  .row.justify-content-center
+    .col-sm-12.col-lg-9
+      ul.archives-field
+        .search-wrapper
+          = form_with url: archives_path, method: 'GET' do |f|
+            .form-group
+              = f.search_field :q, value: @q, placeholder: t('archive.search'), class: 'form-control'
+        - @posts.each do |post|
+          li
+            = link_to blog_path(post), class: 'blog-title' do
+              == search_highlight(post.title, @q)
+            p.tags-field
+              i.fa.fa-calendar
+              span
+                = format_date(post.created_at)
+              i.fa.fa-eye
+              span
+                = post.labels_content
+              i.fa.fa-torah
+              span
+                = post.visited_count
+              i.fa.fa-heart
+              span
+                = post.liked_count
+        - if @q.present?
+          .search-result-wrapper
+            p.text-muted 共 #{@q_size || 0} 条结果
+      = paginate @posts, q: @q

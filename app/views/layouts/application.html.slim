@@ -9,19 +9,37 @@ html
     meta name="HandheldFriendly" content="True"
     meta name="MobileOptimized" content="320"
     meta name="turbolinks-cache-control" content="no-cache"
+    - if content_for?(:meta)
+      = yield(:meta)
     title
-      - if content_for?(:title)
-        = yield(:title) + " | wblog"
-      - else
-        | wblog
+      = content_for?(:title) ? yield(:title) + " | #{ENV['SITE_NAME']}" : ENV['SITE_NAME']
     = csrf_meta_tags
     = action_cable_meta_tag
     = content_for?(:head) ? yield(:head) : ''
     = stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'ga', 'data-turbolinks-track': 'reload'
-    = favicon_link_tag asset_pack_path("media/images/favicon.ico")
+    = favicon_link_tag asset_pack_path("media/images/favicon.png")
   body class=body_class
-    main
-      .container
-        == yield
+    - if content_for?(:main)
+      = yield(:main)
+    - else
+      nav class="navbar navbar-expand-lg navbar-dark bg-dark my-navbar"
+        a class="navbar-brand" href="/" #{ENV['SITE_NAME']}
+        button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+          span class="navbar-toggler-icon"
+        div class="collapse navbar-collapse" id="navbar-collapse"
+          ul.navbar-nav.ml-auto
+            li class="nav-item"
+              = link_to '首页', root_path, class: 'nav-link'
+            li class="nav-item"
+              = link_to '时间线', archives_path, class: 'nav-link'
+            li class="nav-item"
+              = link_to '关于', page_path('about'), class: 'nav-link'
+            li class="nav-item"
+              a class="nav-link" href=archives_path
+                .fa.fa-search
+      main
+        = render 'common/welcome_new_year'
+        = yield
+        = render "layouts/footer"

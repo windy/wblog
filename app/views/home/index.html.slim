@@ -1,15 +1,31 @@
-.container.text-center
-  p
-  h1 Hello World
-  hr
-  h3 You are roading on Rails...
-  br
-  br
-  br
-  br
-  p.text-muted
-    ' Built with
-    span dao42/rails-template
-    | !
+- if ENV['INTRODUCE'].present?
+  - content_for(:meta) do
+    meta name="description" content="#{ENV['INTRODUCE'].dup.force_encoding('UTF-8')}"
+- content_for(:title) do
+  | #{t('title.home')}
+.container
+  .row
+    .col-sm-12.col-lg-8
+      - unless @newest
+        = render 'common/no_blog_here'
+      - else
+        = render partial: 'post_head', locals: { post: @newest }
+        .content.markdown
+          == @newest.sub_content
+          p.published-at #{t('home.created_at')} #{format_date(@newest.created_at)}
 
-  = link_to 'About Page', page_path('about')
+          = link_to t('home.read'), blog_path(@newest), class: 'read-more'
+
+        - if @recent.present?
+          h4.recent-title #{t('home.recent')}
+          ul.recent-content
+            - @recent.each do |re|
+              li = link_to re.title, blog_path(re)
+
+    .col-lg-4.self-introduce
+      / Adjust it in common/welcome
+      = render 'common/welcome'
+      h4 #{t('subscribes.title')}
+      .row
+        .col-12.col-md-6.col-lg-12
+          = image_pack_tag 'wechat_qrcode.jpg', class: 'wechat_qrcode'

@@ -1,0 +1,36 @@
+- url = @post.new_record? ? admin_posts_path : admin_post_path(@post)
+.row
+  .col-sm-6
+    = simple_form_for(@post, url: url, html: {novalidate: '' }) do |f|
+      = f.input :title, label: t('admin.posts_attributes.title'), input_html: { name: 'title' }
+      / .row
+        / .small-12.large-6.columns
+          / = label_tag :labels, t('admin.posts_attributes.labels')
+          / = text_field_tag :labels, @post.labels_content(true)
+
+      / .row
+        / .small-12.columns
+          / p
+            / | #{t('admin.posts_attributes.already_labels')}
+            / span
+              / - Label.all.each do |label|
+                / a.tag href="#" #{label.name}
+
+      / tabs and upload file field
+      ul.tabs#tabs data-tabs=''
+        li.tabs-title.is-active
+          a href="#content" #{t('admin.posts_attributes.content')}
+        li.tabs-title
+          a href="#preview" #{t('admin.posts_attributes.preview')}
+        = link_to t('admin.posts_attributes.upload_photo'), "#", :id=>'upload_photo'
+      input[type="file" style="display: none;"]
+
+      .tabs-content data-tabs-content='tabs'
+        .tabs-panel.content-field.is-active#content
+          = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', id: 'content-input' }
+
+        .tabs-panel.preview.markdown#preview
+
+      .row
+        .small-12.large-6.columns.posts-button
+          button.button type='submit' #{t('admin.posts_attributes.submit')}

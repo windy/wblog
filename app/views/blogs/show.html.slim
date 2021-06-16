@@ -1,0 +1,24 @@
+- content_for(:meta) do
+  meta name="description" content=@post.meta_content
+  meta name="keywords" content=@post.labels_content
+
+- content_for(:title) do
+  | #{@post.title}
+/ data-url=refresh_blog_comments_path(@post) data-post_id=@post.id
+.container.blog-wrapper
+  .row.justify-content-center
+    .col-xs-12.col-lg-9
+      = render partial: "post", :locals=> { post: @post }
+.comment-field
+  = render partial: 'comment', locals: { comments: @comments, post: @post }
+  p
+  .row
+    .col-xs-12.col-lg-8
+      - if @prev
+        = link_to blog_path(@prev), class: 'prev' do
+          i.fi-arrow-left
+          | Prev
+      - if @next
+        = link_to blog_path(@next), class: 'next' do
+          | Next
+          i.fi-arrow-right

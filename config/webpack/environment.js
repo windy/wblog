@@ -22,6 +22,5 @@ environment.loaders.append('expose', {
   ]
 })
 
-
 environment.loaders.prepend('erb', erb)
 module.exports = environment

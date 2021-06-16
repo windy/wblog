@@ -15,7 +15,7 @@ module ApplicationHelper
     body_class_page =
       if controller.is_a?(HighVoltage::StaticPage) && params.key?(:id) && params[:id] !~ /\A[-+]?[0-9]*\.?[0-9]+\Z/
         id_name = params[:id].tr('_', '-') + '-page'
-        format('%s-%s-%s', path, action_name, id_name)
+        format('%s-%s', 'pages', id_name)
       else
         format('%s-%s-page', path, mapped_action_name)
       end
@@ -42,5 +42,19 @@ module ApplicationHelper
     when 'warning' then 'alert alert-warning alert-dismissible'
     when 'alert', 'error' then 'alert alert-danger alert-dismissible'
     end
+  end
+
+  def format_time(time)
+    time.strftime("%Y-%m-%d %H:%M")
+  end
+
+  def format_date(time)
+    time.strftime("%Y.%m.%d")
+  end
+
+  def search_highlight(title, q)
+    return title if q.blank?
+
+    title.sub(q, "<em>#{q}</em>")
   end
 end

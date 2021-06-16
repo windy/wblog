@@ -11,16 +11,28 @@ end
 
 Rails.application.routes.draw do
 
+  resources :blogs, only: [:show, :edit] do
+    resources :likes, only: [:index, :create, :destroy]
+    resources :comments, only: [:index, :create] do
+      collection do
+        get :refresh
+      end
+    end
+  end
+  resources :archives, only: [:index]
+
   namespace :admin do
     get 'login', to: 'sessions#new', as: :login
     post 'login', to: 'sessions#create'
     delete 'logout', to: 'sessions#destroy', as: :logout
     resource :account, only: [:edit, :update]
 
+    resources :posts, only: [:index, :new, :edit, :create, :update, :destroy] do
+      resources :comments, only: [:index, :destroy]
+    end
+
     root to: 'dashboard#index'
   end
-
-  # write your routes here
 
   mount Sidekiq::Web => '/sidekiq', constraints: AdminConstraint.new
   #mount ActionCable.server => '/cable'

@@ -1,0 +1,33 @@
+.self-introduce {
+  @media screen and (min-width: 64em) {
+    margin-top: 1.875rem;
+  }
+
+  .box {
+    margin-bottom: 2rem;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  p, .aboutme-index {
+    color: #5D5D5D;
+  }
+}
+
+.aboutme-index {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 0;
+  li {
+    margin-left: 0;
+    padding-bottom: 0.5rem;
+    span {
+      &:first-child{
+        margin-right: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,73 @@
+.markdown {
+
+  word-wrap: break-word;
+  overflow: hidden;
+  color: #4f4444;
+
+  @media screen and (min-width: 40.063em) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.875rem;
+    }
+  }
+
+  @media screen and (max-width: 40em) {
+    h1, h2, h3, h4, h5, h6 {
+      font-size: 1.2rem;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+  }
+
+  pre {
+    padding: 1rem 0.5rem;
+    margin: 1rem 0;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: pre;
+    word-wrap: normal;
+    overflow-x: auto;
+    background-color: #272822;
+    color: #f8f8f2;
+    border-radius: 5px;
+
+    > code {
+      border: none;
+      background-color: transparent;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  code {
+    font-weight: 500;
+    border: none;
+    margin: 0;
+    background: #5d5e59;
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    color: #f8f8f2;
+    display: inline-block;
+    margin: 0.3rem 0.2rem 0.3rem 0;
+  }
+
+  blockquote {
+    padding: 0.5625rem 1.25rem 0 1.1875rem;
+    border-left: 1px solid #cacaca;
+    color: #8a8a8a;
+  }
+  ol, ul, dl {
+    padding-left: 1.2rem;
+    li {
+      margin-bottom: 0.3rem;
+    }
+  }
+}
