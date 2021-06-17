@@ -6,10 +6,10 @@ gem 'rails', '~> 6.1.3', '>= 6.1.3.2'
 gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'webpacker', '~> 5.0'
-gem 'turbolinks', '~> 5'
 gem 'turbo-rails', '~> 0.5'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
+gem 'stimulus-rails'
 
 gem 'rexml', '~> 3.2', '>= 3.2.4'
 
@@ -35,7 +35,6 @@ gem 'sprockets', '~> 3.7.2'
 gem 'sassc-rails'
 gem 'pg', '>= 1.1'
 
-gem 'js_cookie_rails'
 gem 'carrierwave'
 gem 'redcarpet'
 gem 'rouge'

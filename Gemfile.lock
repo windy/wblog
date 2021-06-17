@@ -138,8 +138,6 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
-    js_cookie_rails (2.2.0)
-      railties (>= 3.1)
     launchy (2.5.0)
       addressable (~> 2.7)
     listen (3.5.1)
@@ -283,14 +281,13 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     ssrf_filter (1.0.7)
+    stimulus-rails (0.2.4)
+      rails (>= 6.0.0)
     temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
     turbo-rails (0.5.9)
       rails (>= 6.0.0)
-    turbolinks (5.2.1)
-      turbolinks-source (~> 5.2)
-    turbolinks-source (5.2.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     web-console (4.1.0)
@@ -330,7 +327,6 @@ DEPENDENCIES
   high_voltage (~> 3.1)
   html_truncator
   jbuilder (~> 2.7)
-  js_cookie_rails
   kaminari!
   launchy
   listen (~> 3.3)
@@ -360,8 +356,8 @@ DEPENDENCIES
   spring
   sprockets (~> 3.7.2)
   sprockets-rails (~> 3.2.1)
+  stimulus-rails
   turbo-rails (~> 0.5)
-  turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)
   webdrivers

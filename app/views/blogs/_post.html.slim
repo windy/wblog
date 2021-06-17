@@ -9,15 +9,15 @@ p.ptag.published-at
 
 = render 'common/copyright'
 hr.blog-over
-p
-  button.like-button class="#{'liked' if post.liked_by?(cookies[:like])}" type='button' data-url=blog_likes_path(post)
+p data-controller='like'
+  button.like-button class="#{'liked' if post.liked_by?(cookies[:like])}" type='button' data-url=blog_likes_path(post) data-like-target='button' data-action='click->like#toggle'
     span.count #{@likes_count}
     span Like
-  .qrcode
-    a#qrcode-link href="#"
-      i.fi-link
-      | #{t('qr_code')}
-
-  .social-share
-    .qrcode-wrapper
-      = render partial: "qrcode", locals: { str: blog_url(post) }
+  .qrcode-controller data-controller='qrcode'
+    .qrcode
+      a#qrcode-link href='#' data-action='click->qrcode#greet'
+        i.fi-link
+        | #{t('qr_code')}
+    .social-share data-qrcode-target='wrapper'
+      .qrcode-wrapper
+        = render partial: "qrcode", locals: { str: blog_url(post) }
