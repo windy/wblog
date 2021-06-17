@@ -23,14 +23,14 @@
   };
 }).call(this);
 
-$(document).on('turbolinks:load', function() {
+$(document).on('turbo:load', function() {
   var component = $('.admin-page');
   if (component.length > 0) {
     App.adminSidebar.restoreSidebarScrollPosition();
   }
 });
 
-$(document).on('turbolinks:before-render', function() {
+$(document).on('turbo:before-render', function() {
   var component = $('.admin-page');
   if (component.length > 0) {
     App.adminSidebar.saveSidebarScrollPosition();

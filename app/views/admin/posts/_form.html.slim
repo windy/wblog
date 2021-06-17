@@ -17,20 +17,18 @@
                 / a.tag href="#" #{label.name}
 
       / tabs and upload file field
-      ul.tabs#tabs data-tabs=''
-        li.tabs-title.is-active
-          a href="#content" #{t('admin.posts_attributes.content')}
-        li.tabs-title
-          a href="#preview" #{t('admin.posts_attributes.preview')}
-        = link_to t('admin.posts_attributes.upload_photo'), "#", :id=>'upload_photo'
-      input[type="file" style="display: none;"]
+      ul.nav.nav-tabs#tabs
+        li.nav-item
+          a.nav-link.active data-toggle="tab" href="#content" #{t('admin.posts_attributes.content')}
+        li.nav-item
+          a.nav-link#preview-link data-toggle="tab" href="#preview" #{t('admin.posts_attributes.preview')}
+      = link_to t('admin.posts_attributes.upload_photo'), "#", id: 'upload_photo'
+      input type="file" style="display: none;"
 
-      .tabs-content data-tabs-content='tabs'
-        .tabs-panel.content-field.is-active#content
+      .tab-content
+        .tab-pane.fade.show.active#content
           = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', id: 'content-input' }
 
-        .tabs-panel.preview.markdown#preview
-
-      .row
-        .small-12.large-6.columns.posts-button
-          button.button type='submit' #{t('admin.posts_attributes.submit')}
+        .tab-pane.fade.markdown#preview
+      = f.button :submit
+      / button.btn.btn-primary type='submit' #{t('admin.posts_attributes.submit')}

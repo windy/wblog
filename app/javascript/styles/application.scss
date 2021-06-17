@@ -1,8 +1,8 @@
 @import 'bootstrap_custom';
+@import 'libs/markdown';
 
 @import 'aboutme_welcome';
 @import 'archives';
-@import 'markdown';
 @import 'blogs';
 @import 'head';
 @import 'qrcodes';
@@ -12,7 +12,7 @@
 @import 'like_and_weixin';
 @import 'about';
 
-.turbolinks-progress-bar {
+.turbo-progress-bar {
   height: 2px;
   background-color: red;
 }

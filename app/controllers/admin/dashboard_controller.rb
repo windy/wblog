@@ -1,5 +1,6 @@
 class Admin::DashboardController < Admin::BaseController
   def index
-    @admin_count = Administrator.all.size
+    @posts_count = Post.all.count
+    @comments_count = Comment.all.count
   end
 end

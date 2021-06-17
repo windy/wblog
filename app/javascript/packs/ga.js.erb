@@ -6,7 +6,7 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  document.addEventListener('turbolinks:load', function(event){
+  document.addEventListener('turbo:load', function(event){
     if (typeof gtag === 'function') {
       if(typeof gon !== 'undefined' && gon.user_id){
         gtag('set', { 'user_id': gon.user_id })

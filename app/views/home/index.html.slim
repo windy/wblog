@@ -12,9 +12,8 @@
         = render partial: 'post_head', locals: { post: @newest }
         .content.markdown
           == @newest.sub_content
-          p.published-at #{t('home.created_at')} #{format_date(@newest.created_at)}
-
           = link_to t('home.read'), blog_path(@newest), class: 'read-more'
+          p.published-at #{t('home.created_at')} #{format_date(@newest.created_at)}
 
         - if @recent.present?
           h4.recent-title #{t('home.recent')}

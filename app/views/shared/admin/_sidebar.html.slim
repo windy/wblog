@@ -12,8 +12,12 @@ aside.main-sidebar.sidebar-dark-primary.elevation-4
         li.nav-item
           = link_to admin_root_path, class: "nav-link #{admin_active_for(admin_root_path, current_path)}" do
             i.nav-icon.fas.fa-tachometer-alt
-            span Dashboard
+            span 数据中心
         li.nav-item
-          = link_to admin_posts_path, class: "nav-link" do
+          = link_to admin_posts_path, class: "nav-link #{admin_active_for(admin_posts_path, current_path)}" do
             i.nav-icon.fas.fa-th
             span 博客管理
+        li.nav-item
+          = link_to admin_all_comments_path, class: "nav-link #{admin_active_for(admin_all_comments_path, current_path)}" do
+            i.nav-icon.fas.fa-th
+            span 评论管理

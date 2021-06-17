@@ -1,10 +1,6 @@
-class Admin::CommentsController < Admin::BaseController
-  before_action do
-    @post = Post.find( params[:post_id] )
-  end
-
+class Admin::AllCommentsController < Admin::BaseController
   def index
-    @comments = @post.comments.order(created_at: :desc)
+    @comments = Comment.order(created_at: :desc).page(params[:page]).per(25)
   end
 
   def destroy

@@ -8,16 +8,16 @@ html
     meta http-equiv="cleartype" content="on"
     meta name="HandheldFriendly" content="True"
     meta name="MobileOptimized" content="320"
-    meta name="turbolinks-cache-control" content="no-cache"
+    meta name="turbo-cache-control" content="no-cache"
     - if content_for?(:title)
       title = format("%s - Dashboard", yield(:title))
     - else
-      title wblog Dashboard
+      title Dashboard
     = csrf_meta_tags
     = action_cable_meta_tag
     = content_for?(:head) ? yield(:head) : ''
-    = stylesheet_pack_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'admin', media: 'all', 'data-turbo-track': 'reload'
+    = javascript_pack_tag 'admin', 'data-turbo-track': 'reload'
     = favicon_link_tag asset_pack_path("media/images/favicon.png")
   body.hold-transition.skin-blue.sidebar-mini.layout-fixed.admin-page class=body_class
     - if @full_render

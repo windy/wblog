@@ -12,13 +12,14 @@
 .comment-field
   = render partial: 'comment', locals: { comments: @comments, post: @post }
   p
-  .row
-    .col-xs-12.col-lg-8
-      - if @prev
-        = link_to blog_path(@prev), class: 'prev' do
-          i.fi-arrow-left
-          | Prev
-      - if @next
-        = link_to blog_path(@next), class: 'next' do
-          | Next
-          i.fi-arrow-right
+  .container
+    .row.justify-content-center
+      .col-xs-12.col-lg-9
+        - if @prev
+          = link_to blog_path(@prev), class: 'prev' do
+            i.fa.fa-arrow-left
+            | 上一篇
+        - if @next
+          = link_to blog_path(@next), class: 'next' do
+            | 下一篇
+            i.fa.fa-arrow-right

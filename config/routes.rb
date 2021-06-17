@@ -20,6 +20,7 @@ Rails.application.routes.draw do
     end
   end
   resources :archives, only: [:index]
+  resources :photos, only: [:create]
 
   namespace :admin do
     get 'login', to: 'sessions#new', as: :login
@@ -28,8 +29,13 @@ Rails.application.routes.draw do
     resource :account, only: [:edit, :update]
 
     resources :posts, only: [:index, :new, :edit, :create, :update, :destroy] do
+      collection do
+        post :preview
+      end
       resources :comments, only: [:index, :destroy]
     end
+
+    resources :all_comments, only: [:index, :destroy]
 
     root to: 'dashboard#index'
   end

@@ -1,5 +1,12 @@
 @import 'bootstrap_custom';
+@import 'libs/markdown';
 @import 'admin-lte/dist/css/adminlte';
+@import 'admin/posts';
+
+.turbo-progress-bar {
+  height: 4px;
+  background-color: red;
+}
 
 .main-sidebar {
   li.nav-item {
