@@ -44,8 +44,22 @@ zh-CN:
     timeline: '时间线'
     about: '关于我'
 
-  comment_attributes:
-    email: '邮件地址错误'
+
+  activerecord:
+    errors:
+      models:
+        comment:
+          attributes:
+            email:
+              blank: '邮件地址错误'
+              invalid: '邮件地址错误'
+            name:
+              blank: '请输入你的名字'
+              invalid: '请输入你的名字'
+            content:
+              blank: '请输入有价值的评论'
+              invalid: '请输入有价值的评论'
+              too_short: '请输入有价值的评论'
   comment_placeholder:
     content: '发表你的评论...'
     name: '名字'
