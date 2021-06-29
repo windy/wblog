@@ -36,6 +36,7 @@ Rails.application.routes.draw do
     end
 
     resources :all_comments, only: [:index, :destroy]
+    resources :labels
 
     root to: 'dashboard#index'
   end

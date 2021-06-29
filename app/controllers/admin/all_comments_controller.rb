@@ -4,13 +4,13 @@ class Admin::AllCommentsController < Admin::BaseController
   end
 
   def destroy
-    comment = @post.comments.find(params[:id])
+    comment = Comment.find(params[:id])
     if comment.destroy
       flash[:notice] = '删除评论成功'
-      redirect_to admin_post_comments_path(@post)
+      redirect_to admin_all_comments_path
     else
       flash[:alert] = '删除失败'
-      redirect_to admin_post_comments_path(@post)
+      redirect_to admin_all_comments_path
     end
   end
 end

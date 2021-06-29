@@ -18,7 +18,7 @@
             td #{comment.post.title}
             td #{format_time(comment.created_at)}
             td
-              = link_to t('destroy'), admin_all_comments_path(comment), method: 'DELETE', 'data-confirm' => '确认删除?'
+              = link_to t('destroy'), admin_all_comment_path(comment), method: 'DELETE', 'data-confirm' => '确认删除?'
   .card-footer
     .float-sm-left
       | 总计: #{@comments.total_count}

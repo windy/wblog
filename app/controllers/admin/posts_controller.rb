@@ -23,9 +23,7 @@ class Admin::PostsController < Admin::BaseController
   end
 
   def create
-    labels = params.delete(:labels).to_s
-    @post = Post.new( params.permit(:title, :content, :type) )
-    initialize_or_create_labels(labels)
+    @post = Post.new( post_params )
 
     if @post.save
       flash[:notice] = '创建博客成功'
@@ -39,10 +37,7 @@ class Admin::PostsController < Admin::BaseController
   def update
     @post = Post.find( params[:id] )
 
-    labels = params.delete(:labels).to_s
-    initialize_or_create_labels(labels)
-
-    if @post.update( params.permit(:title, :content, :type) )
+    if @post.update( post_params )
       flash[:notice] = '更新博客成功'
       redirect_to admin_posts_path
     else
@@ -56,12 +51,7 @@ class Admin::PostsController < Admin::BaseController
   end
 
   private
-  def initialize_or_create_labels(labels)
-    @post.labels = []
-    labels.split(",").map { |i| i.strip }.uniq.each do |name|
-      label = Label.find_or_initialize_by(name: name.strip)
-      label.save!
-      @post.labels << label
-    end
+  def post_params
+    params.require(:post).permit(:title, :content, label_ids: [])
   end
 end

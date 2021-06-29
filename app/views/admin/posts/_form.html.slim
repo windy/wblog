@@ -1,20 +1,10 @@
-- url = @post.new_record? ? admin_posts_path : admin_post_path(@post)
-.row
+.row data-controller='admin-label'
   .col-sm-6
-    = simple_form_for(@post, url: url, html: {novalidate: '' }) do |f|
+    = simple_form_for([:admin, @post], html: {novalidate: '' }) do |f|
       = f.input :title, label: t('admin.posts_attributes.title'), input_html: { name: 'title' }
-      / .row
-        / .small-12.large-6.columns
-          / = label_tag :labels, t('admin.posts_attributes.labels')
-          / = text_field_tag :labels, @post.labels_content(true)
-
-      / .row
-        / .small-12.columns
-          / p
-            / | #{t('admin.posts_attributes.already_labels')}
-            / span
-              / - Label.all.each do |label|
-                / a.tag href="#" #{label.name}
+      / = f.text_field :label_tokens, data: { 'admin-label-target': 'label', 'labels-data': Label.all.map(&:name) }
+      / = f.input :labels, input_html: { data: { 'admin-label-target': 'label', 'labels-data': Label.all.map(&:name) } }
+      = f.association :labels, input_html: { data: { 'admin-label-target': 'label', 'labels-data': Label.all.map(&:name) } }
 
       / tabs and upload file field
       ul.nav.nav-tabs#tabs
@@ -30,5 +20,4 @@
           = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', id: 'content-input' }
 
         .tab-pane.fade.markdown#preview
-      = f.button :submit
-      / button.btn.btn-primary type='submit' #{t('admin.posts_attributes.submit')}
+        = f.button :submit
