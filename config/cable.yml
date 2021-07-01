@@ -1,9 +1,0 @@
-production:
-  adapter: redis
-  url: redis://localhost:6379/actioncable_<%= ENV["REDIS_NAMESPACE"] %>
-
-development:
-  adapter: async
-
-test:
-  adapter: async
