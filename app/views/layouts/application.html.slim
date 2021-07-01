@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    meta charset='utf-8'
+    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"
+    meta name="renderer" content="webkit"
+    meta http-equiv="cleartype" content="on"
+    meta name="HandheldFriendly" content="True"
+    meta name="MobileOptimized" content="320"
+    / meta name="turbo-cache-control" content="no-cache"
+    - if content_for?(:meta)
+      = yield(:meta)
+    title
+      = content_for?(:title) ? yield(:title) + " | #{ENV['SITE_NAME']}" : ENV['SITE_NAME']
+    = csrf_meta_tags
+    = action_cable_meta_tag
+    = content_for?(:head) ? yield(:head) : ''
+    = stylesheet_pack_tag 'application', media: 'all', 'data-turbo-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbo-track': 'reload'
+    = javascript_pack_tag 'ga', 'data-turbo-track': 'reload'
+    = favicon_link_tag asset_pack_path("media/images/favicon.png")
+  body class=body_class
+    - if content_for?(:main)
+      = yield(:main)
+    - else
+      nav class="navbar navbar-expand-lg navbar-dark bg-dark my-navbar"
+        a class="navbar-brand" href="/" #{ENV['SITE_NAME']}
+        button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse"
+          span class="navbar-toggler-icon"
+        div class="collapse navbar-collapse" id="navbar-collapse"
+          ul.navbar-nav.ml-auto
+            li class="nav-item"
+              = link_to '首页', root_path, class: 'nav-link'
+            li class="nav-item"
+              = link_to '时间线', archives_path, class: 'nav-link'
+            li class="nav-item"
+              = link_to '关于', page_path('about'), class: 'nav-link'
+            li class="nav-item"
+              a class="nav-link" href=archives_path
+                .fa.fa-search
+      main
+        = render 'common/welcome_new_year'
+        = yield
+        = render "layouts/footer"

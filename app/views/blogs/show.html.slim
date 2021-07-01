@@ -1,0 +1,25 @@
+- content_for(:meta) do
+  meta name="description" content=@post.meta_content
+  meta name="keywords" content=@post.labels_content
+
+- content_for(:title) do
+  | #{@post.title}
+/ data-url=refresh_blog_comments_path(@post) data-post_id=@post.id
+.container.blog-wrapper
+  .row.justify-content-center
+    .col-xs-12.col-lg-9
+      = render partial: "post", :locals=> { post: @post }
+.comment-field
+  = render partial: 'comment', locals: { comments: @comments, post: @post }
+  p
+  .container
+    .row.justify-content-center
+      .col-xs-12.col-lg-9
+        - if @prev
+          = link_to blog_path(@prev), class: 'prev' do
+            i.fa.fa-arrow-left
+            | 上一篇
+        - if @next
+          = link_to blog_path(@next), class: 'next' do
+            | 下一篇
+            i.fa.fa-arrow-right

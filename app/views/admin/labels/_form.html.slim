@@ -1,0 +1,5 @@
+.row
+  .col-sm-6
+    = simple_form_for([:admin, @label], html: {novalidate: '' }) do |f|
+      = f.input :name
+      = f.button :submit

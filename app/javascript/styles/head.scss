@@ -1,0 +1,13 @@
+.my-navbar {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+
+  a.navbar-brand:hover {
+    color: #aaa;
+  }
+
+  .nav-link {
+    padding-right: 0.75rem !important;
+    padding-left: 0.75rem !important;
+  }
+}

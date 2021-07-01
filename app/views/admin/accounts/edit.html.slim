@@ -1,0 +1,15 @@
+- content_for :title do
+  | Account Setting
+
+.card.card-primary
+  .card-header.with-border
+    h3.card-title
+      | Edit Account
+  = simple_form_for current_admin, url: admin_account_path do |f|
+    .card-body
+      = f.input :name, label: 'Administrator Name'
+      = f.input :current_password, label: 'Current Password', required: true
+      = f.input :password, label: 'New Password( Blank if not modify )'
+      = f.input :password_confirmation, label: 'Confirm New Password'
+    .card-footer
+      = f.submit 'Update Account', class: 'btn btn-primary'

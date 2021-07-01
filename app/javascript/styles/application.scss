@@ -1,0 +1,22 @@
+@import 'bootstrap_custom';
+@import 'libs/markdown';
+
+@import 'aboutme_welcome';
+@import 'archives';
+@import 'blogs';
+@import 'head';
+@import 'qrcodes';
+@import 'comments';
+@import 'highlight';
+@import 'footer';
+@import 'like_and_weixin';
+@import 'about';
+
+.turbo-progress-bar {
+  height: 2px;
+  background-color: red;
+}
+
+img {
+  display: block;
+}

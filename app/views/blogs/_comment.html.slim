@@ -1,0 +1,25 @@
+turbo-frame#comment-frame
+  .container
+    .row.justify-content-center
+      .col-12.col-lg-9
+        - comment = @comment || Comment.new
+        = simple_form_for comment, url: blog_comments_path(post), remote: true do |f|
+          = f.text_area :content, placeholder: t('comment_placeholder.content')
+          .row
+            .col-12.col-lg-6
+              = f.text_field :name, value: cookies[:name], placeholder: t('comment_placeholder.name')
+          .row
+            .col-12.col-lg-6
+              = f.text_field :email, value: cookies[:email], placeholder: t('comment_placeholder.email')
+          button.comment-submit type='submit' data-disable-with=t('comment_placeholder.submitting') #{t('comment_placeholder.submit')}
+          - if info = flash.now[:notice]
+            #alert-container.alert.alert-success
+              span.text #{info}
+              button class="close" type='button'
+                span &times;
+          - elsif comment.errors.any?
+            #alert-container.alert.alert-warning
+              span.text #{comment.errors.values.first}
+              button class="close" type='button' data-dismiss='alert'
+                span &times;
+        = render partial: 'comments/comment_content', locals: { comments: comments }

@@ -1,0 +1,37 @@
+.card
+  .card-header
+    .float-sm-left
+      h3.card-title #{t('admin.posts')}
+    .float-sm-right
+      = link_to '创建博客', new_admin_post_path
+  .card-body
+    table.table.table-hover
+      thead
+        tr
+          th #{t('admin.posts_head.title')}
+          th #{t('admin.posts_head.summary')}
+          th #{t('admin.posts_head.operation')}
+      tbody
+        - @posts.each do |post|
+          tr
+            td = link_to post.title, blog_path(post)
+            td
+              i.fa.fa-calendar
+              span #{format_time(post.created_at)}
+              i.fa.fa-list
+              span #{ post.labels_content }
+              i.fa.fa-eye
+              span #{ post.visited_count }
+              i.fa.fa-heart
+              span #{ post.liked_count }
+            td
+              = link_to t('comment'), admin_post_comments_path(post.id), class: 'edit-post-link'
+              | &nbsp
+              = link_to t('edit'), edit_admin_post_path(post), class: 'edit-post-link'
+              | &nbsp
+              = link_to t('destroy'), admin_post_path(post), method: 'DELETE', 'data-confirm' => '确认删除?'
+  .card-footer
+    .float-sm-left
+      | 总计: #{@posts.total_count}
+    .float-sm-right
+      = paginate @posts
