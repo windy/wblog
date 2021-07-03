@@ -1,5 +1,5 @@
-set :domain, 'example.com'
+set :domain, 'yafeilee.com'
 set :deploy_to, '/data/www/wblog'
-set :repository,  'git@github.com:xx/xxx.git'
+set :repository,  'git@github.com:windy/wblog.git'
 set :branch, 'master'
 set :user, 'ruby'

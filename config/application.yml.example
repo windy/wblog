@@ -12,7 +12,7 @@ SIDEKIQ_DB: '1'
 GA: ''
 
 # Rails secret token, use `rake secret` to generate new one here.
-SECRET_TOKEN: 'e4122773d4324fce978c52cde790d84d14f7194f377aea41b7b8302d1d10150e6076a3b7e5e0c1f24ca330cf0a058482c95ea37908bba1722d0761ba5d4e566a'
+SECRET_KEY_BASE: 'e4122773d4324fce978c52cde790d84d14f7194f377aea41b7b8302d1d10150e6076a3b7e5e0c1f24ca330cf0a058482c95ea37908bba1722d0761ba5d4e566a'
 
 #locale: en or zh-CN, zh-CN is default value
 LOCALE: 'zh-CN'
