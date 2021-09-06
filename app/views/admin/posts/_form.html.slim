@@ -1,7 +1,7 @@
 .row data-controller='admin-label'
   .col-sm-6
     = simple_form_for([:admin, @post], html: {novalidate: '' }) do |f|
-      = f.input :title, label: t('admin.posts_attributes.title'), input_html: { name: 'title' }
+      = f.input :title, label: t('admin.posts_attributes.title')
       / = f.text_field :label_tokens, data: { 'admin-label-target': 'label', 'labels-data': Label.all.map(&:name) }
       / = f.input :labels, input_html: { data: { 'admin-label-target': 'label', 'labels-data': Label.all.map(&:name) } }
       = f.association :labels, input_html: { data: { 'admin-label-target': 'label', 'labels-data': Label.all.map(&:name) } }
@@ -17,7 +17,7 @@
 
       .tab-content
         .tab-pane.fade.show.active#content
-          = f.input :content, :as=> :text, :label => false, input_html: { name: 'content', id: 'content-input' }
+          = f.input :content, :as=> :text, :label => false, input_html: { id: 'content-input' }
 
         .tab-pane.fade.markdown#preview
         = f.button :submit

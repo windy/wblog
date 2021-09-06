@@ -10,7 +10,7 @@ export default class extends Controller {
     $(this.labelTarget).select2({
       theme: 'bootstrap4',
       multiple: true,
-      tags: true,
+      tags: false,
     })
   }
 
