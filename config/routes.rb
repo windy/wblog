@@ -19,8 +19,11 @@ Rails.application.routes.draw do
       end
     end
   end
+
   resources :archives, only: [:index]
   resources :photos, only: [:create]
+
+  get '/about', to: 'home#about'
 
   namespace :admin do
     get 'login', to: 'sessions#new', as: :login
@@ -37,6 +40,7 @@ Rails.application.routes.draw do
 
     resources :all_comments, only: [:index, :destroy]
     resources :labels
+
 
     root to: 'dashboard#index'
   end

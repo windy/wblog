@@ -1,7 +1,7 @@
 import '../js/libs/ddscrollspy'
 
 $(document).on('turbo:load', function(){
-  if($('.pages-about-page').length === 0) { return; }
+  if($('.home-about-page').length === 0) { return; }
 
   $(window).scroll(function(){
     if($(this).scrollTop() > 0)

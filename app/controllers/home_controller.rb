@@ -3,4 +3,7 @@ class HomeController < ApplicationController
     @newest = Post.order(created_at: :desc).first
     @recent = Post.order(created_at: :desc).to_a[1..3]
   end
+
+  def about
+  end
 end
