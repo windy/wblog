@@ -180,8 +180,6 @@ GEM
     rack (2.2.3)
     rack-mini-profiler (2.3.2)
       rack (>= 1.2.0)
-    rack-protection (2.1.0)
-      rack
     rack-proxy (0.7.0)
       rack
     rack-test (1.1.0)
@@ -221,7 +219,7 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     redcarpet (3.5.1)
-    redis (4.1.4)
+    redis (4.5.1)
     regexp_parser (2.1.1)
     rexml (3.2.5)
     rouge (3.26.0)
@@ -259,11 +257,10 @@ GEM
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
     semantic_range (3.0.0)
-    sidekiq (5.2.9)
-      connection_pool (~> 2.2, >= 2.2.2)
+    sidekiq (6.4.0)
+      connection_pool (>= 2.2.2)
       rack (~> 2.0)
-      rack-protection (>= 1.5.0)
-      redis (>= 3.3.5, < 4.2)
+      redis (>= 4.2.0)
     simple_form (5.0.0)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -353,7 +350,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   sassc-rails
   selenium-webdriver
-  sidekiq (~> 5)
+  sidekiq (~> 6)
   simple_form (~> 5.0)
   slim-rails
   spring
