@@ -15,7 +15,7 @@
     "expose-loader": "^1.0.0",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.1",
-    "moment-timezone": "^0.5.33",
+    "moment-timezone": "^0.5.35",
     "popper.js": "^1.14.7",
     "rails-erb-loader": "^5.5.2",
     "select2": "^4.1.0-rc.0",
