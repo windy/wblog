@@ -8,6 +8,10 @@ class CommentsController < ApplicationController
     @post = Post.find( params[:blog_id] )
     @comments = @post.comments.order(created_at: :desc)
 
+    # # 某些原因暂时关闭评论
+    flash.now[:notice] = '评论功能未开放'
+    return
+
     @comment = @post.comments.build(comment_params)
     if @comment.save
       flash.now[:notice] = '发表成功'
