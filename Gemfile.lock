@@ -223,7 +223,8 @@ GEM
     redcarpet (3.5.1)
     redis (4.1.4)
     regexp_parser (2.1.1)
-    rexml (3.2.5)
+    rexml (3.3.3)
+      strscan
     rouge (3.26.0)
     rspec-core (3.10.1)
       rspec-support (~> 3.10.0)
@@ -285,6 +286,7 @@ GEM
     ssrf_filter (1.0.7)
     stimulus-rails (0.2.4)
       rails (>= 6.0.0)
+    strscan (3.1.0)
     temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
@@ -347,7 +349,7 @@ DEPENDENCIES
   rails-i18n (~> 6.0.0)
   rails_apps_testing
   redcarpet
-  rexml (~> 3.2, >= 3.2.4)
+  rexml (~> 3.3)
   rouge
   rspec-rails
   sass-rails (>= 6)

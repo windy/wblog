@@ -11,7 +11,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'stimulus-rails'
 
-gem 'rexml', '~> 3.2', '>= 3.2.4'
+gem 'rexml', '~> 3.3'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
