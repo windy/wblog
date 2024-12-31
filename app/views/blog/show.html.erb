@@ -1,0 +1,32 @@
+<!-- app/views/blog/show.html.erb -->
+
+<h1><%= @post.title %></h1>
+<p><%= @post.content %></p>
+
+<% if comments_enabled? %>
+  <h2>Comments</h2>
+  <div id="comments">
+    <% @comments.each do |comment| %>
+      <div class="comment">
+        <p><strong><%= comment.author %>:</strong> <%= comment.content %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <h3>Add a Comment</h3>
+  <%= form_with(model: [@post, Comment.new], url: create_comment_path(@post), local: true) do |form| %>
+    <div class="field">
+      <%= form.label :author %>
+      <%= form.text_field :author, required: true %>
+    </div>
+    <div class="field">
+      <%= form.label :content %>
+      <%= form.text_area :content, required: true %>
+    </div>
+    <div class="actions">
+      <%= form.submit 'Post Comment' %>
+    </div>
+  <% end %>
+<% else %>
+  <p>Comments are disabled.</p>
+<% end %>

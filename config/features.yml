@@ -1,0 +1,6 @@
+# config/features.yml
+
+# Feature toggles for the windy/wblog application
+
+# Enable or disable the comment feature
+comments_enabled: true

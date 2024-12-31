@@ -13,7 +13,7 @@ Rails.application.routes.draw do
 
   resources :blogs, only: [:show, :edit] do
     resources :likes, only: [:index, :create, :destroy]
-    resources :comments, only: [:index, :create] do
+    resources :comments, only: [:index, :create, :show, :update, :destroy] do
       collection do
         get :refresh
       end
