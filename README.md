@@ -25,7 +25,7 @@ Some [screenshots](#screenshots)
 
 ### System dependencies
 
-* Ruby ( >= 3.0.1 )
+* Ruby ( >= 3.1.2 )
 * Postgresql ( >= 9.x )
 * Nginx ( >= 1.4 )
 
@@ -71,9 +71,21 @@ You can run it like a Ruby on Rails project as usual:
   cp config/database.yml.example config/database.yml
   ```
 
-  Update `application.yml` & `database.yml` 's content as you need
+  Update `application.yml` & `database.yml` 's content as you need, then run setup:
+
+  ```shell
+  bin/setup
+  ```
 
 3. Start it
+
+  one terminal run:
+
+  ```shell
+  bin/webpack-dev-server
+  ```
+
+  another terminal run:
 
   ```shell
   rails s
@@ -81,11 +93,11 @@ You can run it like a Ruby on Rails project as usual:
 
   Open browser with `http://localhost:3000`
 
-  If there is any error found, please check your database's user and password.
+  If there is any error found, please check your database's user and password( default is admin/admin )
 
 4. Post the first blog
 
-  visit: http://localhost:3000/admin, input your username and password configurated in `application.yml`.
+  visit: http://localhost:3000/admin, input your username and password configurated in `seeds.rb`.
   then, post a new article.
 
 OK, That's all.
@@ -105,14 +117,13 @@ You can read WBlog wiki for more information: [WBlog 的发布流程(Chinese onl
 ### Stack
 
 * Ruby on Rails 6.1
-* Ruby 3.0.1
+* Ruby 3.1.2
 * Turbo
 * Bootstrap 4
 * mina
 * slim
 * puma
 * Postgresql
-
 
 ## Related open source blog systems
 
