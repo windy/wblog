@@ -5,7 +5,8 @@ import './libs/add_jquery'
 import 'bootstrap/dist/js/bootstrap'
 
 import RailsUjs from '@rails/ujs'
-import * as Turbo from '@hotwired/turbo'
+import '@hotwired/turbo'
+Turbo.session.drive = false
 import * as ActiveStorage from '@rails/activestorage'
 
 RailsUjs.start()

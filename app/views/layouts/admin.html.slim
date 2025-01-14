@@ -18,15 +18,15 @@ html
     = content_for?(:head) ? yield(:head) : ''
     = stylesheet_link_tag 'admin', media: 'all', 'data-turbo-track': 'reload'
     = javascript_include_tag 'admin', 'data-turbo-track': 'reload'
-    / = favicon_link_tag asset_pack_path("media/images/favicon.png")
-  body.hold-transition.skin-blue.sidebar-mini.layout-fixed.admin-page class=body_class
+    = favicon_link_tag asset_path("favicon.png")
+  body.layout-fixed.sidebar-expand-lg.bg-body-tertiary.app-loaded.sidebar-open.admin-page class=body_class
     - if @full_render
       = yield
     - else
       .app-wrapper
         = render 'shared/admin/header'
         = render 'shared/admin/sidebar'
-        .app-main
+        main.app-main
           .content-messages
             = render 'shared/admin/flash_messages'
           .app-content-header
@@ -41,7 +41,7 @@ html
         / /! Main Footer
         .app-footer
           /! To the right
-          .float-right.d-none.d-sm-inline
+          .float-end.d-none.d-sm-inline
             | Anything you want
           /! Default to the left
           strong

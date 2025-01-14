@@ -15,14 +15,15 @@
     border: 1px solid #333333;
     background-color: #F7F7F7;
     box-shadow: none;
-    &:focus {
-      box-shadow: none;
-      background-color: white;
-    }
     width: 100%;
     padding: 0.5rem;
     color: #333;
     margin-bottom: 1rem;
+
+    &:focus {
+      box-shadow: none;
+      background-color: white;
+    }
   }
 
   .has-tip {

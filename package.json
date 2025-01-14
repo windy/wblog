@@ -2,7 +2,7 @@
   "name": "wblog",
   "private": true,
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.9.0",
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@hotwired/turbo": "^7.0.0-beta.7",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
@@ -13,6 +13,7 @@
     "daterangepicker": "^3.0.5",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.1",
+    "moment": "^2.29.2",
     "moment-timezone": "^0.5.33",
     "popper.js": "^1.14.7",
     "sass": "^1.83.1",
@@ -25,8 +26,8 @@
     "esbuild": "^0.24.2"
   },
   "scripts": {
-    "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
-    "build:admin": "sass ./app/assets/stylesheets/admin.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules",
+    "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules --silence-deprecation=import --quiet-deps",
+    "build:admin": "sass ./app/assets/stylesheets/admin.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules --silence-deprecation=import --quiet-deps",
     "build": "esbuild app/javascript/*.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --loader:.ttf=file --loader:.woff2=file"
   }
 }
