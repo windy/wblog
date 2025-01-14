@@ -7,25 +7,26 @@
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
-    "@rails/webpacker": "5.4.4",
     "@ttskch/select2-bootstrap4-theme": "^1.5.2",
     "admin-lte": "^4.0.0-beta3",
     "bootstrap": "^4.3.1",
     "daterangepicker": "^3.0.5",
-    "expose-loader": "^1.0.0",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.1",
     "moment-timezone": "^0.5.33",
     "popper.js": "^1.14.7",
-    "rails-erb-loader": "^5.5.2",
+    "sass": "^1.83.1",
     "select2": "^4.1.0-rc.0",
     "stimulus": "^2.0.0",
-    "tempusdominus-core": "^5.19.0",
-    "webpack": "^4.0.0",
-    "webpack-cli": "^3.3.12"
+    "tempusdominus-core": "^5.19.0"
   },
   "version": "0.1.0",
   "devDependencies": {
-    "webpack-dev-server": "^3.11.2"
+    "esbuild": "^0.24.2"
+  },
+  "scripts": {
+    "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules",
+    "build:admin": "sass ./app/assets/stylesheets/admin.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules",
+    "build": "esbuild app/javascript/*.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --loader:.ttf=file --loader:.woff2=file"
   }
 }

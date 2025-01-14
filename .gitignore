@@ -50,3 +50,6 @@ yarn-debug.log*
 .env
 .byebug_history
 .DS_Store
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

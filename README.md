@@ -82,13 +82,7 @@ You can run it like a Ruby on Rails project as usual:
   one terminal run:
 
   ```shell
-  bin/webpack-dev-server
-  ```
-
-  another terminal run:
-
-  ```shell
-  rails s
+  bin/dev
   ```
 
   Open browser with `http://localhost:3000`

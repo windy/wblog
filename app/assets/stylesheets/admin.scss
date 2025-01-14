@@ -1,7 +1,7 @@
-@import 'bootstrap_custom';
-@import 'libs/markdown';
-@import 'admin-lte/dist/css/adminlte';
-@import 'admin/posts';
+@use 'bootstrap_custom';
+@use 'libs/markdown';
+@use 'admin-lte/dist/css/adminlte';
+@use 'admin/posts';
 
 .turbo-progress-bar {
   height: 4px;

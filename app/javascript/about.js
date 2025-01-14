@@ -1,4 +1,4 @@
-import '../js/libs/ddscrollspy'
+import './libs/ddscrollspy'
 
 $(document).on('turbo:load', function(){
   if($('.home-about-page').length === 0) { return; }
