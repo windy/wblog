@@ -1,5 +1,5 @@
 import { Controller } from "stimulus"
-import '../js/libs/qrcode'
+import '../libs/qrcode'
 
 export default class extends Controller {
   static targets = [ 'wrapper' ]
