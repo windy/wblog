@@ -8,6 +8,8 @@ WBlog
 
 现已全面支持 Ruby on Rails 6.1 版本!!!
 
+New: 现已经从 webpacker 升级至 jsbundling & cssbundling.
+
 * 用户极为友好的阅读体验
 * 自带干净的评论系统
 * 简洁而不简单的发布博客流程
@@ -41,26 +43,30 @@ WBlog
 
 WBlog 是一个标准的 Ruby on Rails 应用. 开发环境依赖于:
 
-* Ruby ( = 3.0.1 )
+* Ruby ( = 3.1.2 )
 * Postgresql ( >= 9.x )
+* node ( >= 18 )
 
 配置 WBlog:
 
   ```shell
+  # rails 依赖
   gem install bundler
   bundle install
+  # node 依赖
+  npm install yarn -g
+  yarn install
+  # 配置更新
   cp config/application.yml.example config/application.yml
   cp config/database.yml.example config/database.yml
   ```
 
   更新对应配置: application.yml & database.yml.
 
-  对于配置有不明白的地方, 可以来这里咨询.
-
 就这样, 可以尝试启动了:
 
   ```shell
-  rails s
+  bin/dev
   ```
 
 登录 http://localhsot:3000/admin 来发布第一篇博客.
@@ -74,7 +80,7 @@ WBlog 采用了 `mina` 作为自动化发布工具, 使用 `nginx`, `puma` 为�
 ### 技术栈
 
 * Ruby on Rails 6.1
-* Ruby 3.0.1
+* Ruby 3.1.2
 * Bootstrap 4
 * mina
 * slim

@@ -30,6 +30,7 @@ Some [screenshots](#screenshots)
 * Ruby ( >= 3.1.2 )
 * Postgresql ( >= 9.x )
 * Nginx ( >= 1.4 )
+* node ( >= 1.18 )
 
 ### Features
 
@@ -56,6 +57,8 @@ You can run it like a Ruby on Rails project as usual:
   # 3.1.2
   postgres  --version
   # 9.x.x
+  npm -v
+  # 1.18.x
   ```
 
 1. Clone it
@@ -67,8 +70,13 @@ You can run it like a Ruby on Rails project as usual:
 2. Install dependencies & configure
 
   ```shell
+  # install rails dependencies
   gem install bundler
   bundle install
+  # install node dependencies
+  npm install yarn -g
+  yarn install
+  # copy and update project config file
   cp config/application.yml.example config/application.yml
   cp config/database.yml.example config/database.yml
   ```
@@ -81,8 +89,29 @@ You can run it like a Ruby on Rails project as usual:
 
 3. Start it
 
+  one command:
+
   ```shell
   bin/dev
+  ```
+
+  It's all.
+
+  or using multi terminal:
+
+  ```shell
+  # rails
+  bin/rails s
+  ```
+
+  ```shell
+  # js compile
+  bin/yarn build --watch
+  ```
+
+  ```shell
+  # css compile
+  bin/yarn build:css --watch
   ```
 
   Open browser with `http://localhost:3000`
@@ -91,7 +120,7 @@ You can run it like a Ruby on Rails project as usual:
 
 4. Post the first blog
 
-  visit: http://localhost:3000/admin, input your username and password configurated in `seeds.rb`.
+  visit: http://localhost:3000/admin, input your username and password configurated in `db/seeds.rb`.
   then, post a new article.
 
 OK, That's all.
