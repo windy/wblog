@@ -26,8 +26,7 @@
     "esbuild": "^0.24.2"
   },
   "scripts": {
-    "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css --no-source-map --load-path=node_modules --silence-deprecation=import --quiet-deps",
-    "build:admin": "sass ./app/assets/stylesheets/admin.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules --silence-deprecation=import --quiet-deps",
+    "build:css": "sass ./app/assets/stylesheets/application.scss:./app/assets/builds/application.css ./app/assets/stylesheets/admin.scss:./app/assets/builds/admin.css --no-source-map --load-path=node_modules --silence-deprecation=import --quiet-deps",
     "build": "esbuild app/javascript/*.js --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets --loader:.ttf=file --loader:.woff2=file"
   }
 }

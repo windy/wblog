@@ -17,7 +17,7 @@ html
     = action_cable_meta_tag
     = content_for?(:head) ? yield(:head) : ''
     = stylesheet_link_tag 'application', media: 'all', 'data-turbo-track': 'reload'
-    = javascript_include_tag 'application', 'data-turbo-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbo-track': Rails.env.production? ? "reload" : ""
     / = javascript_tag 'ga', 'data-turbo-track': 'reload'
     = favicon_link_tag asset_path("favicon.png")
   body class=body_class

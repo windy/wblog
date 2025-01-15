@@ -360,7 +360,7 @@ DEPENDENCIES
   jsbundling-rails
   kaminari!
   launchy
-  listen (~> 3.3)
+  listen (~> 3.9)
   mina (~> 1.2.2)
   mina-logs
   mina-multistage

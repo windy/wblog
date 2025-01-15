@@ -10,6 +10,8 @@ WBlog is open source blog which built for mobile first, it's licenced on MIT, us
 
 New: WBlog is using Ruby on Rails 6.1 now.
 
+New: WBlog has updated from webpacker to jsbundling & cssbundling with esbuild and sass.
+
 [中文说明文档](/README.zh-CN.md)
 
 Characteristic:
@@ -51,7 +53,7 @@ You can run it like a Ruby on Rails project as usual:
 
   ```shell
   ruby -v
-  # 3.0.1
+  # 3.1.2
   postgres  --version
   # 9.x.x
   ```
@@ -78,8 +80,6 @@ You can run it like a Ruby on Rails project as usual:
   ```
 
 3. Start it
-
-  one terminal run:
 
   ```shell
   bin/dev

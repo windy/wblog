@@ -13,8 +13,11 @@ class Admin::LabelsController < Admin::BaseController
 
   def create
     @label = Label.new(label_params)
-    @label.save!
-    redirect_to admin_labels_path, notice: '创建成功'
+    if @label.save
+      redirect_to admin_labels_path, notice: '创建成功'
+    else
+      render :new
+    end
   end
 
   def update

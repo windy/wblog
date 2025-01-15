@@ -4,6 +4,9 @@
 @use 'admin-lte/dist/css/adminlte';
 @use 'admin/posts';
 
+@use 'select2/dist/css/select2.css';
+// @use '@ttskch/select2-bootstrap4-theme/dist/select2-bootstrap4.css';
+
 .turbo-progress-bar {
   height: 4px;
   background-color: red;

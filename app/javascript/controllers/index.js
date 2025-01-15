@@ -12,4 +12,4 @@ import QrcodeController from "./qrcode_controller"
 application.register("qrcode", QrcodeController)
 
 import AdminLabelController from "./admin_label_controller"
-application.register("admin_label", AdminLabelController)
+application.register("admin-label", AdminLabelController)
