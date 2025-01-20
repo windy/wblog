@@ -17,7 +17,8 @@ html
     = action_cable_meta_tag
     = content_for?(:head) ? yield(:head) : ''
     = stylesheet_link_tag 'admin', media: 'all', 'data-turbo-track': 'reload'
-    = javascript_include_tag 'admin', 'data-turbo-track': 'reload'
+    / = javascript_include_tag 'admin', 'data-turbo-track': 'reload'
+    = javascript_include_tag 'admin', 'data-turbo-track': Rails.env.production? ? "reload" : "", type: "module"
     = favicon_link_tag asset_path("favicon.png")
   body.layout-fixed.sidebar-expand-lg.bg-body-tertiary.app-loaded.sidebar-open.admin-page class=body_class
     - if @full_render

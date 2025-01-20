@@ -1,14 +1,13 @@
 // base dependency library, it should be only shared by `admin.js` and `application.js`.
 //
 import './libs/add_jquery'
-
 import 'bootstrap/dist/js/bootstrap'
 
 import RailsUjs from '@rails/ujs'
-import '@hotwired/turbo'
-Turbo.session.drive = false
+import "@hotwired/turbo-rails"
 import * as ActiveStorage from '@rails/activestorage'
 
+// Turbo.session.drive = false
 RailsUjs.start()
 ActiveStorage.start()
 

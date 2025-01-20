@@ -30,7 +30,7 @@ class Admin::PostsController < Admin::BaseController
       redirect_to admin_posts_path
     else
       flash.now[:error] = '创建失败'
-      render :new
+      render :new, status: 422
     end
   end
 

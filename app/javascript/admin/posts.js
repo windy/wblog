@@ -4,7 +4,7 @@ $(document).on('turbo:load', function(){
     return false
   })
 
-  opt = {
+  var opt = {
     type: 'POST',
     url: "/photos",
     success: function(data,status,xhr){
