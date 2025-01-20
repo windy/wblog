@@ -6,9 +6,11 @@ WBlog
 
 为移动而生的 Ruby on Rails 开源博客. WBlog 基于 MIT 协议, 自由使用.
 
-现已全面支持 Ruby on Rails 6.1 版本!!!
+~~现已全面支持 Ruby on Rails 6.1 版本!!!~~
 
 New: 现已经从 webpacker 升级至 jsbundling & cssbundling.
+
+New: 现已全面升级到 Ruby on Rails 7.0 版本！！！
 
 * 用户极为友好的阅读体验
 * 自带干净的评论系统
@@ -79,7 +81,7 @@ WBlog 采用了 `mina` 作为自动化发布工具, 使用 `nginx`, `puma` 为�
 
 ### 技术栈
 
-* Ruby on Rails 6.1
+* Ruby on Rails 7.0
 * Ruby 3.1.2
 * Bootstrap 4
 * mina
