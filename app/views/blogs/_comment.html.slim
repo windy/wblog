@@ -15,7 +15,8 @@ turbo-frame#comment-frame
           - if info = flash.now[:notice]
             #alert-container.alert.alert-success
               span.text #{info}
-              button class="close" type='button'
+              // ai fix
+              button class="close" type='button' data-dismiss='alert'
                 span &times;
           - elsif comment.errors.any?
             #alert-container.alert.alert-warning
