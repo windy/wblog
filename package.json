@@ -10,7 +10,7 @@
     "@rails/ujs": "^6.0.0",
     "@ttskch/select2-bootstrap4-theme": "^1.5.2",
     "admin-lte": "^4.0.0-beta3",
-    "bootstrap": "^4.3.1",
+    "bootstrap": "^5.0.0",
     "daterangepicker": "^3.0.5",
     "jquery": "^3.3.1",
     "js-cookie": "^2.2.1",
