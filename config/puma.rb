@@ -1,3 +1,5 @@
+# require 'puma/daemon'
+
 if ENV['RAILS_ENV'] == 'production'
   app_root = '/data/www/wblog/shared'
   pidfile "#{app_root}/tmp/pids/puma.pid"

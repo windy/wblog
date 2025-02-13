@@ -4,7 +4,7 @@ WBlog
 [![Maintainability](https://api.codeclimate.com/v1/badges/545d8372a9dda70b77fe/maintainability)](https://codeclimate.com/github/windy/wblog/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/545d8372a9dda70b77fe/test_coverage)](https://codeclimate.com/github/windy/wblog/test_coverage)
 
-The missing open source blog system on Ruby on Rails 7.0.
+The missing open source blog system on Ruby on Rails 7.x.
 
 WBlog is open source blog which built for mobile first, it's licenced on MIT, use it for free!
 
@@ -12,7 +12,7 @@ WBlog is open source blog which built for mobile first, it's licenced on MIT, us
 
 New: WBlog has updated from webpacker to jsbundling & cssbundling with esbuild and sass.
 
-New: WBlog is using Ruby on Rails 7.0 now.
+New: WBlog is using Ruby on Rails 7.1 now.
 
 [中文说明文档](/README.zh-CN.md)
 
@@ -141,7 +141,7 @@ You can read WBlog wiki for more information: [WBlog 的发布流程(Chinese onl
 
 ### Stack
 
-* Ruby on Rails 7.0
+* Ruby on Rails 7.1
 * Ruby 3.1.2
 * Turbo
 * Bootstrap 4
