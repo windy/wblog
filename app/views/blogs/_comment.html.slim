@@ -20,7 +20,7 @@ turbo-frame#comment-frame
                 span &times;
           - elsif comment.errors.any?
             #alert-container.alert.alert-warning
-              span.text #{comment.errors.values.first}
+              span.text #{comment.errors[:content].first}
               button class="close" type='button' data-dismiss='alert'
                 span &times;
         = render partial: 'comments/comment_content', locals: { comments: comments }
