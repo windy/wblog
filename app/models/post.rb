@@ -8,12 +8,6 @@ class Post < ActiveRecord::Base
   validates :title, :presence=>true, :uniqueness=> true
   validates :content, :presence=>true, :length => { :minimum=> 3 }
 
-  after_commit on: :create do
-    if ENV['MAIL_SERVER'].present?
-      NewPostWorker.perform_async(self.id.to_s)
-    end
-  end
-
   def content_html
     self.class.render_html(self.content)
   end
