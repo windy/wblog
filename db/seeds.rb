@@ -15,7 +15,7 @@ Administrator.delete_all
 puts 'Creating admin user...'
 Administrator.create!(
   name: 'admin',
-  password: 'password'
+  password: 'admin'
 )
 
 puts 'Creating labels...'
