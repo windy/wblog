@@ -60,6 +60,7 @@ gem 'mina-logs', require: false
 
 group :development do
   gem 'rails_apps_testing'
+  gem 'faker'
 end
 
 group :development, :test do
