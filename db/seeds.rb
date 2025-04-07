@@ -69,8 +69,5 @@ puts 'Creating likes...'
   )
 end
 
-# Reset visit counters for all posts
-puts 'Resetting post visit counters...'
-Post.update_all(visited_count: 0)
 
 puts 'Seed data created successfully!'
