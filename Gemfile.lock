@@ -140,6 +140,8 @@ GEM
     factory_bot_rails (6.4.4)
       factory_bot (~> 6.5)
       railties (>= 5.0.0)
+    faker (3.5.1)
+      i18n (>= 1.8.11, < 2)
     ffi (1.17.1)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -375,6 +377,7 @@ DEPENDENCIES
   cssbundling-rails
   database_cleaner
   factory_bot_rails
+  faker
   figaro
   high_voltage (~> 3.1)
   html_truncator
