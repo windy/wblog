@@ -38,11 +38,13 @@ en:
     creator: 'Startup'
     timeline: 'Timeline'
     about: 'About'
+    changelog: 'Changelog'
 
   title:
     home: 'Home'
     timeline: 'Timeline'
     about: 'About Me'
+    changelog: 'Changelog'
 
   comment_attributes:
     email: 'Format Validation Failed'

@@ -38,11 +38,13 @@ zh-CN:
     creator: '创业'
     timeline: '时间线'
     about: '关于我'
+    changelog: '更新日志'
 
   title:
     home: '首页'
     timeline: '时间线'
     about: '关于我'
+    changelog: '更新日志'
 
 
   activerecord:

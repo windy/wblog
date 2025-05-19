@@ -24,6 +24,7 @@ Rails.application.routes.draw do
   resources :photos, only: [:create]
 
   get '/about', to: 'home#about'
+  get '/changelog', to: 'home#changelog'
 
   namespace :admin do
     get 'login', to: 'sessions#new', as: :login
