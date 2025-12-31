@@ -1,0 +1,22 @@
+.new-year {
+  margin: 1rem 0;
+  text-align: center;
+  font-size: 1.1rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px 0 rgba(102, 126, 234, 0.3);
+
+  strong {
+    color: white;
+  }
+
+  .close {
+    color: white;
+    opacity: 0.8;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

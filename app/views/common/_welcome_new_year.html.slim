@@ -1,5 +1,5 @@
 - if (1.days.from_now).strftime('%-m-%-d') =~ /^1-[123]$/
-  .new-year
-    .callout.primary data-closable=''
-      | 我的朋友, 祝你元旦快乐
-      button.close-button type='button' data-close='' &times;
+  .new-year.alert.alert-success.alert-dismissible.fade.show role='alert'
+    strong 🎉 我的朋友，祝你元旦快乐！
+    button.close type='button' data-dismiss='alert' aria-label='Close'
+      span aria-hidden='true' &times;
